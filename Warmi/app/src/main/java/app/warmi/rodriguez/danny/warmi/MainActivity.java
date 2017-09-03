@@ -27,13 +27,14 @@ public class MainActivity extends AppCompatActivity {
                 int value = dataSnapshot.getValue(Integer.class);
                 Log.i("DATO", value+"");
 
+
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {  // cuando se cancela, por alguna razon no podemos obtener el valor
                 Log.e("ERROR", databaseError.getMessage());
             }
-        })
+        });
 
 
     }
