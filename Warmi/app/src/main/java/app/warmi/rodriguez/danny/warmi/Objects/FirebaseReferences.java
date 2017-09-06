@@ -6,5 +6,7 @@ package app.warmi.rodriguez.danny.warmi.Objects;
 
 public class FirebaseReferences {
 
-    final public static String FIRE_REFERENCE = "Tuto";
+    final public static String DENUNCIA_REFE = "Denuncia";
+    final public static String PERSONA_REFE = "Persona";
+
 }
