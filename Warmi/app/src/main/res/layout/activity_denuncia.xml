@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.warmi.rodriguez.danny.warmi.DenunciaActivity">
+
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <EditText
+            android:id="@+id/ciDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ci denunciante"
+            android:inputType="number"
+            android:layout_below="@+id/nomDen"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/nomDen"
+            android:layout_alignStart="@+id/nomDen" />
+
+        <EditText
+            android:id="@+id/ciVic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/nomVic"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/nomVic"
+            android:layout_below="@+id/nomVic"
+            android:ems="10"
+            android:hint="Ci victima (opc.)"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/nomDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre denunciante"
+            android:inputType="textPersonName"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <EditText
+            android:id="@+id/nomVic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre victima (opc.)"
+            android:inputType="textPersonName"
+            android:layout_below="@+id/numDen"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/numDen"
+            android:layout_alignStart="@+id/numDen" />
+
+        <EditText
+            android:id="@+id/numDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Numero denunciante"
+            android:inputType="number"
+            android:layout_below="@+id/ciDen"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/ciDen"
+            android:layout_alignStart="@+id/ciDen" />
+
+        <EditText
+            android:id="@+id/numVic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/ciVic"
+            android:ems="10"
+            android:hint="Numero victima (opc.)"
+            android:inputType="number"
+            android:layout_alignLeft="@+id/ciVic"
+            android:layout_alignStart="@+id/ciVic" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Relacion con la victima:"
+            android:layout_below="@+id/numVic"
+            android:layout_alignLeft="@+id/numVic"
+            android:layout_alignStart="@+id/numVic" />
+
+        <EditText
+            android:id="@+id/fechaDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Fecha"
+            android:inputType="date"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="33dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/numVic"
+            android:layout_alignStart="@+id/numVic" />
+
+        <EditText
+            android:id="@+id/descDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fechaDen"
+            android:ems="10"
+            android:hint="Descripción"
+            android:inputType="text"
+            android:layout_alignLeft="@+id/fechaDen"
+            android:layout_alignStart="@+id/fechaDen"
+            android:layout_alignRight="@+id/btnCancelar"
+            android:layout_alignEnd="@+id/btnCancelar" />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_dark"
+            android:text="Guardar"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:textColorLink="@android:color/background_light"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/textView2"
+            android:layout_alignEnd="@+id/textView2"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btnGuardar"
+            android:layout_marginLeft="41dp"
+            android:layout_marginStart="41dp"
+            android:layout_toEndOf="@+id/btnGuardar"
+            android:layout_toRightOf="@+id/btnGuardar"
+            android:background="@android:color/background_dark"
+            android:text="Cancelar"
+            android:textColor="@android:color/background_light" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
