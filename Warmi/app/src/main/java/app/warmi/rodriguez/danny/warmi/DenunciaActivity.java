@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,6 +22,7 @@ public class DenunciaActivity extends AppCompatActivity {
 
     Button btnGuardar;
     Button btnCancelar;
+    Button btnCamara;
     EditText nomDen;
     EditText ciDen;
     EditText telDen;
@@ -31,6 +33,7 @@ public class DenunciaActivity extends AppCompatActivity {
     EditText fecha;
     Spinner relacion;
     String relaciones[] = {"Relacion con victima", "Esposo", "Hermana(o)"};
+    String rel="";
 
     public DenunciaActivity() {
     }
@@ -44,6 +47,7 @@ public class DenunciaActivity extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference reference = database.getReference();
+
         relacion = (Spinner) findViewById(R.id.relacion);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, relaciones);
         relacion.setAdapter(adapter);
@@ -51,13 +55,26 @@ public class DenunciaActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+                switch (i){
+                    case 1:
+                        rel =  relaciones[i];
+                        break;
+                    case 2:
+                        rel =  relaciones[i];
+                        break;
+                }
+
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
+                Toast toast = Toast.makeText(getApplicationContext(),"Seleccione una relacion", Toast.LENGTH_LONG);
+                toast.show();
             }
         });
+
+
+
 
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
         btnGuardar.setOnClickListener(new View.OnClickListener() {
@@ -80,11 +97,23 @@ public class DenunciaActivity extends AppCompatActivity {
                 String descripcionDen = descrip.getText().toString();
                 fecha = (EditText) findViewById(R.id.fechaDen);
                 String fechaDen = fecha.getText().toString();
-
+                if(nombreDenunciante!=""&& ciDenunciante!=""&&telefonoDenunciante!=""&& descripcionDen!=""&&fechaDen!=""){
                 Persona denunciante = new Persona(nombreDenunciante, ciDenunciante, telefonoDenunciante);
                 Persona victima = new Persona(nombreVictima, ciVictima, telefonoVictima);
-                Denuncia denuncia = new Denuncia(denunciante, victima, descripcionDen, fechaDen, "Ninguna");
+                Denuncia denuncia = new Denuncia(denunciante, victima, descripcionDen, fechaDen, rel);
+                    reference.child(FirebaseReferences.PERSONA_REFE).push().setValue(denunciante);
+                    reference.child(FirebaseReferences.PERSONA_REFE).push().setValue(victima);
                 reference.child(FirebaseReferences.DENUNCIA_REFE).push().setValue(denuncia);
+                    Toast toast = Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_LONG);
+                    toast.show();
+                    Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Toast toast = Toast.makeText(getApplicationContext(),"Rellene los campos obligatorios", Toast.LENGTH_LONG);
+                    toast.show();
+                    System.exit(0);
+                }
 
             }
         });

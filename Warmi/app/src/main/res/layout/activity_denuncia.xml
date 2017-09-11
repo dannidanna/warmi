@@ -93,15 +93,6 @@
             android:layout_alignLeft="@+id/ciVic"
             android:layout_alignStart="@+id/ciVic" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Relacion con la victima:"
-            android:layout_below="@+id/numVic"
-            android:layout_alignLeft="@+id/numVic"
-            android:layout_alignStart="@+id/numVic" />
-
         <EditText
             android:id="@+id/fechaDen"
             android:layout_width="wrap_content"
@@ -109,12 +100,11 @@
             android:ems="10"
             android:hint="Fecha"
             android:inputType="date"
-            android:layout_below="@+id/textView2"
-            android:layout_marginTop="33dp"
+            android:layout_below="@+id/relacion"
+            android:layout_alignLeft="@+id/relacion"
+            android:layout_alignStart="@+id/relacion"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/numVic"
-            android:layout_alignStart="@+id/numVic" />
+            android:layout_alignParentEnd="true" />
 
         <EditText
             android:id="@+id/descDen"
@@ -126,8 +116,8 @@
             android:inputType="text"
             android:layout_alignLeft="@+id/fechaDen"
             android:layout_alignStart="@+id/fechaDen"
-            android:layout_alignRight="@+id/btnCancelar"
-            android:layout_alignEnd="@+id/btnCancelar" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:id="@+id/btnGuardar"
@@ -138,34 +128,52 @@
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light"
             android:textColorLink="@android:color/background_light"
+            android:layout_marginRight="13dp"
+            android:layout_marginEnd="13dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/textView2"
-            android:layout_alignEnd="@+id/textView2"
-            android:layout_marginRight="11dp"
-            android:layout_marginEnd="11dp" />
+            android:layout_toLeftOf="@+id/btnCancelar"
+            android:layout_toStartOf="@+id/btnCancelar"
+            android:layout_marginBottom="14dp" />
 
         <Button
             android:id="@+id/btnCancelar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/btnGuardar"
-            android:layout_marginLeft="41dp"
-            android:layout_marginStart="41dp"
-            android:layout_toEndOf="@+id/btnGuardar"
-            android:layout_toRightOf="@+id/btnGuardar"
             android:background="@android:color/background_dark"
             android:text="Cancelar"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:layout_marginRight="71dp"
+            android:layout_marginEnd="71dp"
+            android:layout_alignBaseline="@+id/btnGuardar"
+            android:layout_alignBottom="@+id/btnGuardar"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <Spinner
             android:id="@+id/relacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView2"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_below="@+id/textView2"
-            android:layout_marginLeft="11dp"
-            android:layout_marginStart="11dp" />
+            android:layout_below="@+id/numVic"
+            android:layout_alignLeft="@+id/numVic"
+            android:layout_alignStart="@+id/numVic"
+            android:layout_marginTop="19dp" />
+
+        <Button
+            android:id="@+id/btnCamara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descDen"
+            android:layout_toEndOf="@+id/btnGuardar"
+            android:layout_toRightOf="@+id/btnGuardar"
+            android:text="Camara" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_alignRight="@+id/btnGuardar"
+            android:layout_alignEnd="@+id/btnGuardar" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
