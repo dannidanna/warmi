@@ -157,5 +157,15 @@
             android:text="Cancelar"
             android:textColor="@android:color/background_light" />
 
+        <Spinner
+            android:id="@+id/relacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp" />
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

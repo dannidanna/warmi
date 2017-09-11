@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -18,17 +21,16 @@ public class DenunciaActivity extends AppCompatActivity {
 
     Button btnGuardar;
     Button btnCancelar;
-
-    Denuncia denuncia;
-    Persona perDenunciante;
-    Persona perVictima;
-
-    EditText denunciante;
-    EditText victima;
-    Number ciDenunciante;
-    Number ciVictima;
-    Number telDenunciante;
-    Number telVictima;
+    EditText nomDen;
+    EditText ciDen;
+    EditText telDen;
+    EditText nomVic;
+    EditText ciVic;
+    EditText telVic;
+    EditText descrip;
+    EditText fecha;
+    Spinner relacion;
+    String relaciones[] = {"Relacion con victima", "Esposo", "Hermana(o)"};
 
     public DenunciaActivity() {
     }
@@ -38,19 +40,50 @@ public class DenunciaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_denuncia);
+
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference reference = database.getReference();
+        relacion = (Spinner) findViewById(R.id.relacion);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, relaciones);
+        relacion.setAdapter(adapter);
+        relacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         btnGuardar = (Button) findViewById(R.id.btnGuardar);
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Persona denunciante = new Persona("Danny", 2345, 4365141);
-                Persona victima = new Persona("Maria", 8473, 7349924);
-                Denuncia denuncia = new Denuncia(denunciante, victima, "Hostigamiento laboral", "06/09/17", "Ninguna");
-                Denuncia denuncia2 = new Denuncia(denunciante, victima, "Mala madre ", "15/09/17", "Ninguna");
+                nomDen = (EditText) findViewById(R.id.nomDen);
+                String nombreDenunciante = nomDen.getText().toString();
+                ciDen = (EditText) findViewById(R.id.ciDen);
+                String ciDenunciante = ciDen.getText().toString();
+                telDen = (EditText) findViewById(R.id.numDen);
+                String telefonoDenunciante = telDen.getText().toString();
+                nomVic = (EditText) findViewById(R.id.nomVic);
+                String nombreVictima = nomVic.getText().toString();
+                ciVic = (EditText) findViewById(R.id.ciVic);
+                String ciVictima = ciVic.getText().toString();
+                telVic = (EditText) findViewById(R.id.numVic);
+                String telefonoVictima = telVic.getText().toString();
+                descrip = (EditText) findViewById(R.id.descDen);
+                String descripcionDen = descrip.getText().toString();
+                fecha = (EditText) findViewById(R.id.fechaDen);
+                String fechaDen = fecha.getText().toString();
 
+                Persona denunciante = new Persona(nombreDenunciante, ciDenunciante, telefonoDenunciante);
+                Persona victima = new Persona(nombreVictima, ciVictima, telefonoVictima);
+                Denuncia denuncia = new Denuncia(denunciante, victima, descripcionDen, fechaDen, "Ninguna");
                 reference.child(FirebaseReferences.DENUNCIA_REFE).push().setValue(denuncia);
 
             }

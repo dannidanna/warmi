@@ -7,13 +7,13 @@ package app.warmi.rodriguez.danny.warmi.Objects;
 public class Persona {
 
     String nombre;
-    int ci;
-    int telefono;
+    String ci;
+    String telefono;
 
-    public Persona(){
+    public Persona() {
     }
 
-    public Persona(String nombre, int ci, int telefono) {
+    public Persona(String nombre, String ci, String telefono) {
         this.nombre = nombre;
         this.ci = ci;
         this.telefono = telefono;
@@ -27,20 +27,19 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public int getCi() {
+    public String getCi() {
         return ci;
     }
 
-    public void setCi(int ci) {
+    public void setCi(String ci) {
         this.ci = ci;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 }
-
