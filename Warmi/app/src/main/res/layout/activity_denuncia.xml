@@ -17,163 +17,189 @@
             android:id="@+id/ciDen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnCamara"
+            android:layout_alignLeft="@+id/nomDen"
+            android:layout_alignRight="@+id/btnCamara"
+            android:layout_alignStart="@+id/nomDen"
+            android:layout_below="@+id/nomDen"
             android:ems="10"
             android:hint="Ci denunciante"
-            android:inputType="number"
-            android:layout_below="@+id/nomDen"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/nomDen"
-            android:layout_alignStart="@+id/nomDen" />
+            android:inputType="text"
+            android:textColor="@color/color1"
+            android:textColorHighlight="@color/color1"
+            android:textColorLink="@color/color1"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/ciVic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnCamara"
             android:layout_alignLeft="@+id/nomVic"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/btnCamara"
             android:layout_alignStart="@+id/nomVic"
             android:layout_below="@+id/nomVic"
             android:ems="10"
             android:hint="Ci victima (opc.)"
-            android:inputType="number" />
+            android:inputType="text"
+            android:textColorLink="@color/color1"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/nomDen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnCamara"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/btnCamara"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
             android:ems="10"
             android:hint="Nombre denunciante"
             android:inputType="textPersonName"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="27dp"
-            android:layout_marginStart="27dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:textColor="@color/color1"
+            android:textColorLink="@color/color1"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/nomVic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnCamara"
+            android:layout_alignLeft="@+id/numDen"
+            android:layout_alignRight="@+id/btnCamara"
+            android:layout_alignStart="@+id/numDen"
+            android:layout_below="@+id/numDen"
             android:ems="10"
             android:hint="Nombre victima (opc.)"
             android:inputType="textPersonName"
-            android:layout_below="@+id/numDen"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/numDen"
-            android:layout_alignStart="@+id/numDen" />
+            android:textColorLink="@color/color1"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/numDen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnCamara"
+            android:layout_alignLeft="@+id/ciDen"
+            android:layout_alignRight="@+id/btnCamara"
+            android:layout_alignStart="@+id/ciDen"
+            android:layout_below="@+id/ciDen"
             android:ems="10"
             android:hint="Numero denunciante"
             android:inputType="number"
-            android:layout_below="@+id/ciDen"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/ciDen"
-            android:layout_alignStart="@+id/ciDen" />
+            android:textColorLink="@color/color1"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/numVic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignEnd="@+id/btnCamara"
+            android:layout_alignLeft="@+id/ciVic"
+            android:layout_alignRight="@+id/btnCamara"
+            android:layout_alignStart="@+id/ciVic"
             android:layout_below="@+id/ciVic"
             android:ems="10"
             android:hint="Numero victima (opc.)"
             android:inputType="number"
-            android:layout_alignLeft="@+id/ciVic"
-            android:layout_alignStart="@+id/ciVic" />
+            android:textColorLink="@color/color1"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/fechaDen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnCamara"
+            android:layout_alignLeft="@+id/relacion"
+            android:layout_alignRight="@+id/btnCamara"
+            android:layout_alignStart="@+id/relacion"
+            android:layout_below="@+id/relacion"
             android:ems="10"
             android:hint="Fecha"
             android:inputType="date"
-            android:layout_below="@+id/relacion"
-            android:layout_alignLeft="@+id/relacion"
-            android:layout_alignStart="@+id/relacion"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:textColorLink="@color/color1"
+            android:textSize="15dp" />
 
         <EditText
             android:id="@+id/descDen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnCamara"
+            android:layout_alignLeft="@+id/fechaDen"
+            android:layout_alignRight="@+id/btnCamara"
+            android:layout_alignStart="@+id/fechaDen"
             android:layout_below="@+id/fechaDen"
             android:ems="10"
             android:hint="Descripción"
             android:inputType="text"
-            android:layout_alignLeft="@+id/fechaDen"
-            android:layout_alignStart="@+id/fechaDen"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:textColorLink="@color/color1"
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_dark"
+            android:layout_height="@dimen/dim1"
+            android:background="@color/color1"
             android:text="Guardar"
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light"
             android:textColorLink="@android:color/background_light"
-            android:layout_marginRight="13dp"
-            android:layout_marginEnd="13dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@+id/btnCancelar"
-            android:layout_toStartOf="@+id/btnCancelar"
-            android:layout_marginBottom="14dp" />
+            android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp"
+            android:layout_alignParentBottom="true" />
 
         <Button
             android:id="@+id/btnCancelar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/background_dark"
+            android:layout_height="@dimen/dim1"
+            android:background="@color/color1"
             android:text="Cancelar"
             android:textColor="@android:color/background_light"
-            android:layout_marginRight="71dp"
-            android:layout_marginEnd="71dp"
-            android:layout_alignBaseline="@+id/btnGuardar"
-            android:layout_alignBottom="@+id/btnGuardar"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginRight="49dp"
+            android:layout_marginEnd="49dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/btnCamara"
+            android:layout_alignEnd="@+id/btnCamara" />
 
         <Spinner
             android:id="@+id/relacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
             android:layout_below="@+id/numVic"
             android:layout_alignLeft="@+id/numVic"
             android:layout_alignStart="@+id/numVic"
-            android:layout_marginTop="19dp" />
+            android:layout_alignRight="@+id/numVic"
+            android:layout_alignEnd="@+id/numVic" />
 
         <Button
             android:id="@+id/btnCamara"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/dim1"
+            android:layout_marginEnd="26dp"
+            android:layout_marginRight="26dp"
+            android:background="@color/color2"
+            android:text="Camara"
+            android:textSize="15dp"
             android:layout_below="@+id/descDen"
-            android:layout_toEndOf="@+id/btnGuardar"
-            android:layout_toRightOf="@+id/btnGuardar"
-            android:text="Camara" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="36dp" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:layout_alignRight="@+id/btnGuardar"
-            android:layout_alignEnd="@+id/btnGuardar" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/common_google_signin_btn_icon_light"
+            android:layout_below="@+id/descDen"
+            android:layout_alignLeft="@+id/btnGuardar"
+            android:layout_alignStart="@+id/btnGuardar"
+            android:layout_marginLeft="14dp"
+            android:layout_marginStart="14dp" />
+
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

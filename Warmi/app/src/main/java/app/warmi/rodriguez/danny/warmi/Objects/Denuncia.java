@@ -11,16 +11,18 @@ public class Denuncia {
     String descripcion;
     String fecha;
     String relacion;
+    Localizacion localizacion;
 
     public Denuncia() {
     }
 
-    public Denuncia(Persona personaDenunciante, Persona personaVictima, String descripcion, String fecha, String relacion) {
+    public Denuncia(Persona personaDenunciante, Persona personaVictima, String descripcion, String fecha, String relacion, Localizacion localizacion) {
         this.personaDenunciante = personaDenunciante;
         this.personaVictima = personaVictima;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.relacion = relacion;
+        this.localizacion = localizacion;
     }
 
     public Denuncia(String descripcion, String fecha, String relacion) {
@@ -69,5 +71,13 @@ public class Denuncia {
 
     public void setRelacion(String relacion) {
         this.relacion = relacion;
+    }
+
+    public Localizacion getLocalizacion() {
+        return localizacion;
+    }
+
+    public void setLocalizacion(Localizacion localizacion) {
+        this.localizacion = localizacion;
     }
 }
