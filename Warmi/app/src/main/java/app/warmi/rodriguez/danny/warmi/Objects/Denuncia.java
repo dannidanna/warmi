@@ -11,12 +11,12 @@ public class Denuncia {
     String descripcion;
     String fecha;
     String relacion;
-    Localizacion localizacion;
+    LocalizacionClass localizacion;
 
     public Denuncia() {
     }
 
-    public Denuncia(Persona personaDenunciante, Persona personaVictima, String descripcion, String fecha, String relacion, Localizacion localizacion) {
+    public Denuncia(Persona personaDenunciante, Persona personaVictima, String descripcion, String fecha, String relacion, LocalizacionClass localizacion) {
         this.personaDenunciante = personaDenunciante;
         this.personaVictima = personaVictima;
         this.descripcion = descripcion;
@@ -73,11 +73,11 @@ public class Denuncia {
         this.relacion = relacion;
     }
 
-    public Localizacion getLocalizacion() {
+    public LocalizacionClass getLocalizacion() {
         return localizacion;
     }
 
-    public void setLocalizacion(Localizacion localizacion) {
+    public void setLocalizacion(LocalizacionClass localizacion) {
         this.localizacion = localizacion;
     }
 }

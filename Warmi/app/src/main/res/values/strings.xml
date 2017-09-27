@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Warmi</string>
+    <string name="title_activity_inst_maps">Map</string>
 </resources>

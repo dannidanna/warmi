@@ -6,9 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnDenuncia;
+    Button btnInstMaps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,13 +17,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnDenuncia = (Button) findViewById(R.id.btnDenuncia);
-        btnDenuncia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnDenuncia.setOnClickListener(this);
+        btnInstMaps = (Button) findViewById(R.id.btnInstMaps);
+        btnInstMaps.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()){
+            case R.id.btnDenuncia:
                 Intent intent = new Intent(MainActivity.this, DenunciaActivity.class);
                 startActivity(intent);
-            }
-        });
-
+                break;
+            case R.id.btnInstMaps:
+                Intent intent1 = new Intent(MainActivity.this, InstMapsActivity.class);
+                startActivity(intent1);
+                break;
+        }
     }
 }

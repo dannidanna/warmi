@@ -179,15 +179,15 @@
             android:id="@+id/btnCamara"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dim1"
-            android:layout_marginEnd="26dp"
-            android:layout_marginRight="26dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginRight="23dp"
             android:background="@color/color2"
             android:text="Camara"
             android:textSize="15dp"
+            android:layout_marginTop="30dp"
             android:layout_below="@+id/descDen"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="36dp" />
+            android:layout_alignParentEnd="true" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -199,6 +199,24 @@
             android:layout_alignStart="@+id/btnGuardar"
             android:layout_marginLeft="14dp"
             android:layout_marginStart="14dp" />
+
+        <Button
+            android:id="@+id/btnGaleria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Galeria"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_alignLeft="@+id/btnCamara"
+            android:layout_alignStart="@+id/btnCamara" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adjuntar imagen:"
+            android:layout_below="@+id/descDen"
+            android:layout_alignRight="@+id/descDen"
+            android:layout_alignEnd="@+id/descDen" />
 
 
     </RelativeLayout>

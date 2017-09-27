@@ -1,13 +1,13 @@
 package app.warmi.rodriguez.danny.warmi.Objects;
 
 
-public class Localizacion  {
+public class LocalizacionClass  {
 
     private double latitud;
     private double longitud;
     private String direccion;
 
-    public Localizacion(double latitud, double longitud, String direccion) {
+    public LocalizacionClass(double latitud, double longitud, String direccion) {
         this.longitud = longitud;
         this.latitud = latitud;
         this.direccion = direccion;
