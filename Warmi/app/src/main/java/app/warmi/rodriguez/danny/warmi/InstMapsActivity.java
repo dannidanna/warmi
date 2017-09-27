@@ -7,6 +7,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -37,10 +38,26 @@ public class InstMapsActivity extends FragmentActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        misPuntos(googleMap);
+    }
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    public void misPuntos(GoogleMap googleMap){
+        mMap = googleMap;
+        LatLng oficinaMujer = new LatLng(-17.3833,-66.1667);
+        mMap.addMarker(new MarkerOptions().position(oficinaMujer).title("OFICINA JURIDICA DE LA MUJER"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(oficinaMujer));
+
+        LatLng slim = new LatLng(-17.3833,-66.1667);
+        mMap.addMarker(new MarkerOptions().position(slim).title("SLIM").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(slim));
+
+        LatLng felcc = new LatLng(-17.4009921,-66.1460303);
+        mMap.addMarker(new MarkerOptions().position(felcc).title("FELCC").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(slim));
+
+
+
+
+
     }
 }

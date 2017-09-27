@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button btnDenuncia;
     Button btnInstMaps;
+    Button btnInstInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDenuncia.setOnClickListener(this);
         btnInstMaps = (Button) findViewById(R.id.btnInstMaps);
         btnInstMaps.setOnClickListener(this);
+        btnInstInfo = (Button) findViewById(R.id.btnInstInfo);
+        btnInstInfo.setOnClickListener(this);
 
     }
 
@@ -33,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnInstMaps:
                 Intent intent1 = new Intent(MainActivity.this, InstMapsActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.btnInstInfo:
+                Intent intent2 = new Intent(MainActivity.this, InstInfoActivity.class);
+                startActivity(intent2);
                 break;
         }
     }

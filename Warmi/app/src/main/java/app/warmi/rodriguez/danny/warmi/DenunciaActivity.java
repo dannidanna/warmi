@@ -55,8 +55,8 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     private static final int CAMARA_REQ = 1;
     private static final int GALERIA_INT = 1;
     private StorageReference storageReference;
-    private double latitud;
-    private double longitud;
+    private String latitud;
+    private String longitud;
     private String direccion;
 
 
@@ -132,9 +132,9 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == GALERIA_INT && resultCode== RESULT_OK){
-           // imagen.setImageBitmap(data.getData("data"));
             Uri uri = data.getData();
             StorageReference dirArch = storageReference.child("Fotos").child(uri.getLastPathSegment());
+            imagen.setImageURI(uri);
             dirArch.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -218,7 +218,8 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
             return;
         }
-        mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
+
+        //mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
         mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
 
     }
@@ -242,7 +243,8 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
                 if (!list.isEmpty()) {
                     Address DirCalle = list.get(0);
                     direccion = DirCalle.getAddressLine(0);
-                    //latitud = loc.getLatitude();
+                    //latitud = String.valueOf(loc.getLatitude());
+                    //longitud = String.valueOf(loc.getLongitude());
                     //longitud = loc.getLongitude();
                    // mensaje2.setText("Mi direccion es: \n" DirCalle.getAddressLine(0));
                 }
