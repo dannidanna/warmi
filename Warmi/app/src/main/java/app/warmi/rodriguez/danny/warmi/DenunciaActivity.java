@@ -50,7 +50,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     private EditText nomDen,ciDen,telDen,nomVic, ciVic,telVic, descrip, fecha;
     private Spinner relacion;
     private String relaciones[] = {"Relacion con victima", "Esposo", "Hermana(o)", "Prima(o)", "Mamá","Papá",
-            "Jefa(e)","Empleada(o)","Ninguno"};
+            "Jefa(e)","Empleada(o)","Conocido(a)","Ninguno"};
     private String rel="";
     private static final int CAMARA_REQ = 1;
     private static final int GALERIA_INT = 1;
@@ -105,6 +105,9 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
                         break;
                     case 8:
                         rel =  relaciones[i];
+                        break;
+                    case 9:
+                        rel = relaciones[i];
                         break;
                 }
             }
@@ -219,7 +222,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        //mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
+        mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
         mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
 
     }
