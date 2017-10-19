@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnInstMaps;
     Button btnInstInfo;
     Button btnHistorial;
+    Button btnRegistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnInstInfo.setOnClickListener(this);
         btnHistorial = (Button) findViewById(R.id.btnHistorial);
         btnHistorial.setOnClickListener(this);
+        btnRegistro = (Button) findViewById(R.id.btnRegistro);
+        btnRegistro.setOnClickListener(this);
 
     }
 
@@ -47,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnHistorial:
                 Intent intent3 = new Intent(MainActivity.this, HistorialActivity.class);
                 startActivity(intent3);
+                break;
+            case R.id.btnRegistro:
+                Intent intent4 = new Intent(MainActivity.this, RegistroActivity.class);
+                startActivity(intent4);
                 break;
         }
     }

@@ -59,6 +59,24 @@
             android:layout_alignParentStart="true" />
 
         <Button
+            android:id="@+id/btnRegistro"
+            style="@style/miEstilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btnInstInfo"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/borde"
+            android:text="REGISTRO"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="135dp"
+            tools:layout_editor_absoluteY="139dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
             android:id="@+id/btnHistorial"
             style="@style/miEstilo"
             android:layout_width="wrap_content"
