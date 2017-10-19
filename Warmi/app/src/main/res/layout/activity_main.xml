@@ -47,16 +47,34 @@
             style="@style/miEstilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/btnInstMaps"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/borde"
             android:text="INFORMACION INSTITUCIONES"
             android:textColor="@android:color/background_light"
             android:textSize="30sp"
             tools:layout_editor_absoluteX="135dp"
-            tools:layout_editor_absoluteY="139dp" />
+            tools:layout_editor_absoluteY="139dp"
+            android:layout_below="@+id/btnHistorial"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/btnHistorial"
+            style="@style/miEstilo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/btnInstMaps"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/borde"
+            android:text="Historial"
+            android:textColor="@android:color/background_light"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="135dp"
+            tools:layout_editor_absoluteY="139dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

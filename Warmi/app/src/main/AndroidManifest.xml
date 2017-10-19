@@ -48,8 +48,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDSVmCJtK9FLNNbbBML2KeGDVqTt3FNsJY" />
 
-
-
         <activity
             android:name=".InstMapsActivity"
             android:label="@string/title_activity_inst_maps" />
@@ -61,6 +59,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".HistorialActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
         </activity>
     </application>
 
