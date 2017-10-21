@@ -26,11 +26,26 @@
             tools:layout_editor_absoluteY="-423dp"
             android:layout_marginTop="25dp"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/btnRegistrar"
-            android:layout_alignStart="@+id/btnRegistrar" />
+            android:layout_alignLeft="@+id/btnIngresar"
+            android:layout_alignStart="@+id/btnIngresar" />
 
         <EditText
             android:id="@+id/contra"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bordedos"
+            android:ems="10"
+            android:hint=" Contraseña"
+            android:inputType="textPassword"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:layout_marginTop="21dp"
+            android:layout_below="@+id/celular"
+            android:layout_alignLeft="@+id/celular"
+            android:layout_alignStart="@+id/celular" />
+
+        <EditText
+            android:id="@+id/celular"
             android:layout_width="300dp"
             android:layout_height="35dp"
             android:layout_alignLeft="@+id/correo"
@@ -39,8 +54,8 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/bordedos"
             android:ems="10"
-            android:hint=" Contraseña"
-            android:inputType="textPassword"
+            android:hint=" Celular o telefono de contacto"
+            android:inputType="text"
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light" />
 
@@ -74,21 +89,21 @@
             android:textColorHint="@android:color/background_light" />
 
         <Button
-            android:id="@+id/btnRegistrar"
+            android:id="@+id/btnIngresar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="REGISTRAR"
             android:background="@drawable/bordedos"
             android:textColor="@android:color/background_light"
-            android:layout_marginTop="52dp"
-            android:layout_below="@+id/contra"
-            android:layout_centerHorizontal="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="105dp" />
 
         <TextView
             android:id="@+id/cuenta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/btnRegistrar"
+            android:layout_alignTop="@+id/btnIngresar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="88dp"
             android:text="YA TENGO UNA CUENTA"

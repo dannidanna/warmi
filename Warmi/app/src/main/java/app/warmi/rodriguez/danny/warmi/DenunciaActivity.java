@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -27,6 +28,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -59,6 +61,14 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     private String longitud;
     private String direccion;
 
+    private FirebaseAuth autentificacion;
+    private FirebaseAuth.AuthStateListener autenLis;
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        autentificacion.addAuthStateListener(autenLis);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +79,20 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         } else {
             locationStart();
         }
+
+        autentificacion = FirebaseAuth.getInstance();
+        autenLis = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if(firebaseAuth.getCurrentUser()==null){
+                    Toast.makeText(getApplicationContext(),"Inicie sesion para realizar una denuncia", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(DenunciaActivity.this, IniciarSesionActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+            }
+        };
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference reference = database.getReference();

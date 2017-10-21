@@ -16,11 +16,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener{
 
     private EditText nombre;
     private EditText correo;
+    private EditText celular;
     private EditText contra;
     private Button btnRegistrar;
     private TextView cuenta;
@@ -43,8 +46,9 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         autentificacion = FirebaseAuth.getInstance();
         nombre = (EditText) findViewById(R.id.nombre);
         correo = (EditText) findViewById(R.id.correo);
+        celular = (EditText) findViewById(R.id.celular);
         contra = (EditText) findViewById(R.id.contra);
-        btnRegistrar = (Button) findViewById(R.id.btnRegistrar);
+        btnRegistrar = (Button) findViewById(R.id.btnIngresar);
         btnRegistrar.setOnClickListener(this);
         miDialogo = new ProgressDialog(this);
         cuenta = (TextView) findViewById(R.id.cuenta);
@@ -54,6 +58,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
+                    Toast.makeText(getApplicationContext(),"Ya se encuentra en su sesion", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
@@ -66,7 +71,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnRegistrar:
+            case R.id.btnIngresar:
                     iniciarRegistro();
                 break;
             case R.id.cuenta:
@@ -80,6 +85,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     private void iniciarRegistro(){
         final String nom = nombre.getText().toString().trim();
         final String cor = correo.getText().toString().trim();
+        final String cel = celular.getText().toString().trim();
         final String con = contra.getText().toString().trim();
 
         if(!TextUtils.isEmpty(nom) && !TextUtils.isEmpty(cor)&& !TextUtils.isEmpty(con)){
@@ -90,7 +96,12 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     miDialogo.dismiss();
                     if(task.isSuccessful()){
-                        String idUsuario = autentificacion.getCurrentUser().getUid();
+                        autentificacion.signInWithEmailAndPassword(cor,con);
+                        DatabaseReference bd = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+                        DatabaseReference bdUsuarios = bd.child(autentificacion.getCurrentUser().getUid());
+                        bdUsuarios.child("Nombre").setValue(nom);
+                        bdUsuarios.child("Correo").setValue(cor);
+                        bdUsuarios.child("Telefono").setValue(cel);
                         Toast.makeText(getApplicationContext(), "USUARIO REGISTRADO", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
                         startActivity(intent);

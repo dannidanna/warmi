@@ -4,6 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.warmi.rodriguez.danny.warmi.IniciarSesionActivity">
+    android:background="@drawable/back"
+    tools:context="app.warmi.rodriguez.danny.warmi.DenunciaActivity">
+
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="551dp"
+        tools:layout_editor_absoluteY="-3dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="INICIAR SESION"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="-55dp"
+            tools:layout_editor_absoluteY="-423dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:id="@+id/contra"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bordedos"
+            android:ems="10"
+            android:hint=" Contraseña"
+            android:inputType="textPassword"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:layout_marginTop="23dp"
+            android:layout_below="@+id/correo"
+            android:layout_alignLeft="@+id/correo"
+            android:layout_alignStart="@+id/correo" />
+
+        <EditText
+            android:id="@+id/correo"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="113dp"
+            android:background="@drawable/bordedos"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="   Correo"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bordedos"
+            android:text="INGRESAR"
+            android:textColor="@android:color/background_light"
+            android:layout_below="@+id/contra"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="73dp" />
+
+        <TextView
+            android:id="@+id/crearCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btnIngresar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="78dp"
+            android:text="CREAR CUENTA"
+            android:textColor="@android:color/background_light"/>
+
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

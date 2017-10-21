@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnInstInfo;
     Button btnHistorial;
     Button btnRegistro;
+    Button btnIniciar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnHistorial.setOnClickListener(this);
         btnRegistro = (Button) findViewById(R.id.btnRegistro);
         btnRegistro.setOnClickListener(this);
+        btnIniciar = (Button) findViewById(R.id.btnIniciar);
+        btnIniciar.setOnClickListener(this);
 
     }
 
@@ -54,6 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnRegistro:
                 Intent intent4 = new Intent(MainActivity.this, RegistroActivity.class);
                 startActivity(intent4);
+                break;
+            case R.id.btnIniciar:
+                Intent intentIni = new Intent(MainActivity.this, IniciarSesionActivity.class);
+                startActivity(intentIni);
                 break;
         }
     }
