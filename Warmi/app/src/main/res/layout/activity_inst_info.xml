@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/nomDen"
+        android:id="@+id/nombreVic"
         android:layout_width="match_parent"
         android:layout_height="25dp"
         android:background="@drawable/borde"
@@ -41,7 +41,7 @@
         android:textColor="@android:color/background_light"
         android:textColorHint="@android:color/background_light"
 
-        android:layout_below="@+id/nomDen"
+        android:layout_below="@+id/nombreVic"
         android:layout_centerHorizontal="true" />
 
 

@@ -42,14 +42,13 @@ import java.util.Locale;
 import app.warmi.rodriguez.danny.warmi.Objects.Denuncia;
 import app.warmi.rodriguez.danny.warmi.Objects.FirebaseReferences;
 import app.warmi.rodriguez.danny.warmi.Objects.LocalizacionClass;
-import app.warmi.rodriguez.danny.warmi.Objects.Persona;
 
 public class DenunciaActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private Button btnGuardar, btnCancelar, btnCamara, btnGaleria;
     private ImageView imagen;
-    private EditText nomDen,ciDen,telDen,nomVic, ciVic,telVic, descrip, fecha;
+    private EditText nomVic, numVic, nomAgre, descrip, fecha;
     private Spinner relacion;
     private String relaciones[] = {"Relacion con victima", "Esposo", "Hermana(o)", "Prima(o)", "Mamá","Papá",
             "Jefa(e)","Empleada(o)","Conocido(a)","Ninguno"};
@@ -104,7 +103,6 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         relacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    //relacion(i);
                 switch (i){
                     case 1:
                         rel =  relaciones[i];
@@ -196,27 +194,19 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference reference = database.getReference();
-        nomDen = (EditText) findViewById(R.id.nomDen);
-        String nombreDenunciante = nomDen.getText().toString();
-        ciDen = (EditText) findViewById(R.id.ciDen);
-        String ciDenunciante = ciDen.getText().toString();
-        telDen = (EditText) findViewById(R.id.numDen);
-        String telefonoDenunciante = telDen.getText().toString();
         nomVic = (EditText) findViewById(R.id.nomVic);
-        String nombreVictima = nomVic.getText().toString();
-        ciVic = (EditText) findViewById(R.id.ciVic);
-        String ciVictima = ciVic.getText().toString();
-        telVic = (EditText) findViewById(R.id.numVic);
-        String telefonoVictima = telVic.getText().toString();
-        descrip = (EditText) findViewById(R.id.descDen);
+        String nombreVictima = nomVic.getText().toString().trim();
+        numVic = (EditText) findViewById(R.id.numVic);
+        String numeroVictima= numVic.getText().toString().trim();
+        nomAgre = (EditText) findViewById(R.id.nomAgre);
+        String nombreAgresor = nomAgre.getText().toString().trim();
+        descrip = (EditText) findViewById(R.id.descrip);
         String descripcionDen = descrip.getText().toString();
-        fecha = (EditText) findViewById(R.id.fechaDen);
+        fecha = (EditText) findViewById(R.id.fecha);
         String fechaDen = fecha.getText().toString();
 
-        Persona denunciante = new Persona(nombreDenunciante, ciDenunciante, telefonoDenunciante);
-        Persona victima = new Persona(nombreVictima, ciVictima, telefonoVictima);
         LocalizacionClass localizacionObj = new LocalizacionClass(latitud, longitud, direccion);
-        Denuncia denuncia = new Denuncia(denunciante, victima, descripcionDen, fechaDen, rel, localizacionObj);
+        Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, localizacionObj);
         reference.child(FirebaseReferences.DENUNCIA_REFE).push().setValue(denuncia);
         Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);
@@ -282,7 +272,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    //CLASS LOCALIZACION
+    //CLASE LOCALIZACION
     public class Localizacion implements LocationListener {
         DenunciaActivity denunciaActivity;
         double lat;

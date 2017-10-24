@@ -14,156 +14,6 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
-        <EditText
-            android:id="@+id/ciDen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borde"
-            android:ems="10"
-            android:hint="   Ci denunciante"
-            android:inputType="text"
-            android:textSize="15dp"
-            android:layout_marginBottom="13dp"
-            android:layout_above="@+id/numDen"
-            android:layout_alignLeft="@+id/numDen"
-            android:layout_alignStart="@+id/numDen"
-            android:layout_alignRight="@+id/numDen"
-            android:layout_alignEnd="@+id/numDen"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"/>
-
-        <EditText
-
-            android:id="@+id/ciVic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borde"
-            android:ems="10"
-            android:hint="   Ci victima (opc.)"
-            android:inputType="text"
-            android:textSize="15dp"
-            android:layout_above="@+id/numVic"
-            android:layout_alignLeft="@+id/numVic"
-            android:layout_alignStart="@+id/numVic"
-            android:layout_marginBottom="24dp"
-            android:layout_alignRight="@+id/numVic"
-            android:layout_alignEnd="@+id/numVic"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"/>
-
-        <EditText
-            android:id="@+id/nomDen"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borde"
-            android:ems="10"
-            android:hint="   Nombre denunciante"
-            android:inputType="textPersonName"
-            android:textSize="15dp"
-            android:layout_above="@+id/ciDen"
-            android:layout_alignLeft="@+id/ciDen"
-            android:layout_alignStart="@+id/ciDen"
-            android:layout_marginBottom="17dp"
-            android:layout_alignRight="@+id/ciDen"
-            android:layout_alignEnd="@+id/ciDen" />
-
-        <EditText
-            android:id="@+id/nomVic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borde"
-            android:ems="10"
-            android:hint="   Nombre victima (opc.)"
-            android:inputType="textPersonName"
-            android:textSize="15dp"
-            android:layout_above="@+id/ciVic"
-            android:layout_alignLeft="@+id/ciVic"
-            android:layout_alignStart="@+id/ciVic"
-            android:layout_marginBottom="15dp"
-            android:layout_alignRight="@+id/ciVic"
-            android:layout_alignEnd="@+id/ciVic"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"/>
-
-        <EditText
-            android:id="@+id/numDen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borde"
-            android:ems="10"
-            android:hint="   Numero denunciante"
-            android:inputType="number"
-            android:textSize="15dp"
-            android:layout_above="@+id/nomVic"
-            android:layout_alignLeft="@+id/nomVic"
-            android:layout_alignStart="@+id/nomVic"
-            android:layout_marginBottom="20dp"
-            android:layout_alignRight="@+id/nomVic"
-            android:layout_alignEnd="@+id/nomVic"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"/>
-
-        <EditText
-
-            android:id="@+id/numVic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borde"
-            android:ems="10"
-            android:hint="   Numero victima (opc.)"
-            android:inputType="number"
-            android:textSize="15dp"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"
-            android:layout_above="@+id/relacion"
-            android:layout_alignLeft="@+id/relacion"
-            android:layout_alignStart="@+id/relacion"
-            android:layout_marginBottom="13dp"
-            android:layout_alignRight="@+id/relacion"
-            android:layout_alignEnd="@+id/relacion" />
-
-        <EditText
-
-            android:id="@+id/fechaDen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/borde"
-            android:ems="10"
-            android:hint="   Fecha"
-            android:inputType="date"
-            android:textSize="15dp"
-            android:layout_above="@+id/descDen"
-            android:layout_marginBottom="19dp"
-            android:layout_alignLeft="@+id/descDen"
-            android:layout_alignStart="@+id/descDen"
-            android:layout_alignRight="@+id/descDen"
-            android:layout_alignEnd="@+id/descDen"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"/>
-
-        <EditText
-
-            android:id="@+id/descDen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:background="@drawable/borde"
-            android:ems="10"
-            android:hint="   Descripción"
-            android:inputType="text"
-            android:textSize="15dp"
-            android:layout_marginLeft="35dp"
-            android:layout_above="@+id/textView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="35dp"
-            android:layout_alignRight="@+id/textView"
-            android:layout_alignEnd="@+id/textView"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"/>
-
         <Button
 
             android:id="@+id/btnGuardar"
@@ -192,17 +42,6 @@
             android:background="@drawable/borde"
             android:text="Cancelar"
             android:textColor="@android:color/background_light" />
-
-        <Spinner
-            android:id="@+id/relacion"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:layout_alignEnd="@+id/fechaDen"
-            android:layout_alignLeft="@+id/fechaDen"
-            android:layout_alignRight="@+id/fechaDen"
-            android:layout_alignStart="@+id/fechaDen"
-            android:layout_centerVertical="true"
-            android:background="@drawable/borde" />
 
         <Button
 
@@ -254,12 +93,97 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/imageView"
-            android:layout_toRightOf="@+id/imageView"
             android:text="DENUNCIA"
             android:textColor="@android:color/background_light"
             android:textSize="20dp"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:id="@+id/nomVic"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:background="@drawable/bordedos"
+            android:hint="   Nombre victima (opcional)"
+            android:layout_width="340dp"
+            android:layout_height="30dp"/>
+
+
+        <EditText
+            android:id="@+id/numVic"
+            android:layout_width="340dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/nomVic"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bordedos"
+            android:ems="10"
+            android:hint="   Telf. o Cel. victima (opcional)"
+            android:inputType="number"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light" />
+
+        <EditText
+            android:id="@+id/nomAgre"
+            android:layout_width="340dp"
+            android:layout_height="30dp"
+            android:background="@drawable/bordedos"
+            android:ems="10"
+            android:hint="   Nombre agresor (opcional)"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:layout_below="@+id/numVic"
+            android:layout_alignLeft="@+id/numVic"
+            android:layout_alignStart="@+id/numVic"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/descrip"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:background="@drawable/bordedos"
+            android:hint="   Descripcion del acto"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/nomAgre"
+            android:layout_alignLeft="@+id/nomAgre"
+            android:layout_alignStart="@+id/nomAgre" />
+
+        <EditText
+            android:id="@+id/fecha"
+            android:ems="10"
+            android:inputType="date"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light"
+            android:background="@drawable/bordedos"
+            android:hint="   Fecha"
+            android:layout_width="340dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/descrip"
+            android:layout_alignStart="@+id/descrip" />
+
+        <Spinner
+            android:id="@+id/relacion"
+            android:layout_width="340dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/fecha"
+            android:layout_alignStart="@+id/fecha"
+            android:layout_below="@+id/fecha"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bordedos"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light" />
 
 
     </RelativeLayout>

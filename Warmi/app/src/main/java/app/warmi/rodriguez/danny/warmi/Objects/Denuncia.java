@@ -6,8 +6,9 @@ package app.warmi.rodriguez.danny.warmi.Objects;
 
 public class Denuncia {
 
-    Persona personaDenunciante;
-    Persona personaVictima;
+    String nombreVictima;
+    String numeroVictima;
+    String nombreAgresor;
     String descripcion;
     String fecha;
     String relacion;
@@ -16,37 +17,46 @@ public class Denuncia {
     public Denuncia() {
     }
 
-    public Denuncia(Persona personaDenunciante, Persona personaVictima, String descripcion, String fecha, String relacion, LocalizacionClass localizacion) {
-        this.personaDenunciante = personaDenunciante;
-        this.personaVictima = personaVictima;
+    public Denuncia(String nombreVictima, String numeroVictima, String nombreAgresor, String descripcion,
+                    String fecha, String relacion, LocalizacionClass localizacion) {
+        this.nombreVictima = nombreVictima;
+        this.numeroVictima = numeroVictima;
+        this.nombreAgresor = nombreAgresor;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.relacion = relacion;
         this.localizacion = localizacion;
     }
 
-    public Denuncia(String descripcion, String fecha, String relacion) {
-        //this.personaDenunciante = personaDenunciante;
-        //this.personaVictima = personaVictima;
+    public Denuncia(String descripcion, String fecha, String relacion, LocalizacionClass localizacion) {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.relacion = relacion;
+        this.localizacion = localizacion;
     }
 
-   public Persona getPersonaDenunciante() {
-        return personaDenunciante;
+    public String getNombreVictima() {
+        return nombreVictima;
     }
 
-    public void setPersonaDenunciante(Persona personaDenunciante) {
-        this.personaDenunciante = personaDenunciante;
+    public void setNombreVictima(String nombreVictima) {
+        this.nombreVictima = nombreVictima;
     }
 
-    public Persona getPersonaVictima() {
-        return personaVictima;
+    public String getNumeroVictima() {
+        return numeroVictima;
     }
 
-    public void setPersonaVictima(Persona personaVictima) {
-        this.personaVictima = personaVictima;
+    public void setNumeroVictima(String numeroVictima) {
+        this.numeroVictima = numeroVictima;
+    }
+
+    public String getNombreAgresor() {
+        return nombreAgresor;
+    }
+
+    public void setNombreAgresor(String nombreAgresor) {
+        this.nombreAgresor = nombreAgresor;
     }
 
     public String getDescripcion() {
