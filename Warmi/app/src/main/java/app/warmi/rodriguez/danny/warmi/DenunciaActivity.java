@@ -1,6 +1,8 @@
 package app.warmi.rodriguez.danny.warmi;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -27,15 +29,23 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.Locale;
 
@@ -55,13 +65,16 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     private String rel="";
     private static final int CAMARA_REQ = 1;
     private static final int GALERIA_INT = 1;
+    private DatabaseReference bdReferencia;
     private StorageReference storageReference;
     private String latitud;
     private String longitud;
     private String direccion;
+    private String urlImagenD;
 
     private FirebaseAuth autentificacion;
     private FirebaseAuth.AuthStateListener autenLis;
+    private ProgressDialog miDialogo;
 
     @Override
     protected void onStart(){
@@ -78,6 +91,8 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         } else {
             locationStart();
         }
+
+        miDialogo = new ProgressDialog(this);
 
         autentificacion = FirebaseAuth.getInstance();
         autenLis = new FirebaseAuth.AuthStateListener() {
@@ -158,16 +173,93 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == GALERIA_INT && resultCode== RESULT_OK){
             Uri uri = data.getData();
-            StorageReference dirArch = storageReference.child("Fotos").child(uri.getLastPathSegment());
+            miDialogo.setMessage("Subiendo imagen...");
+            miDialogo.show();
+            //subirFoto(uri);
+           StorageReference dirArch = storageReference.child("Fotos").child(uri.getLastPathSegment());
             imagen.setImageURI(uri);
             dirArch.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    @SuppressWarnings("VisibleForTests") Uri urlImagen = taskSnapshot.getDownloadUrl();
+                    //Log.d("URL", String.valueOf(urlImagen));
+                    urlImagenD = String.valueOf(urlImagen);
+                    miDialogo.dismiss();
                     Toast.makeText(getApplicationContext(), "IMAGEN ALMACENADA", Toast.LENGTH_LONG).show();
                 }
             });
         }
     }
+
+    private void subirFoto(final Uri uri){
+        if (autentificacion.getCurrentUser() == null)
+            return;
+
+        if (storageReference == null)
+            storageReference = FirebaseStorage.getInstance().getReference();
+        if (bdReferencia == null)
+            bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+
+        final StorageReference filepath = storageReference.child("Fotos denuncias").child(getRandomString());/*uri.getLastPathSegment()*/
+        final DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid());
+
+        miDialogo.setMessage("Uploading image...");
+        miDialogo.show();
+
+        currentUserDB.child("image").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String image = dataSnapshot.getValue().toString().trim();
+
+                if (!image.equals("default") && !image.isEmpty()) {
+                    Task<Void> task = FirebaseStorage.getInstance().getReferenceFromUrl(image).delete();
+                    task.addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful())
+                                Toast.makeText(getApplicationContext(), "Deleted image succesfully", Toast.LENGTH_SHORT).show();
+                            else
+                                Toast.makeText(getApplicationContext(), "Deleted image failed", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                currentUserDB.child("image").removeEventListener(this);
+
+                filepath.putFile(uri).addOnSuccessListener(DenunciaActivity.this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        miDialogo.dismiss();
+                        @SuppressWarnings("VisibleForTests") Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        //Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        Toast.makeText(getApplicationContext(), "Finished", Toast.LENGTH_SHORT).show();
+                        //Picasso.with(ActivityAccount.this).load(fileUri).fit().centerCrop().into(imageProfile);
+                        DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid());
+                        currentUserDB.child("Imagen").setValue(downloadUrl.toString());
+
+                    }
+                }).addOnFailureListener(DenunciaActivity.this, new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+    }
+
+    public String getRandomString() {
+        SecureRandom random = new SecureRandom();
+        return new BigInteger(130, random).toString(32);
+    }
+
+
 
     @Override
     public void onClick(View view) {
@@ -188,7 +280,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
                 llamarIntent();
                 break;
         }
-   }
+    }
 
     private void guardarDenuncia(){
 
@@ -205,9 +297,12 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         fecha = (EditText) findViewById(R.id.fecha);
         String fechaDen = fecha.getText().toString();
 
+        bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+        final DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid());
+
         LocalizacionClass localizacionObj = new LocalizacionClass(latitud, longitud, direccion);
-        Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, localizacionObj);
-        reference.child(FirebaseReferences.DENUNCIA_REFE).push().setValue(denuncia);
+        Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, localizacionObj, urlImagenD);
+        currentUserDB.push().setValue(denuncia);
         Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);
         startActivity(intent);
@@ -263,7 +358,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
                     //latitud = String.valueOf(loc.getLatitude());
                     //longitud = String.valueOf(loc.getLongitude());
                     //longitud = loc.getLongitude();
-                   // mensaje2.setText("Mi direccion es: \n" DirCalle.getAddressLine(0));
+                    // mensaje2.setText("Mi direccion es: \n" DirCalle.getAddressLine(0));
                 }
 
             } catch (IOException e) {
@@ -296,7 +391,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
             loc.getLongitude();
 
             //String Text = "Mi ubicacion actual es: " + "\n Lat = "                    + loc.getLatitude() + "\n Long = " + loc.getLongitude();
-           // mensaje1.setText(Text);
+            // mensaje1.setText(Text);
             lat = loc.getLatitude();
             lon = loc.getLongitude();
             this.denunciaActivity.setLocation(loc);
@@ -305,13 +400,13 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         @Override
         public void onProviderDisabled(String provider) {
             // Este metodo se ejecuta cuando el GPS es desactivado
-           // mensaje1.setText("GPS Desactivado");
+            // mensaje1.setText("GPS Desactivado");
         }
 
         @Override
         public void onProviderEnabled(String provider) {
             // Este metodo se ejecuta cuando el GPS es activado
-           // mensaje1.setText("GPS Activado");
+            // mensaje1.setText("GPS Activado");
         }
 
         @Override

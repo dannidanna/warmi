@@ -19,12 +19,12 @@
             android:id="@+id/btnAtras"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dim1"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="56dp"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/borde"
             android:text="atras"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:id="@+id/textView2"
@@ -36,13 +36,12 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
-        <ListView
+        <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/textView2"
-            android:layout_marginTop="69dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp" />
 
 
     </RelativeLayout>

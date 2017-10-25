@@ -51,15 +51,15 @@
             android:background="@drawable/borde"
             android:text="Camara"
             android:textSize="15dp"
-            android:layout_marginBottom="18dp"
-            android:layout_alignBottom="@+id/imageView"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/btnGaleria"
             android:layout_alignLeft="@+id/btnGaleria"
             android:layout_alignStart="@+id/btnGaleria" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_above="@+id/btnGuardar"
             android:layout_alignLeft="@+id/btnGuardar"
             android:layout_alignStart="@+id/btnGuardar"
@@ -72,22 +72,22 @@
             android:layout_height="25dp"
             android:background="@drawable/borde"
             android:text="Galeria"
-            android:layout_marginRight="25dp"
-            android:layout_marginEnd="25dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginTop="34dp"
             android:layout_below="@+id/textView"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="19dp" />
+            android:layout_alignRight="@+id/relacion"
+            android:layout_alignEnd="@+id/relacion" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/imageView"
-            android:layout_alignEnd="@+id/btnCamara"
-            android:layout_alignRight="@+id/btnCamara"
             android:text="Adjuntar imagen:"
-            android:textColor="@android:color/background_light"/>
+            android:textColor="@android:color/background_light"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_alignRight="@+id/btnGaleria"
+            android:layout_alignEnd="@+id/btnGaleria" />
 
         <TextView
             android:id="@+id/textView2"
@@ -153,7 +153,7 @@
             android:background="@drawable/bordedos"
             android:hint="   Descripcion del acto"
             android:layout_width="340dp"
-            android:layout_height="60dp"
+            android:layout_height="30dp"
             android:layout_below="@+id/nomAgre"
             android:layout_alignLeft="@+id/nomAgre"
             android:layout_alignStart="@+id/nomAgre" />
@@ -168,9 +168,10 @@
             android:hint="   Fecha"
             android:layout_width="340dp"
             android:layout_height="30dp"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/descrip"
             android:layout_alignLeft="@+id/descrip"
-            android:layout_alignStart="@+id/descrip" />
+            android:layout_alignStart="@+id/descrip"
+            android:layout_marginTop="22dp" />
 
         <Spinner
             android:id="@+id/relacion"

@@ -1,24 +1,35 @@
 package app.warmi.rodriguez.danny.warmi.Objects;
 
+import android.net.Uri;
+
 /**
  * Created by danni on 05-Sep-17.
  */
 
 public class Denuncia {
 
-    String nombreVictima;
-    String numeroVictima;
-    String nombreAgresor;
-    String descripcion;
-    String fecha;
-    String relacion;
-    LocalizacionClass localizacion;
+    private String nombreVictima;
+    private String numeroVictima;
+    private String nombreAgresor;
+    private String descripcion;
+    private String fecha;
+    private String relacion;
+    private LocalizacionClass localizacion;
+    private String urlDescarga;
 
     public Denuncia() {
     }
 
+    public String getUrlDescarga() {
+        return urlDescarga;
+    }
+
+    public void setUrlDescarga(String urlDescarga) {
+        this.urlDescarga = urlDescarga;
+    }
+
     public Denuncia(String nombreVictima, String numeroVictima, String nombreAgresor, String descripcion,
-                    String fecha, String relacion, LocalizacionClass localizacion) {
+                    String fecha, String relacion, LocalizacionClass localizacion, String urlDescarga) {
         this.nombreVictima = nombreVictima;
         this.numeroVictima = numeroVictima;
         this.nombreAgresor = nombreAgresor;
@@ -26,6 +37,8 @@ public class Denuncia {
         this.fecha = fecha;
         this.relacion = relacion;
         this.localizacion = localizacion;
+        this.urlDescarga = urlDescarga;
+
     }
 
     public Denuncia(String descripcion, String fecha, String relacion, LocalizacionClass localizacion) {

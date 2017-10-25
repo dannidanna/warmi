@@ -72,7 +72,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnIngresar:
-                    iniciarRegistro();
+                iniciarRegistro();
                 break;
             case R.id.cuenta:
                 Intent intent = new Intent(RegistroActivity.this, IniciarSesionActivity.class);
