@@ -50,12 +50,14 @@ public class InstMapsActivity extends FragmentActivity implements OnMapReadyCall
         }
         mMap.setMyLocationEnabled(true);
         misPuntos(googleMap);
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(-17.3890035,-66.1594936), 13.0f));
     }
 
     public void misPuntos(GoogleMap googleMap){
         mMap = googleMap;
+
         LatLng oficinaMujer = new LatLng(-17.3833,-66.1667);
-        mMap.addMarker(new MarkerOptions().position(oficinaMujer).title("OFICINA JURIDICA DE LA MUJER"));
+        mMap.addMarker(new MarkerOptions().position(oficinaMujer).title("OFICINA JURIDICA DE LA MUJER").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(oficinaMujer));
 
         LatLng slim = new LatLng(-17.3833,-66.1667);
@@ -64,11 +66,27 @@ public class InstMapsActivity extends FragmentActivity implements OnMapReadyCall
 
         LatLng felcc = new LatLng(-17.4009921,-66.1460303);
         mMap.addMarker(new MarkerOptions().position(felcc).title("FELCC").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(slim));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(felcc));
 
+        //revisados
 
+        LatLng coordMujer = new LatLng(-17.3890035,-66.1594936);
+        mMap.addMarker(new MarkerOptions().position(coordMujer).title("COORDINADORA DE LA MUJER").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(coordMujer));
 
+        LatLng brigada = new LatLng(-17.391874, -66.157887);
+        mMap.addMarker(new MarkerOptions().position(brigada).title("BRIGADA DE PROTECCION A LA FAMILIA").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(brigada));
 
+        LatLng ofUmss = new LatLng(-17.393687, -66.148728);
+        mMap.addMarker(new MarkerOptions().position(ofUmss).title(" Oficina Jurídica Popular de la UMSS").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(ofUmss));
+
+        LatLng ofUniValle = new LatLng(-17.393687, -66.148728);
+        mMap.addMarker(new MarkerOptions().position(ofUniValle).title(" Oficina Jurídica Popular de Univalle").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(ofUniValle));
 
     }
+
+
 }

@@ -1,10 +1,14 @@
 package app.warmi.rodriguez.danny.warmi;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -14,11 +18,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnHistorial;
     Button btnRegistro;
     Button btnIniciar;
+    Button btnCerrar;
+
+   /* private FirebaseAuth autentificacion;
+    private FirebaseAuth.AuthStateListener autenLis;
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        autentificacion.addAuthStateListener(autenLis);
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       /* autenLis = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
+            }
+        };*/
 
         btnDenuncia = (Button) findViewById(R.id.btnDenuncia);
         btnDenuncia.setOnClickListener(this);
@@ -32,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRegistro.setOnClickListener(this);
         btnIniciar = (Button) findViewById(R.id.btnIniciar);
         btnIniciar.setOnClickListener(this);
+        btnCerrar = (Button) findViewById(R.id.btnCerrarSesion);
+        btnCerrar.setOnClickListener(this);
 
     }
 
@@ -61,6 +84,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnIniciar:
                 Intent intentIni = new Intent(MainActivity.this, IniciarSesionActivity.class);
                 startActivity(intentIni);
+                break;
+            case R.id.btnCerrarSesion:
+                //if (autentificacion.getCurrentUser() != null)
+              //  autentificacion.signOut();
                 break;
         }
     }
