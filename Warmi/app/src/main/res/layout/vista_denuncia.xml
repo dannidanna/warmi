@@ -189,13 +189,13 @@
             android:textColor="@android:color/background_light" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imagen"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            app:srcCompat="@android:color/transparent"
             android:layout_below="@+id/textView16"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp" />
+            android:layout_marginTop="18dp"
+            app:srcCompat="@android:color/transparent" />
 
 
     </RelativeLayout>

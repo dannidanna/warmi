@@ -52,7 +52,6 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
         lista = (RecyclerView) findViewById(R.id.recHis);
         lista.setLayoutManager(new LinearLayoutManager(this));
         bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
-
         autentificacion = FirebaseAuth.getInstance();
         autenLis = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -65,18 +64,23 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
                     finish();
                 }
                 else{
+                    DatabaseReference bdUsuarios = bdReferencia.child(autentificacion.getCurrentUser().getUid());
                     FirebaseRecyclerAdapter<User, UserViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<User, UserViewHolder>(
                             User.class,
                             R.layout.vista_denuncia,
                             UserViewHolder.class,
-                            bdReferencia
+                            bdUsuarios
                     ) {
                         @Override
                         protected void populateViewHolder(final UserViewHolder holder, User model, int position) {
-                            holder.txtName.setText(model.Nombre);
-                            holder.txtCorreo.setText(model.Correo);
-                           /* if (!model.image.equals("default"))
-                                Picasso.with(HistorialActivity.this).load(model.image).into(holder.imgProfile);*/
+                            holder.txtNomVic.setText(model.nombreVictima);
+                            holder.txtNumVic.setText(model.numeroVictima);
+                            holder.txtNomAgre.setText(model.nombreAgresor);
+                            holder.txtRelacion.setText(model.relacion);
+                            holder.txtFecha.setText(model.fecha);
+                            holder.txtDescripcion.setText(model.descripcion);
+                           //if (!model.urlDescarga.equals("default"))
+                                Picasso.with(HistorialActivity.this).load(model.urlDescarga).into(holder.viewImagen);
                         }
                     };
                     lista.setAdapter(firebaseRecyclerAdapter);
@@ -92,8 +96,14 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
     }
 
     public static class User {
-        String Nombre;
-        String Correo;
+
+        String nombreVictima;
+        String numeroVictima;
+        String nombreAgresor;
+        String relacion;
+        String fecha;
+        String descripcion;
+        String urlDescarga;
     }
 
     @Override
@@ -107,13 +117,25 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
     }
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {
-        TextView txtName;
-        TextView txtCorreo;
+
+        TextView txtNomVic;
+        TextView txtNumVic;
+        TextView txtNomAgre;
+        TextView txtRelacion;
+        TextView txtFecha;
+        TextView txtDescripcion;
+        ImageView viewImagen;
 
         public UserViewHolder(View itemView) {
             super(itemView);
-            txtName = (TextView) itemView.findViewById(R.id.descripcion);
-            txtCorreo = (TextView) itemView.findViewById(R.id.fecha);
+
+            txtNomVic = (TextView) itemView.findViewById(R.id.nomVic);
+            txtNumVic = (TextView) itemView.findViewById(R.id.numVic);
+            txtNomAgre = (TextView) itemView.findViewById(R.id.nomAgre);
+            txtRelacion = (TextView) itemView.findViewById(R.id.relacion);
+            txtFecha = (TextView) itemView.findViewById(R.id.fecha);
+            txtDescripcion = (TextView) itemView.findViewById(R.id.descripcion);
+            viewImagen = (ImageView) itemView.findViewById(R.id.imagen);
         }
     }
 }
