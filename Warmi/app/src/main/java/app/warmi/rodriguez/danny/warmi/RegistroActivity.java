@@ -44,7 +44,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_registro);
 
         autentificacion = FirebaseAuth.getInstance();
-        nombre = (EditText) findViewById(R.id.nombre);
+        nombre = (EditText) findViewById(R.id.descripcion);
         correo = (EditText) findViewById(R.id.correo);
         celular = (EditText) findViewById(R.id.celular);
         contra = (EditText) findViewById(R.id.contra);
