@@ -10,38 +10,28 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:layout_weight="1"
-        android:layout_marginTop="12dp"
-        android:text="DENUNCIA"
-        android:textColor="@android:color/background_light"
-        android:textSize="20sp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:id="@+id/nombreVic"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:background="@drawable/borde"
-        android:hint="Nombre denunciante"
-        android:paddingLeft="10dp"
-        android:layout_margin="22dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:text="INSTITUCIONES"
         android:textColor="@android:color/background_light"
-        android:textColorHint="@android:color/background_light"
-        android:layout_below="@+id/textView5"
-        android:layout_centerHorizontal="true" />
+        android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnAtras"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/borde"
-        android:hint="Nombre denunciante"
-        android:paddingLeft="10dp"
-        android:textColor="@android:color/background_light"
-        android:textColorHint="@android:color/background_light"
+        android:text="atras"
+        android:textColor="@android:color/background_light" />
 
-        android:layout_below="@+id/nombreVic"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/instituciones"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true" />
 
 

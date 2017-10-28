@@ -1,6 +1,5 @@
 package app.warmi.rodriguez.danny.warmi;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 
@@ -8,9 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,15 +15,9 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
-import java.util.Iterator;
 
 
 public class HistorialActivity extends AppCompatActivity implements View.OnClickListener {
@@ -89,8 +80,6 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
             }
         };
 
-
-
         btnAtras = (Button) findViewById(R.id.btnAtras);
         btnAtras.setOnClickListener(this);
     }
@@ -129,10 +118,10 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
         public UserViewHolder(View itemView) {
             super(itemView);
 
-            txtNomVic = (TextView) itemView.findViewById(R.id.nomVic);
-            txtNumVic = (TextView) itemView.findViewById(R.id.numVic);
-            txtNomAgre = (TextView) itemView.findViewById(R.id.nomAgre);
-            txtRelacion = (TextView) itemView.findViewById(R.id.relacion);
+            txtNomVic = (TextView) itemView.findViewById(R.id.direccion);
+            txtNumVic = (TextView) itemView.findViewById(R.id.telefono);
+            txtNomAgre = (TextView) itemView.findViewById(R.id.servicio);
+            txtRelacion = (TextView) itemView.findViewById(R.id.pagina);
             txtFecha = (TextView) itemView.findViewById(R.id.fecha);
             txtDescripcion = (TextView) itemView.findViewById(R.id.descripcion);
             viewImagen = (ImageView) itemView.findViewById(R.id.imagen);

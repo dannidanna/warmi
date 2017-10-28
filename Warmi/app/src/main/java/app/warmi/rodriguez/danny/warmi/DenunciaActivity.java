@@ -1,7 +1,6 @@
 package app.warmi.rodriguez.danny.warmi;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -50,7 +49,6 @@ import java.util.List;
 import java.util.Locale;
 
 import app.warmi.rodriguez.danny.warmi.Objects.Denuncia;
-import app.warmi.rodriguez.danny.warmi.Objects.FirebaseReferences;
 import app.warmi.rodriguez.danny.warmi.Objects.LocalizacionClass;
 
 public class DenunciaActivity extends AppCompatActivity implements View.OnClickListener {
@@ -112,7 +110,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         final DatabaseReference reference = database.getReference();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        relacion = (Spinner) findViewById(R.id.relacion);
+        relacion = (Spinner) findViewById(R.id.pagina);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, relaciones);
         relacion.setAdapter(adapter);
         relacion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -286,11 +284,11 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference reference = database.getReference();
-        nomVic = (EditText) findViewById(R.id.nomVic);
+        nomVic = (EditText) findViewById(R.id.direccion);
         String nombreVictima = nomVic.getText().toString().trim();
-        numVic = (EditText) findViewById(R.id.numVic);
+        numVic = (EditText) findViewById(R.id.telefono);
         String numeroVictima= numVic.getText().toString().trim();
-        nomAgre = (EditText) findViewById(R.id.nomAgre);
+        nomAgre = (EditText) findViewById(R.id.servicio);
         String nombreAgresor = nomAgre.getText().toString().trim();
         descrip = (EditText) findViewById(R.id.descrip);
         String descripcionDen = descrip.getText().toString();

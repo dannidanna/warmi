@@ -76,8 +76,8 @@
             android:layout_marginEnd="11dp"
             android:layout_marginTop="34dp"
             android:layout_below="@+id/textView"
-            android:layout_alignRight="@+id/relacion"
-            android:layout_alignEnd="@+id/relacion" />
+            android:layout_alignRight="@+id/pagina"
+            android:layout_alignEnd="@+id/pagina" />
 
         <TextView
             android:id="@+id/textView"
@@ -100,7 +100,7 @@
             android:layout_centerHorizontal="true" />
 
         <EditText
-            android:id="@+id/nomVic"
+            android:id="@+id/direccion"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="17dp"
@@ -115,10 +115,10 @@
 
 
         <EditText
-            android:id="@+id/numVic"
+            android:id="@+id/telefono"
             android:layout_width="340dp"
             android:layout_height="30dp"
-            android:layout_below="@+id/nomVic"
+            android:layout_below="@+id/direccion"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="18dp"
             android:background="@drawable/bordedos"
@@ -129,7 +129,7 @@
             android:textColorHint="@android:color/background_light" />
 
         <EditText
-            android:id="@+id/nomAgre"
+            android:id="@+id/servicio"
             android:layout_width="340dp"
             android:layout_height="30dp"
             android:background="@drawable/bordedos"
@@ -138,9 +138,9 @@
             android:inputType="textPersonName"
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light"
-            android:layout_below="@+id/numVic"
-            android:layout_alignLeft="@+id/numVic"
-            android:layout_alignStart="@+id/numVic"
+            android:layout_below="@+id/telefono"
+            android:layout_alignLeft="@+id/telefono"
+            android:layout_alignStart="@+id/telefono"
             android:layout_marginTop="16dp" />
 
         <EditText
@@ -154,9 +154,9 @@
             android:hint="   Descripcion del acto"
             android:layout_width="340dp"
             android:layout_height="30dp"
-            android:layout_below="@+id/nomAgre"
-            android:layout_alignLeft="@+id/nomAgre"
-            android:layout_alignStart="@+id/nomAgre" />
+            android:layout_below="@+id/servicio"
+            android:layout_alignLeft="@+id/servicio"
+            android:layout_alignStart="@+id/servicio" />
 
         <EditText
             android:id="@+id/fecha"
@@ -174,7 +174,7 @@
             android:layout_marginTop="22dp" />
 
         <Spinner
-            android:id="@+id/relacion"
+            android:id="@+id/pagina"
             android:layout_width="340dp"
             android:layout_height="30dp"
             android:layout_alignLeft="@+id/fecha"
