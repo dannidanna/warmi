@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="app.warmi.rodriguez.danny.warmi">
 
-    <uses-sdk tools:overrideLibrary="android.support.v17.leanback"/>
+    <uses-sdk tools:overrideLibrary="android.support.v17.leanback" />
 
     <uses-feature
         android:name="android.hardware.Camera"
@@ -66,14 +66,25 @@
         <activity
             android:name=".HistorialActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
         <activity
             android:name=".RegistroActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <activity
             android:name=".IniciarSesionActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-                    </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".DDHHActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".UsuarioActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+
+        <activity
+            android:name=".DelitosActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

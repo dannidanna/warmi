@@ -48,7 +48,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         correo = (EditText) findViewById(R.id.correo);
         celular = (EditText) findViewById(R.id.celular);
         contra = (EditText) findViewById(R.id.contra);
-        btnRegistrar = (Button) findViewById(R.id.btnIngresar);
+        btnRegistrar = (Button) findViewById(R.id.btnAtras);
         btnRegistrar.setOnClickListener(this);
         miDialogo = new ProgressDialog(this);
         cuenta = (TextView) findViewById(R.id.cuenta);
@@ -71,7 +71,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnIngresar:
+            case R.id.btnAtras:
                 iniciarRegistro();
                 break;
             case R.id.cuenta:

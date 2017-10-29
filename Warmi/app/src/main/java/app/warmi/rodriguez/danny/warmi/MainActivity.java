@@ -18,28 +18,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnHistorial;
     Button btnRegistro;
     Button btnIniciar;
-    Button btnCerrar;
-
-   /* private FirebaseAuth autentificacion;
-    private FirebaseAuth.AuthStateListener autenLis;
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        autentificacion.addAuthStateListener(autenLis);
-    }*/
+    Button btnCuenta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-       /* autenLis = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-
-            }
-        };*/
 
         btnDenuncia = (Button) findViewById(R.id.btnDenuncia);
         btnDenuncia.setOnClickListener(this);
@@ -53,8 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnRegistro.setOnClickListener(this);
         btnIniciar = (Button) findViewById(R.id.btnIniciar);
         btnIniciar.setOnClickListener(this);
-        btnCerrar = (Button) findViewById(R.id.btnCerrarSesion);
-        btnCerrar.setOnClickListener(this);
+        btnCuenta = (Button) findViewById(R.id.btnCuenta);
+        btnCuenta.setOnClickListener(this);
 
     }
 
@@ -85,9 +69,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentIni = new Intent(MainActivity.this, IniciarSesionActivity.class);
                 startActivity(intentIni);
                 break;
-            case R.id.btnCerrarSesion:
-                //if (autentificacion.getCurrentUser() != null)
-              //  autentificacion.signOut();
+            case R.id.btnCuenta:
+                Intent intentCuenta = new Intent(MainActivity.this, UsuarioActivity.class);
+                startActivity(intentCuenta);
                 break;
         }
     }

@@ -30,7 +30,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HISTORIAL"
+            android:text="DDHH DE LA MUJER"
             android:textColor="@android:color/background_light"
             android:textSize="20dp"
             android:layout_alignParentTop="true"

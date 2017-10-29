@@ -53,7 +53,7 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
         };
         correo = (EditText) findViewById(R.id.correo);
         contra = (EditText) findViewById(R.id.contra);
-        btnIngresar = (Button) findViewById(R.id.btnIngresar);
+        btnIngresar = (Button) findViewById(R.id.btnAtras);
         btnIngresar.setOnClickListener(this);
         miDialogo = new ProgressDialog(this);
         crearCuenta = (TextView) findViewById(R.id.crearCuenta);
@@ -63,7 +63,7 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnIngresar:
+            case R.id.btnAtras:
                 iniciarSesion();
                 break;
             case R.id.crearCuenta:

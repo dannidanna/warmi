@@ -91,7 +91,7 @@
             tools:layout_editor_absoluteY="139dp" />
 
         <Button
-            android:id="@+id/btnCerrarSesion"
+            android:id="@+id/btnCuenta"
             style="@style/miEstilo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/btnIniciar"
             android:background="@drawable/borde"
-            android:text="CERRAR SESION"
+            android:text="CUENTA"
             android:textColor="@android:color/background_light"
             android:textSize="30sp"
             tools:layout_editor_absoluteX="135dp"
