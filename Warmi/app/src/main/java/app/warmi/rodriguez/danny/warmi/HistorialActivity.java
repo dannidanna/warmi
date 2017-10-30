@@ -20,9 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 
-public class HistorialActivity extends AppCompatActivity implements View.OnClickListener {
+public class HistorialActivity extends AppCompatActivity {
 
-    private Button btnAtras;
     private FirebaseAuth autentificacion;
     private FirebaseAuth.AuthStateListener autenLis;
     private RecyclerView lista;
@@ -80,8 +79,6 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
             }
         };
 
-        btnAtras = (Button) findViewById(R.id.btnAtras);
-        btnAtras.setOnClickListener(this);
     }
 
     public static class User {
@@ -95,15 +92,6 @@ public class HistorialActivity extends AppCompatActivity implements View.OnClick
         String urlDescarga;
     }
 
-    @Override
-    public void onClick(View view) {
-        switch(view.getId()){
-            case R.id.btnAtras:
-                Intent intent = new Intent(HistorialActivity.this, MainActivity.class);
-                startActivity(intent);
-                break;
-    }
-    }
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {
 

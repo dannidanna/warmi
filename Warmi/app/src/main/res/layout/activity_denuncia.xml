@@ -17,17 +17,14 @@
         <Button
 
             android:id="@+id/btnGuardar"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="@dimen/dim1"
             android:layout_alignParentBottom="true"
-
             android:layout_marginLeft="46dp"
             android:layout_marginStart="46dp"
-            android:background="@drawable/borde"
-            android:text="Guardar"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"
-            android:textColorLink="@android:color/background_light" />
+            android:background="@drawable/bordetres"
+            android:elevation="24dp"
+            android:text="Guardar"/>
 
         <Button
 
@@ -39,7 +36,8 @@
             android:layout_alignRight="@+id/btnCamara"
             android:layout_marginEnd="49dp"
             android:layout_marginRight="49dp"
-            android:background="@drawable/borde"
+            android:background="@drawable/bordedos"
+            android:elevation="20dp"
             android:text="Cancelar"
             android:textColor="@android:color/background_light" />
 

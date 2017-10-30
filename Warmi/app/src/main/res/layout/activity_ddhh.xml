@@ -1,47 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
-    tools:context="app.warmi.rodriguez.danny.warmi.DenunciaActivity">
+    android:background="@drawable/back">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ddhh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true" />
 
 
-    <RelativeLayout
-        android:layout_width="368dp"
-        android:layout_height="551dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
-
-        <Button
-
-            android:id="@+id/btnAtras"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dim1"
-            android:layout_marginBottom="12dp"
-            android:background="@drawable/borde"
-            android:text="atras"
-            android:textColor="@android:color/background_light"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DDHH DE LA MUJER"
-            android:textColor="@android:color/background_light"
-            android:textSize="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recHis"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true" />
-
-
-    </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

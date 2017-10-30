@@ -24,10 +24,9 @@
             android:textSize="20dp"
             tools:layout_editor_absoluteX="-55dp"
             tools:layout_editor_absoluteY="-423dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="52dp"
             android:layout_alignParentTop="true"
-            android:layout_alignLeft="@+id/btnAtras"
-            android:layout_alignStart="@+id/btnAtras" />
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:id="@+id/contra"
@@ -90,14 +89,15 @@
 
         <Button
             android:id="@+id/btnAtras"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="REGISTRAR"
-            android:background="@drawable/bordedos"
-            android:textColor="@android:color/background_light"
+            android:layout_width="300dp"
+            android:layout_height="38dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="105dp" />
+            android:layout_marginBottom="105dp"
+            android:background="@drawable/bordetres"
+            android:elevation="24dp"
+            android:text="REGISTRAR"
+            android:textColor="@android:color/background_dark" />
 
         <TextView
             android:id="@+id/cuenta"

@@ -20,12 +20,13 @@
             android:id="@+id/nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="40dp"
             android:text="DENUNCIA"
             android:textColor="@android:color/background_light"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView11"
+            android:layout_toEndOf="@+id/textView11" />
 
         <TextView
             android:id="@+id/textView4"
@@ -75,42 +76,35 @@
 
         <TextView
             android:id="@+id/direccion"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textView4"
             android:layout_alignBottom="@+id/textView4"
-            android:layout_alignLeft="@+id/nombre"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@+id/nombre"
+            android:layout_toEndOf="@+id/imageView3"
+            android:layout_toRightOf="@+id/imageView3"
             android:text="sdfsdf"
             android:textColor="@android:color/background_light" />
 
         <TextView
             android:id="@+id/telefono"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:text="sdfsdf"
+            android:textColor="@android:color/background_light"
             android:layout_alignBaseline="@+id/textView7"
             android:layout_alignBottom="@+id/textView7"
             android:layout_alignLeft="@+id/direccion"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@+id/direccion"
-            android:text="sdfsdf"
-            android:textColor="@android:color/background_light" />
+            android:layout_alignStart="@+id/direccion" />
 
         <TextView
             android:id="@+id/servicio"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView9"
-            android:layout_alignBottom="@+id/textView9"
-            android:layout_alignLeft="@+id/telefono"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@+id/telefono"
             android:text="sdfsdf"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:layout_above="@+id/textView11"
+            android:layout_alignLeft="@+id/telefono"
+            android:layout_alignStart="@+id/telefono" />
 
         <TextView
             android:id="@+id/pagina"
@@ -127,14 +121,20 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/pagina"
-            android:layout_marginTop="27dp" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/family"
+            android:layout_above="@+id/textView4"
+            android:layout_toRightOf="@+id/textView9"
+            android:layout_toEndOf="@+id/textView9" />
 
 
     </RelativeLayout>

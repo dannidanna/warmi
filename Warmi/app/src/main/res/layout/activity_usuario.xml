@@ -18,7 +18,7 @@
 
         <Button
             android:id="@+id/btnAtras"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -29,15 +29,15 @@
 
         <Button
             android:id="@+id/btnCerrarSesion"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="30dp"
-            android:layout_alignBottom="@+id/btnAtras"
-            android:layout_alignLeft="@+id/btnAtras"
-            android:layout_alignStart="@+id/btnAtras"
-            android:layout_marginBottom="61dp"
-            android:background="@drawable/bordedos"
+            android:layout_marginBottom="29dp"
+            android:background="@drawable/bordetres"
+            android:elevation="24dp"
             android:text="CERRAR SESION"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_dark"
+            android:layout_above="@+id/btnAtras"
+            android:layout_centerHorizontal="true" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -46,7 +46,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            app:srcCompat="@drawable/user" />
+            app:srcCompat="@drawable/bri" />
 
         <TextView
             android:id="@+id/nombre"
@@ -56,6 +56,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="62dp"
             android:text="NOMBRE usuarios"
+            android:textAlignment="center"
             android:textColor="@android:color/background_light"
             android:textSize="20sp" />
 
@@ -63,25 +64,27 @@
             android:id="@+id/telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NOMBRE usuarios"
-            android:textColor="@android:color/background_light"
-            android:textSize="20sp"
-            android:layout_below="@+id/nombre"
             android:layout_alignLeft="@+id/nombre"
             android:layout_alignStart="@+id/nombre"
-            android:layout_marginTop="22dp" />
+            android:layout_below="@+id/nombre"
+            android:layout_marginTop="22dp"
+            android:text="NOMBRE usuarios"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/correo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NOMBRE usuarios"
-            android:textColor="@android:color/background_light"
-            android:textSize="20sp"
-            android:layout_marginTop="22dp"
-            android:layout_below="@+id/telefono"
             android:layout_alignLeft="@+id/telefono"
-            android:layout_alignStart="@+id/telefono" />
+            android:layout_alignStart="@+id/telefono"
+            android:layout_below="@+id/telefono"
+            android:layout_marginTop="22dp"
+            android:text="NOMBRE usuarios"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
 
 
     </RelativeLayout>

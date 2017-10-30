@@ -18,9 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-public class InstInfoActivity extends AppCompatActivity implements View.OnClickListener{
+public class InstInfoActivity extends AppCompatActivity {
 
-    private Button btnAtras;
     private FirebaseAuth autentificacion;
     private FirebaseAuth.AuthStateListener autenLis;
     private RecyclerView lista;
@@ -66,20 +65,8 @@ public class InstInfoActivity extends AppCompatActivity implements View.OnClickL
 
         };
 
-        btnAtras = (Button) findViewById(R.id.btnAtras);
-        btnAtras.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btnAtras:
-                Intent intent = new Intent(InstInfoActivity.this, MainActivity.class);
-                startActivity(intent);
-                break;
-        }
-
-    }
 
     public static class User {
 

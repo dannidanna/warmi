@@ -12,13 +12,13 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button btnDenuncia;
-    Button btnInstMaps;
-    Button btnInstInfo;
-    Button btnHistorial;
-    Button btnRegistro;
-    Button btnIniciar;
-    Button btnCuenta;
+    private Button btnDenuncia;
+    private Button btnInstMaps;
+    private Button btnInstInfo;
+    private Button btnHistorial;
+    private Button btnCuenta;
+    private Button btnDdhh;
+    private Button btnDelitos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnInstInfo.setOnClickListener(this);
         btnHistorial = (Button) findViewById(R.id.btnHistorial);
         btnHistorial.setOnClickListener(this);
-        btnRegistro = (Button) findViewById(R.id.btnRegistro);
-        btnRegistro.setOnClickListener(this);
-        btnIniciar = (Button) findViewById(R.id.btnIniciar);
-        btnIniciar.setOnClickListener(this);
         btnCuenta = (Button) findViewById(R.id.btnCuenta);
         btnCuenta.setOnClickListener(this);
+        btnDdhh = (Button) findViewById(R.id.btnDdhh);
+        btnDdhh.setOnClickListener(this);
+        btnDelitos = (Button) findViewById(R.id.btnDelitos);
+        btnDelitos.setOnClickListener(this);
 
     }
 
@@ -61,17 +61,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent3 = new Intent(MainActivity.this, HistorialActivity.class);
                 startActivity(intent3);
                 break;
-            case R.id.btnRegistro:
-                Intent intent4 = new Intent(MainActivity.this, RegistroActivity.class);
-                startActivity(intent4);
-                break;
-            case R.id.btnIniciar:
-                Intent intentIni = new Intent(MainActivity.this, IniciarSesionActivity.class);
-                startActivity(intentIni);
-                break;
             case R.id.btnCuenta:
                 Intent intentCuenta = new Intent(MainActivity.this, UsuarioActivity.class);
                 startActivity(intentCuenta);
+                break;
+            case R.id.btnDdhh:
+                Intent intentDdhh = new Intent(MainActivity.this, DDHHActivity.class);
+                startActivity(intentDdhh);
+                break;
+            case R.id.btnDelitos:
+                Intent intentDelitos = new Intent(MainActivity.this, DelitosActivity.class);
+                startActivity(intentDelitos);
                 break;
         }
     }

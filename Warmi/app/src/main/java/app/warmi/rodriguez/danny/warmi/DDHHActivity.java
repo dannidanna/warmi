@@ -16,9 +16,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class DDHHActivity extends AppCompatActivity implements View.OnClickListener{
+public class DDHHActivity extends AppCompatActivity {
 
-    private Button btnAtras;
     private FirebaseAuth autentificacion;
     private FirebaseAuth.AuthStateListener autenLis;
     private RecyclerView lista;
@@ -36,48 +35,34 @@ public class DDHHActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ddhh);
 
-        lista = (RecyclerView) findViewById(R.id.instituciones);
+        lista = (RecyclerView) findViewById(R.id.ddhh);
         lista.setLayoutManager(new LinearLayoutManager(this));
-        bdReferencia = FirebaseDatabase.getInstance().getReference().child("Instituciones");
+        bdReferencia = FirebaseDatabase.getInstance().getReference().child("DDHH");
         autentificacion = FirebaseAuth.getInstance();
-        autenLis = new FirebaseAuth.AuthStateListener() {
+        autenLis = new FirebaseAuth.AuthStateListener(){
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseRecyclerAdapter<InstInfoActivity.User, InstInfoActivity.UserViewHolder> firebaseRecyclerAdapter =
-                        new FirebaseRecyclerAdapter<InstInfoActivity.User, InstInfoActivity.UserViewHolder>(
-                                InstInfoActivity.User.class,
-                                R.layout.vista_instituciones,
-                                InstInfoActivity.UserViewHolder.class,
+                FirebaseRecyclerAdapter<DDHHActivity.User, DDHHActivity.UserViewHolder> firebaseRecyclerAdapter =
+                        new FirebaseRecyclerAdapter<User, UserViewHolder>(
+                                DDHHActivity.User.class,
+                                R.layout.vista_ddhh,
+                                DDHHActivity.UserViewHolder.class,
                                 bdReferencia
                         ) {
-                            @Override
-                            protected void populateViewHolder(InstInfoActivity.UserViewHolder viewHolder, InstInfoActivity.User model, int position) {
-                                viewHolder.nombre.setText(model.Nombre);
-                                viewHolder.direccion.setText(model.Direccion);
-                                viewHolder.telefono.setText(model.Telefono);
-                                viewHolder.servicio.setText(model.Servicio);
-                                viewHolder.pagina.setText(model.PaginaReferencia);
-                            }
-                        };
+                    @Override
+                    protected void populateViewHolder(UserViewHolder viewHolder, User model, int position) {
+                        viewHolder.nombre.setText(model.Nombre);
+                        viewHolder.direccion.setText(model.Direccion);
+                        viewHolder.telefono.setText(model.Telefono);
+                        viewHolder.servicio.setText(model.Servicio);
+                        viewHolder.pagina.setText(model.PaginaReferencia);
+
+                    }
+                };
                 lista.setAdapter(firebaseRecyclerAdapter);
-
             }
-
         };
 
-        btnAtras = (Button) findViewById(R.id.btnAtras);
-        btnAtras.setOnClickListener(this);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btnAtras:
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                break;
-        }
     }
 
     public static class User {

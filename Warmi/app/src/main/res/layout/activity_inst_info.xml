@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/back">
 
-    <Button
-        android:id="@+id/btnAtras"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/borde"
-        android:text="atras"
-        android:textColor="@android:color/background_light" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/instituciones"
         android:layout_width="match_parent"
