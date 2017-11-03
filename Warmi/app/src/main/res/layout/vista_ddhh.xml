@@ -2,139 +2,102 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@android:color/transparent"
     tools:context="app.warmi.rodriguez.danny.warmi.DenunciaActivity">
 
 
     <RelativeLayout
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="330dp"
+        android:layout_height="280dp"
+        android:layout_marginBottom="0dp"
         android:background="@drawable/bordedos"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="37dp">
 
         <TextView
-            android:id="@+id/nombre"
+            android:id="@+id/articulo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="DENUNCIA"
-            android:textColor="@android:color/background_light"
-            android:textSize="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/textView11"
-            android:layout_toEndOf="@+id/textView11" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/nombre"
-            android:layout_marginLeft="14dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="13dp"
-            android:text="Direccion:"
-            android:textColor="@android:color/background_light" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView4"
-            android:layout_alignStart="@+id/textView4"
-            android:layout_below="@+id/textView4"
-            android:layout_marginTop="15dp"
-            android:text="Telefono:"
-            android:textColor="@android:color/background_light" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView7"
-            android:layout_alignStart="@+id/textView7"
-            android:layout_below="@+id/textView7"
-            android:layout_marginTop="13dp"
-            android:text="Servicio:"
-            android:textColor="@android:color/background_light" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView9"
-            android:layout_alignStart="@+id/textView9"
-            android:layout_below="@+id/textView9"
-            android:layout_marginTop="18dp"
-            android:text="Pagina de referencia:"
-            android:textColor="@android:color/background_light" />
-
-        <TextView
-            android:id="@+id/direccion"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView4"
-            android:layout_alignBottom="@+id/textView4"
-            android:layout_toEndOf="@+id/imageView3"
-            android:layout_toRightOf="@+id/imageView3"
-            android:text="sdfsdf"
-            android:textColor="@android:color/background_light" />
-
-        <TextView
-            android:id="@+id/telefono"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="sdfsdf"
-            android:textColor="@android:color/background_light"
-            android:layout_alignBaseline="@+id/textView7"
-            android:layout_alignBottom="@+id/textView7"
-            android:layout_alignLeft="@+id/direccion"
-            android:layout_alignStart="@+id/direccion" />
-
-        <TextView
-            android:id="@+id/servicio"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="sdfsdf"
-            android:textColor="@android:color/background_light"
-            android:layout_above="@+id/textView11"
-            android:layout_alignLeft="@+id/telefono"
-            android:layout_alignStart="@+id/telefono" />
-
-        <TextView
-            android:id="@+id/pagina"
-            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/textView11"
-            android:layout_marginEnd="23dp"
-            android:layout_marginRight="23dp"
-            android:layout_marginTop="17dp"
-            android:text="sdfsdf"
-            android:textColor="@android:color/background_light" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/pagina"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="28dp" />
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_marginEnd="114dp"
+            android:layout_marginRight="114dp"
+            android:layout_marginTop="12dp"
+            android:text="AR"
+            android:textColor="@android:color/background_light"
+            android:textSize="20dp" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/wo"
-            android:layout_above="@+id/textView4"
-            android:layout_toRightOf="@+id/textView9"
-            android:layout_toEndOf="@+id/textView9" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="54dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="34dp"
+            app:srcCompat="@drawable/wo" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/articulo"
+            android:layout_marginEnd="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@+id/articulo"
+            android:layout_toStartOf="@+id/articulo"
+            android:text="ARTICULO"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageView3"
+            android:layout_alignStart="@+id/imageView3"
+            android:layout_below="@+id/imageView3"
+            android:layout_marginTop="18dp"
+            android:text="NOMBRE: "
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView10"
+            android:layout_toEndOf="@+id/test"
+            android:layout_toRightOf="@+id/test"
+            android:text="NOMBRE"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView10"
+            android:layout_alignStart="@+id/textView10"
+            android:layout_below="@+id/textView10"
+            android:layout_marginTop="18dp"
+            android:text="DESCRIPCION:"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/nombre"
+            android:layout_alignLeft="@+id/test"
+            android:layout_alignRight="@+id/nombre"
+            android:layout_alignStart="@+id/test"
+            android:layout_below="@+id/test"
+            android:layout_marginTop="13dp"
+            android:text="DESCRIPCION DEL ARTICULLO"
+            android:textColor="@android:color/background_light" />
 
 
     </RelativeLayout>

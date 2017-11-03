@@ -59,7 +59,7 @@
             android:textColorHint="@android:color/background_light" />
 
         <EditText
-            android:id="@+id/descripcion"
+            android:id="@+id/test"
             android:layout_width="300dp"
             android:layout_height="35dp"
             android:layout_marginTop="79dp"
@@ -76,9 +76,9 @@
             android:id="@+id/correo"
             android:layout_width="300dp"
             android:layout_height="35dp"
-            android:layout_alignLeft="@+id/descripcion"
-            android:layout_alignStart="@+id/descripcion"
-            android:layout_below="@+id/descripcion"
+            android:layout_alignLeft="@+id/test"
+            android:layout_alignStart="@+id/test"
+            android:layout_below="@+id/test"
             android:layout_marginTop="22dp"
             android:background="@drawable/bordedos"
             android:ems="10"

@@ -13,6 +13,9 @@ public class LocalizacionClass  {
         this.direccion = direccion;
     }
 
+    public LocalizacionClass() {
+    }
+
     public String getLongitud() {
         return longitud;
     }

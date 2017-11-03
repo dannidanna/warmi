@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteX="8dp">
 
         <TextView
-            android:id="@+id/nombre"
+            android:id="@+id/articulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/nombre"
+            android:layout_below="@+id/articulo"
             android:layout_marginLeft="14dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="13dp"
@@ -75,7 +75,7 @@
             android:textColor="@android:color/background_light" />
 
         <TextView
-            android:id="@+id/direccion"
+            android:id="@+id/nombre"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textView4"
@@ -93,8 +93,8 @@
             android:textColor="@android:color/background_light"
             android:layout_alignBaseline="@+id/textView7"
             android:layout_alignBottom="@+id/textView7"
-            android:layout_alignLeft="@+id/direccion"
-            android:layout_alignStart="@+id/direccion" />
+            android:layout_alignLeft="@+id/nombre"
+            android:layout_alignStart="@+id/nombre" />
 
         <TextView
             android:id="@+id/servicio"

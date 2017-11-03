@@ -98,7 +98,7 @@
             android:layout_centerHorizontal="true" />
 
         <EditText
-            android:id="@+id/direccion"
+            android:id="@+id/nombre"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="17dp"
@@ -116,7 +116,7 @@
             android:id="@+id/telefono"
             android:layout_width="340dp"
             android:layout_height="30dp"
-            android:layout_below="@+id/direccion"
+            android:layout_below="@+id/nombre"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="18dp"
             android:background="@drawable/bordedos"

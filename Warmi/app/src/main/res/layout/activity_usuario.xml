@@ -49,7 +49,7 @@
             app:srcCompat="@drawable/bri" />
 
         <TextView
-            android:id="@+id/nombre"
+            android:id="@+id/articulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageView2"
@@ -64,9 +64,9 @@
             android:id="@+id/telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/nombre"
-            android:layout_alignStart="@+id/nombre"
-            android:layout_below="@+id/nombre"
+            android:layout_alignLeft="@+id/articulo"
+            android:layout_alignStart="@+id/articulo"
+            android:layout_below="@+id/articulo"
             android:layout_marginTop="22dp"
             android:text="NOMBRE usuarios"
             android:textAlignment="center"

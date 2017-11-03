@@ -1,6 +1,5 @@
 package app.warmi.rodriguez.danny.warmi;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -39,7 +38,7 @@ public class UsuarioActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_usuario);
 
-        txtNombre = (TextView) findViewById(R.id.nombre);
+        txtNombre = (TextView) findViewById(R.id.articulo);
         txtTelefono = (TextView) findViewById(R.id.telefono);
         txtCorreo = (TextView) findViewById(R.id.correo);
 
@@ -55,6 +54,7 @@ public class UsuarioActivity extends AppCompatActivity implements View.OnClickLi
                 }else{
                     if(firebaseAuth.getCurrentUser()!=null){
                         dbReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+                        dbReferencia.keepSynced(true);
                         dbReferencia.child(firebaseAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {

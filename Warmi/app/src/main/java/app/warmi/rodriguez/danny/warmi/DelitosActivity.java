@@ -34,6 +34,7 @@ public class DelitosActivity extends AppCompatActivity {
         lista = (RecyclerView) findViewById(R.id.delitos);
         lista.setLayoutManager(new LinearLayoutManager(this));
         bdReferencia = FirebaseDatabase.getInstance().getReference().child("Delitos");
+        bdReferencia.keepSynced(true);
         autentificacion = FirebaseAuth.getInstance();
         autenLis = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -78,8 +79,8 @@ public class DelitosActivity extends AppCompatActivity {
 
         public UserViewHolder(View itemView) {
             super(itemView);
-            nombre = (TextView) itemView.findViewById(R.id.nombre);
-            direccion = (TextView) itemView.findViewById(R.id.direccion);
+            nombre = (TextView) itemView.findViewById(R.id.articulo);
+            direccion = (TextView) itemView.findViewById(R.id.nombre);
             telefono = (TextView) itemView.findViewById(R.id.telefono);
             servicio = (TextView) itemView.findViewById(R.id.servicio);
             pagina = (TextView) itemView.findViewById(R.id.pagina);

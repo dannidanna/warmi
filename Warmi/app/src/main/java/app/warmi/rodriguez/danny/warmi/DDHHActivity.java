@@ -1,14 +1,11 @@
 package app.warmi.rodriguez.danny.warmi;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -38,6 +35,7 @@ public class DDHHActivity extends AppCompatActivity {
         lista = (RecyclerView) findViewById(R.id.ddhh);
         lista.setLayoutManager(new LinearLayoutManager(this));
         bdReferencia = FirebaseDatabase.getInstance().getReference().child("DDHH");
+        bdReferencia.keepSynced(true);
         autentificacion = FirebaseAuth.getInstance();
         autenLis = new FirebaseAuth.AuthStateListener(){
             @Override
@@ -52,10 +50,8 @@ public class DDHHActivity extends AppCompatActivity {
                     @Override
                     protected void populateViewHolder(UserViewHolder viewHolder, User model, int position) {
                         viewHolder.nombre.setText(model.Nombre);
-                        viewHolder.direccion.setText(model.Direccion);
-                        viewHolder.telefono.setText(model.Telefono);
-                        viewHolder.servicio.setText(model.Servicio);
-                        viewHolder.pagina.setText(model.PaginaReferencia);
+                        viewHolder.articulo.setText(model.Articulo);
+                        viewHolder.descripcion.setText(model.Descripcion);
 
                     }
                 };
@@ -68,28 +64,22 @@ public class DDHHActivity extends AppCompatActivity {
     public static class User {
 
         String Nombre;
-        String Direccion;
-        String Telefono;
-        String Servicio;
-        String PaginaReferencia;
+        String Articulo;
+        String Descripcion;
     }
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {
 
         TextView nombre;
-        TextView direccion;
-        TextView telefono;
-        TextView servicio;
-        TextView pagina;
+        TextView articulo;
+        TextView descripcion;
 
         public UserViewHolder(View itemView) {
             super(itemView);
 
             nombre = (TextView) itemView.findViewById(R.id.nombre);
-            direccion = (TextView) itemView.findViewById(R.id.direccion);
-            telefono = (TextView) itemView.findViewById(R.id.telefono);
-            servicio = (TextView) itemView.findViewById(R.id.servicio);
-            pagina = (TextView) itemView.findViewById(R.id.pagina);
+            articulo = (TextView) itemView.findViewById(R.id.articulo);
+            descripcion = (TextView) itemView.findViewById(R.id.descripcion);
         }
     }
 }

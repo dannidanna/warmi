@@ -228,9 +228,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         miDialogo.dismiss();
                         @SuppressWarnings("VisibleForTests") Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                        //Uri downloadUrl = taskSnapshot.getDownloadUrl();
                         Toast.makeText(getApplicationContext(), "Finished", Toast.LENGTH_SHORT).show();
-                        //Picasso.with(ActivityAccount.this).load(fileUri).fit().centerCrop().into(imageProfile);
                         DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid());
                         currentUserDB.child("Imagen").setValue(downloadUrl.toString());
 
@@ -248,8 +246,6 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
 
             }
         });
-
-
     }
 
     public String getRandomString() {
@@ -284,7 +280,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference reference = database.getReference();
-        nomVic = (EditText) findViewById(R.id.direccion);
+        nomVic = (EditText) findViewById(R.id.nombre);
         String nombreVictima = nomVic.getText().toString().trim();
         numVic = (EditText) findViewById(R.id.telefono);
         String numeroVictima= numVic.getText().toString().trim();
@@ -301,7 +297,20 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         LocalizacionClass localizacionObj = new LocalizacionClass(latitud, longitud, direccion);
         Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, localizacionObj, urlImagenD);
         currentUserDB.push().setValue(denuncia);
-        Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_LONG).show();
+        /*
+        currentUserDB.push().child("nombreVictima").setValue(nombreVictima);
+        currentUserDB.push().child("nombreAgresor").setValue(nombreAgresor);
+
+        //currentUserDB.child("nombreVictima:").setValue(nombreVictima);
+        currentUserDB.child("numeroVictima").setValue(numeroVictima);
+        //currentUserDB.child("nombreAgresor").setValue(nombreAgresor);
+        currentUserDB.child("descripcion:").setValue(descripcionDen);
+        currentUserDB.child("fecha").setValue(fechaDen);
+        currentUserDB.child("relacion").setValue(rel);
+        currentUserDB.push().setValue(localizacionObj);
+        currentUserDB.push().setValue(urlImagenD);*/
+
+        Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);
         startActivity(intent);
     }

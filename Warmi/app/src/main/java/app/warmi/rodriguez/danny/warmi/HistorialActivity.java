@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+
+import app.warmi.rodriguez.danny.warmi.Objects.Denuncia;
 
 
 public class HistorialActivity extends AppCompatActivity {
@@ -42,35 +43,35 @@ public class HistorialActivity extends AppCompatActivity {
         lista = (RecyclerView) findViewById(R.id.recHis);
         lista.setLayoutManager(new LinearLayoutManager(this));
         bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+        bdReferencia.keepSynced(true);
         autentificacion = FirebaseAuth.getInstance();
         autenLis = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()==null){
                     Toast.makeText(getApplicationContext(),"Inicie sesion para ver el historial de sus denuncias",
-                            Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(HistorialActivity.this, IniciarSesionActivity.class);
                     startActivity(intent);
                     finish();
                 }
                 else{
                     DatabaseReference bdUsuarios = bdReferencia.child(autentificacion.getCurrentUser().getUid());
-                    FirebaseRecyclerAdapter<User, UserViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<User, UserViewHolder>(
-                            User.class,
+                    FirebaseRecyclerAdapter<Denuncia, UserViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Denuncia, UserViewHolder>(
+                            Denuncia.class,
                             R.layout.vista_denuncia,
                             UserViewHolder.class,
                             bdUsuarios
                     ) {
                         @Override
-                        protected void populateViewHolder(final UserViewHolder holder, User model, int position) {
-                            holder.txtNomVic.setText(model.nombreVictima);
-                            holder.txtNumVic.setText(model.numeroVictima);
-                            holder.txtNomAgre.setText(model.nombreAgresor);
-                            holder.txtRelacion.setText(model.relacion);
-                            holder.txtFecha.setText(model.fecha);
-                            holder.txtDescripcion.setText(model.descripcion);
-                           //if (!model.urlDescarga.equals("default"))
-                                Picasso.with(HistorialActivity.this).load(model.urlDescarga).into(holder.viewImagen);
+                        protected void populateViewHolder(final UserViewHolder holder, Denuncia model , int position) {
+                            holder.txtNomVic.setText(model.getNombreVictima());
+                            holder.txtNumVic.setText(model.getNumeroVictima());
+                            holder.txtNomAgre.setText(model.getNombreAgresor());
+                            holder.txtRelacion.setText(model.getRelacion());
+                            holder.txtFecha.setText(model.getFecha());
+                            holder.txtDescripcion.setText(model.getDescripcion());
+                            Picasso.with(HistorialActivity.this).load(model.getUrlDescarga()).into(holder.viewImagen);
                         }
                     };
                     lista.setAdapter(firebaseRecyclerAdapter);
@@ -81,20 +82,8 @@ public class HistorialActivity extends AppCompatActivity {
 
     }
 
-    public static class User {
-
-        String nombreVictima;
-        String numeroVictima;
-        String nombreAgresor;
-        String relacion;
-        String fecha;
-        String descripcion;
-        String urlDescarga;
-    }
-
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {
-
         TextView txtNomVic;
         TextView txtNumVic;
         TextView txtNomAgre;
@@ -106,12 +95,12 @@ public class HistorialActivity extends AppCompatActivity {
         public UserViewHolder(View itemView) {
             super(itemView);
 
-            txtNomVic = (TextView) itemView.findViewById(R.id.direccion);
+            txtNomVic = (TextView) itemView.findViewById(R.id.nombre);
             txtNumVic = (TextView) itemView.findViewById(R.id.telefono);
             txtNomAgre = (TextView) itemView.findViewById(R.id.servicio);
             txtRelacion = (TextView) itemView.findViewById(R.id.pagina);
             txtFecha = (TextView) itemView.findViewById(R.id.fecha);
-            txtDescripcion = (TextView) itemView.findViewById(R.id.descripcion);
+            txtDescripcion = (TextView) itemView.findViewById(R.id.test);
             viewImagen = (ImageView) itemView.findViewById(R.id.imagen);
         }
     }
