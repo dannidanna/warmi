@@ -173,14 +173,12 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
             Uri uri = data.getData();
             miDialogo.setMessage("Subiendo imagen...");
             miDialogo.show();
-            //subirFoto(uri);
            StorageReference dirArch = storageReference.child("Fotos").child(uri.getLastPathSegment());
             imagen.setImageURI(uri);
             dirArch.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     @SuppressWarnings("VisibleForTests") Uri urlImagen = taskSnapshot.getDownloadUrl();
-                    //Log.d("URL", String.valueOf(urlImagen));
                     urlImagenD = String.valueOf(urlImagen);
                     miDialogo.dismiss();
                     Toast.makeText(getApplicationContext(), "IMAGEN ALMACENADA", Toast.LENGTH_LONG).show();
@@ -297,18 +295,6 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         LocalizacionClass localizacionObj = new LocalizacionClass(latitud, longitud, direccion);
         Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, localizacionObj, urlImagenD);
         currentUserDB.push().setValue(denuncia);
-        /*
-        currentUserDB.push().child("nombreVictima").setValue(nombreVictima);
-        currentUserDB.push().child("nombreAgresor").setValue(nombreAgresor);
-
-        //currentUserDB.child("nombreVictima:").setValue(nombreVictima);
-        currentUserDB.child("numeroVictima").setValue(numeroVictima);
-        //currentUserDB.child("nombreAgresor").setValue(nombreAgresor);
-        currentUserDB.child("descripcion:").setValue(descripcionDen);
-        currentUserDB.child("fecha").setValue(fechaDen);
-        currentUserDB.child("relacion").setValue(rel);
-        currentUserDB.push().setValue(localizacionObj);
-        currentUserDB.push().setValue(urlImagenD);*/
 
         Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);

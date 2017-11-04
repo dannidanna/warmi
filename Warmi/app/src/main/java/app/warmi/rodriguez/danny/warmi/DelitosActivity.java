@@ -49,10 +49,8 @@ public class DelitosActivity extends AppCompatActivity {
                     @Override
                     protected void populateViewHolder(UserViewHolder viewHolder, User model, int position) {
                         viewHolder.nombre.setText(model.Nombre);
-                        viewHolder.direccion.setText(model.Direccion);
-                        viewHolder.telefono.setText(model.Telefono);
-                        viewHolder.servicio.setText(model.Servicio);
-                        viewHolder.pagina.setText(model.PaginaReferencia);
+                        viewHolder.articulo.setText(model.Articulo);
+                        viewHolder.descripcion.setText(model.Descripcion);
                     }
                 };
                 lista.setAdapter(firebaseRecyclerAdapter);
@@ -63,27 +61,22 @@ public class DelitosActivity extends AppCompatActivity {
     public static class User {
 
         String Nombre;
-        String Direccion;
-        String Telefono;
-        String Servicio;
-        String PaginaReferencia;
+        String Articulo;
+        String Descripcion;
     }
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {
 
         TextView nombre;
-        TextView direccion;
-        TextView telefono;
-        TextView servicio;
-        TextView pagina;
+        TextView articulo;
+        TextView descripcion;
 
         public UserViewHolder(View itemView) {
             super(itemView);
-            nombre = (TextView) itemView.findViewById(R.id.articulo);
-            direccion = (TextView) itemView.findViewById(R.id.nombre);
-            telefono = (TextView) itemView.findViewById(R.id.telefono);
-            servicio = (TextView) itemView.findViewById(R.id.servicio);
-            pagina = (TextView) itemView.findViewById(R.id.pagina);
+
+            nombre = (TextView) itemView.findViewById(R.id.nombre);
+            articulo = (TextView) itemView.findViewById(R.id.articulo);
+            descripcion = (TextView) itemView.findViewById(R.id.descripcion);
         }
     }
 }

@@ -31,8 +31,6 @@ public class HistorialActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-        if (autentificacion.getCurrentUser() == null)
-            return;
         autentificacion.addAuthStateListener(autenLis);
     }
 
@@ -48,14 +46,8 @@ public class HistorialActivity extends AppCompatActivity {
         autenLis = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser()==null){
-                    Toast.makeText(getApplicationContext(),"Inicie sesion para ver el historial de sus denuncias",
-                            Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(HistorialActivity.this, IniciarSesionActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
-                else{
+
+                    if(firebaseAuth.getCurrentUser()!=null){
                     DatabaseReference bdUsuarios = bdReferencia.child(autentificacion.getCurrentUser().getUid());
                     FirebaseRecyclerAdapter<Denuncia, UserViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Denuncia, UserViewHolder>(
                             Denuncia.class,
@@ -75,8 +67,14 @@ public class HistorialActivity extends AppCompatActivity {
                         }
                     };
                     lista.setAdapter(firebaseRecyclerAdapter);
-
-                }
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),"Inicie sesion para ver el historial de sus denuncias",
+                                Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(HistorialActivity.this, IniciarSesionActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
             }
         };
 
