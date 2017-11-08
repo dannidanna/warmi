@@ -18,6 +18,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -45,6 +46,7 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -56,7 +58,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
 
     private Button btnGuardar, btnCancelar, btnCamara, btnGaleria;
     private ImageView imagen;
-    private EditText nomVic, numVic, nomAgre, descrip, fecha;
+    private EditText nomVic, numVic, nomAgre, descrip;
     private Spinner relacion;
     private String relaciones[] = {"Relacion con victima", "Esposo", "Hermana(o)", "Prima(o)", "Mamá","Papá",
             "Jefa(e)","Empleada(o)","Conocido(a)","Ninguno"};
@@ -196,7 +198,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         if (bdReferencia == null)
             bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
 
-        final StorageReference filepath = storageReference.child("Fotos denuncias").child(getRandomString());/*uri.getLastPathSegment()*/
+        final StorageReference filepath = storageReference.child("Fotos denuncias").child(getRandomString());
         final DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid());
 
         miDialogo.setMessage("Uploading image...");
@@ -286,14 +288,16 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         String nombreAgresor = nomAgre.getText().toString().trim();
         descrip = (EditText) findViewById(R.id.descrip);
         String descripcionDen = descrip.getText().toString();
-        fecha = (EditText) findViewById(R.id.fecha);
-        String fechaDen = fecha.getText().toString();
+
+        Date d = new Date();
+        String fechaDen  = (String) DateFormat.format("MMMM d, yyyy ", d.getTime());
 
         bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
-        final DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid());
+        final DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid()).child("Denuncias");
 
         LocalizacionClass localizacionObj = new LocalizacionClass(latitud, longitud, direccion);
-        Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, localizacionObj, urlImagenD);
+        String dire = localizacionObj.getDireccion();
+        Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, dire, urlImagenD);
         currentUserDB.push().setValue(denuncia);
 
         Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_SHORT).show();

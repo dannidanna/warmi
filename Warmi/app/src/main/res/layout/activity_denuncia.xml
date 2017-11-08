@@ -58,11 +58,11 @@
             android:id="@+id/imageView"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_above="@+id/btnGuardar"
+            app:srcCompat="@drawable/borde"
+            android:layout_below="@+id/pagina"
             android:layout_alignLeft="@+id/btnGuardar"
             android:layout_alignStart="@+id/btnGuardar"
-            android:layout_marginBottom="34dp"
-            app:srcCompat="@drawable/borde" />
+            android:layout_marginTop="42dp" />
 
         <Button
             android:id="@+id/btnGaleria"
@@ -81,11 +81,11 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Adjuntar imagen:"
-            android:textColor="@android:color/background_light"
-            android:layout_alignTop="@+id/imageView"
+            android:layout_alignEnd="@+id/btnGaleria"
             android:layout_alignRight="@+id/btnGaleria"
-            android:layout_alignEnd="@+id/btnGaleria" />
+            android:layout_alignTop="@+id/imageView"
+            android:text="Adjuntar imagen(opc.):"
+            android:textColor="@android:color/background_light" />
 
         <TextView
             android:id="@+id/textView2"
@@ -95,7 +95,8 @@
             android:textColor="@android:color/background_light"
             android:textSize="20dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp" />
 
         <EditText
             android:id="@+id/nombre"
@@ -156,33 +157,17 @@
             android:layout_alignLeft="@+id/servicio"
             android:layout_alignStart="@+id/servicio" />
 
-        <EditText
-            android:id="@+id/fecha"
-            android:ems="10"
-            android:inputType="date"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"
-            android:background="@drawable/bordedos"
-            android:hint="   Fecha"
-            android:layout_width="340dp"
-            android:layout_height="30dp"
-            android:layout_below="@+id/descrip"
-            android:layout_alignLeft="@+id/descrip"
-            android:layout_alignStart="@+id/descrip"
-            android:layout_marginTop="22dp" />
-
         <Spinner
             android:id="@+id/pagina"
             android:layout_width="340dp"
             android:layout_height="30dp"
-            android:layout_alignLeft="@+id/fecha"
-            android:layout_alignStart="@+id/fecha"
-            android:layout_below="@+id/fecha"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="23dp"
             android:background="@drawable/bordedos"
             android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light" />
+            android:textColorHint="@android:color/background_light"
+            android:layout_below="@+id/descrip"
+            android:layout_alignLeft="@+id/descrip"
+            android:layout_alignStart="@+id/descrip" />
 
 
     </RelativeLayout>

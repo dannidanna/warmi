@@ -40,7 +40,7 @@ public class HistorialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_historial);
         lista = (RecyclerView) findViewById(R.id.recHis);
         lista.setLayoutManager(new LinearLayoutManager(this));
-        bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+        bdReferencia = FirebaseDatabase.getInstance().getReference("Usuarios");
         bdReferencia.keepSynced(true);
         autentificacion = FirebaseAuth.getInstance();
         autenLis = new FirebaseAuth.AuthStateListener() {
@@ -48,8 +48,9 @@ public class HistorialActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
 
                     if(firebaseAuth.getCurrentUser()!=null){
-                    DatabaseReference bdUsuarios = bdReferencia.child(autentificacion.getCurrentUser().getUid());
-                    FirebaseRecyclerAdapter<Denuncia, UserViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Denuncia, UserViewHolder>(
+                    DatabaseReference bdUsuarios = bdReferencia.child(autentificacion.getCurrentUser().getUid()).child("Denuncias");
+                    FirebaseRecyclerAdapter<Denuncia, UserViewHolder> firebaseRecyclerAdapter =
+                            new FirebaseRecyclerAdapter<Denuncia, UserViewHolder>(
                             Denuncia.class,
                             R.layout.vista_denuncia,
                             UserViewHolder.class,

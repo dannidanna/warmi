@@ -1,2 +1,5 @@
-<input type="text" [(ngModel)]="name"/>
-<p>{{name}}</p>
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.name}}
+  </li>
+</ul>
