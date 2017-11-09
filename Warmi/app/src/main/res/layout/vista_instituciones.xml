@@ -9,37 +9,35 @@
 
 
     <RelativeLayout
-        android:layout_width="368dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="-4dp"
         android:background="@drawable/bordedos"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="8dp">
+        tools:layout_editor_absoluteX="17dp">
 
         <TextView
             android:id="@+id/articulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/textView4"
             android:text="DENUNCIA"
             android:textColor="@android:color/background_light"
             android:textSize="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/textView11"
-            android:layout_toEndOf="@+id/textView11" />
+            android:layout_toRightOf="@+id/textView4" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/articulo"
-            android:layout_marginLeft="14dp"
-            android:layout_marginStart="14dp"
             android:layout_marginTop="13dp"
             android:text="Direccion:"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignStart="@+id/textView3" />
 
         <TextView
             android:id="@+id/textView7"
@@ -81,30 +79,31 @@
             android:layout_alignBaseline="@+id/textView4"
             android:layout_alignBottom="@+id/textView4"
             android:layout_toEndOf="@+id/imageView3"
-            android:layout_toRightOf="@+id/imageView3"
             android:text="sdfsdf"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:layout_alignLeft="@+id/articulo"
+            android:layout_alignStart="@+id/articulo" />
 
         <TextView
             android:id="@+id/telefono"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="sdfsdf"
-            android:textColor="@android:color/background_light"
             android:layout_alignBaseline="@+id/textView7"
             android:layout_alignBottom="@+id/textView7"
             android:layout_alignLeft="@+id/nombre"
-            android:layout_alignStart="@+id/nombre" />
+            android:layout_alignStart="@+id/nombre"
+            android:text="sdfsdf"
+            android:textColor="@android:color/background_light" />
 
         <TextView
             android:id="@+id/servicio"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="sdfsdf"
-            android:textColor="@android:color/background_light"
             android:layout_above="@+id/textView11"
             android:layout_alignLeft="@+id/telefono"
-            android:layout_alignStart="@+id/telefono" />
+            android:layout_alignStart="@+id/telefono"
+            android:text="sdfsdf"
+            android:textColor="@android:color/background_light" />
 
         <TextView
             android:id="@+id/pagina"
@@ -117,7 +116,9 @@
             android:layout_marginRight="23dp"
             android:layout_marginTop="17dp"
             android:text="sdfsdf"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:layout_alignLeft="@+id/textView11"
+            android:layout_alignStart="@+id/textView11" />
 
         <TextView
             android:id="@+id/textView3"
@@ -133,8 +134,8 @@
             android:layout_height="50dp"
             app:srcCompat="@drawable/family"
             android:layout_above="@+id/textView4"
-            android:layout_toRightOf="@+id/textView9"
-            android:layout_toEndOf="@+id/textView9" />
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignStart="@+id/textView4" />
 
 
     </RelativeLayout>

@@ -297,14 +297,19 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
 
         LocalizacionClass localizacionObj = new LocalizacionClass(latitud, longitud, direccion);
         String dire = localizacionObj.getDireccion();
-        Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, dire, urlImagenD);
-        currentUserDB.push().setValue(denuncia);
+        if(!descripcionDen.isEmpty() && !rel.isEmpty()) {
+            Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, dire, urlImagenD);
+            currentUserDB.push().setValue(denuncia);
 
-        Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);
-        startActivity(intent);
+            Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Rellene todos los campos necesarios", Toast.LENGTH_SHORT).show();
+        }
+
     }
-
 
     private void llamarIntent(){
         Intent tomarFoto = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

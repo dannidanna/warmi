@@ -9,12 +9,12 @@
 
 
     <RelativeLayout
-        android:layout_width="330dp"
+        android:layout_width="350dp"
         android:layout_height="280dp"
         android:layout_marginBottom="0dp"
         android:background="@drawable/bordedos"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="18dp">
+        tools:layout_editor_absoluteX="16dp">
 
         <TextView
             android:id="@+id/articulo"
