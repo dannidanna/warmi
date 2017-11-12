@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-4">
+    <ul type="list-group">
+    <li (click)="viewNote(n)" class="list-group-item" *ngFor="let n of myNotes">
+    {{n.id }}. {{n.title }} 
+    <br>
+    {{n.description}}
+    </li>
+    </ul>
+    <a class="btn btn-primary btn-block" (click)="addNote()">NUEVA NOTA</a>
+  </div>
+
+  <div class="col-md-5" *ngIf="showForm">
+    <h1>NUEVA NOTA</h1>
+    <input class="form-control" type="text" placeholder="TITULO NOTA" [(ngModel)]="note.title"/>
+    <br>
+    <textarea class="form-control" placeholder="CUERPO NOTA" [(ngModel)]="note.description"></textarea>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <a class="btn btn-default btn-block" (click)="cancel()">CANCELAR</a>
+      </div>
+      <div class="col-md-6">
+        <a class="btn btn-primary btn-block" (click)="createNote()">AGREGAR</a>
+      </div>
+    </div>
+  </div>
+</div>
