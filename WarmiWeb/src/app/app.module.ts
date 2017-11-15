@@ -8,6 +8,10 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { DelitosComponent } from './delitos/delitos.component';
+import { DdhhComponent } from './ddhh/ddhh.component';
+import { InstitucionesComponent } from './instituciones/instituciones.component';
+import { DenunciasComponent } from './denuncias/denuncias.component';
 
 var config = {
     apiKey: "AIzaSyDUzOVcMFGzCHTiPhYs78q-YKCFV_rBAVk",
@@ -28,7 +32,7 @@ var config = {
     FormsModule
 
   ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

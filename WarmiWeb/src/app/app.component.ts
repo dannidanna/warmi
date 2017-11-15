@@ -15,13 +15,15 @@ export class AppComponent {
   }*/
 
   items: Observable<any[]>;
+  myNotes: Observable<any[]>;
   constructor(public db: AngularFireDatabase) {
     this.items = db.list('items').valueChanges();
+    this.myNotes = db.list('Notas');
   }
 
   /*myNotes : FirebaseListObservable<any[]>;
   constructor(public db: AngularFireDatabase) {
-    this.myNotes = db.list('/Notas');
+    this.myNotes = db.list('Notas');
 }
 	/*myNotes = [
     	{id:1, title:'note 1', description:'This is a note 1'},
@@ -44,7 +46,7 @@ export class AppComponent {
 
  	createNote(){ 		
  		this.note.id = Date.now();
- 		this.db.database.ref('/Notas' + this.note.id).set(this.note);
+ 		this.db.database.ref('/Notas' ).set(this.note);
  		/*if(this.editing){
  			var me = this;
  			this.myNotes.forEach(function(el, i){
