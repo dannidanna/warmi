@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -9,12 +9,26 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppComponent {
 
-	myNotes = [
+	/*items: Observable<any[]>;
+  constructor(db: AngularFirestore) {
+    this.items = db.collection('items').valueChanges();
+  }*/
+
+  items: Observable<any[]>;
+  constructor(public db: AngularFireDatabase) {
+    this.items = db.list('items').valueChanges();
+  }
+
+  /*myNotes : FirebaseListObservable<any[]>;
+  constructor(public db: AngularFireDatabase) {
+    this.myNotes = db.list('/Notas');
+}
+	/*myNotes = [
     	{id:1, title:'note 1', description:'This is a note 1'},
     	{id:2, title:'note 2', description:'This is a note 2'},
     	{id:3, title:'note 3', description:'This is a note 3'},
     	{id:4, title:'note 4', description:'This is a note 4'},
-    ];
+    ];*/
 
     note = {id:null, title:null, description:null};
 
@@ -28,9 +42,10 @@ export class AppComponent {
   	this.showForm = false;
  	 } 
 
- 	createNote(){
- 		if(this.editing){
- 			alert("Se esta editando la nota");
+ 	createNote(){ 		
+ 		this.note.id = Date.now();
+ 		this.db.database.ref('/Notas' + this.note.id).set(this.note);
+ 		/*if(this.editing){
  			var me = this;
  			this.myNotes.forEach(function(el, i){
  				if(el.id === me.note.id){
@@ -47,7 +62,7 @@ export class AppComponent {
  		this.showForm = false;
  		this.note = {id:null, title:null, description:null};
 
- 			}
+ 			}*/
  	}
 
  	viewNote(note){
@@ -56,10 +71,19 @@ export class AppComponent {
  		this.showForm = true;
  	}
 
-  items: Observable<any[]>;
-  constructor(db: AngularFirestore) {
-    this.items = db.collection('items').valueChanges();
-  }
+ 	/*delete(){
+ 		var me = this;
+ 		this.myNotes.forEach(function(el, i){
+ 				if(el === me.note){
+ 					me.myNotes.splice(i, 1);
+ 				}
+
+ 			});
+ 		this.showForm = false;
+ 		this.note = {id:null, title:null, description:null};
+ 	}*/
+
+  
 
 
 }

@@ -1,3 +1,9 @@
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.name}}
+  </li>
+</ul>
+
 <div class="row">
   <div class="col-md-4">
     <ul type="list-group">
@@ -17,10 +23,13 @@
     <textarea class="form-control" placeholder="CUERPO NOTA" [(ngModel)]="note.description"></textarea>
     <br>
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
+        <a class="btn btn-danger btn-block" *ngIf="editing" (click)="delete()">ELIMINAR</a>
+      </div>
+      <div class="col-md-4">
         <a class="btn btn-default btn-block" (click)="cancel()">CANCELAR</a>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <a class="btn btn-primary btn-block" (click)="createNote()">AGREGAR</a>
       </div>
     </div>

@@ -5,13 +5,5 @@
 
 
 export const environment = {
-  production: false,
-  firebase: {
-    apiKey: 'AIzaSyDUzOVcMFGzCHTiPhYs78q-YKCFV_rBAVk',
-    authDomain: 'warmi-6afeb.firebaseapp.com',
-    databaseURL: 'https://warmi-6afeb.firebaseio.com',
-    projectId: 'warmi-6afeb',
-    storageBucket: 'warmi-6afeb.appspot.com',
-    messagingSenderId: '878784051025'
-  }
+  production: false
 };
