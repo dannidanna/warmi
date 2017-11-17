@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//import { environment } from '../environments/environment';
 import { FormsModule} from "@angular/forms";
+
+//rutas
+import { app_routing } from "./app.routes";
+
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
@@ -12,6 +15,7 @@ import { DelitosComponent } from './delitos/delitos.component';
 import { DdhhComponent } from './ddhh/ddhh.component';
 import { InstitucionesComponent } from './instituciones/instituciones.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
+import { PrincipalComponent } from './principal/principal.component';
 
 var config = {
     apiKey: "AIzaSyDUzOVcMFGzCHTiPhYs78q-YKCFV_rBAVk",
@@ -29,10 +33,11 @@ var config = {
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    app_routing
 
   ],
-  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent ],
+  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

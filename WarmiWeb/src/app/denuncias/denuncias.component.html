@@ -1,3 +1,21 @@
-<p>
-  denuncias works!
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <ul type="list-group">
+    <li (click)="verDenuncia(n)" class="list-group-item" *ngFor="let n of denuncias  | async">
+    {{n.Nombre }} <br>{{n.Direccion }}  <br>{{n.Telefono}}
+    </li>
+    </ul>
+    <a class="btn btn-primary btn-block" (click)="nuevaInst()">NUEVA INSTITUCION</a>
+  </div>
+
+  <div class="col-md-5" *ngIf="mostrarForm">
+    <h1>NUEVA INSTITUCION</h1>
+    <input class="form-control" type="text" placeholder="NOMBRE INSTITUCION" [(ngModel)]="institucion.Nombre"/>
+    <br>
+    <textarea class="form-control" placeholder="DIRECCION" [(ngModel)]="institucion.Direccion"></textarea><br>
+    <textarea class="form-control" placeholder="TELEFONO" [(ngModel)]="institucion.Telefono"></textarea><br>
+    <textarea class="form-control" placeholder="SERVICIO" [(ngModel)]="institucion.Servicio"></textarea><br>
+    <textarea class="form-control" placeholder="PAGINA DE REFERENCIA" [(ngModel)]="institucion.PaginaReferencia"></textarea>
+    <br>
+  </div>
+</div>

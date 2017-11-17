@@ -1,37 +1,33 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.name}}
-  </li>
-</ul>
-
-<div class="row">
-  <div class="col-md-4">
-    <ul type="list-group">
-    <li (click)="viewNote(n)" class="list-group-item" *ngFor="let n of myNotes">
-    {{n.id }}. {{n.title }} 
-    <br>
-    {{n.description}}
-    </li>
-    </ul>
-    <a class="btn btn-primary btn-block" (click)="addNote()">NUEVA NOTA</a>
-  </div>
-
-  <div class="col-md-5" *ngIf="showForm">
-    <h1>NUEVA NOTA</h1>
-    <input class="form-control" type="text" placeholder="TITULO NOTA" [(ngModel)]="note.title"/>
-    <br>
-    <textarea class="form-control" placeholder="CUERPO NOTA" [(ngModel)]="note.description"></textarea>
-    <br>
-    <div class="row">
-      <div class="col-md-4">
-        <a class="btn btn-danger btn-block" *ngIf="editing" (click)="delete()">ELIMINAR</a>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-default btn-block" (click)="cancel()">CANCELAR</a>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-primary btn-block" (click)="createNote()">AGREGAR</a>
-      </div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">WARMI - WEB</a>
     </div>
-  </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a [routerLink]="['principal']">Principal <span class="sr-only">(current)</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['denuncias']">Denuncias</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['instituciones']">Instituciones</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['ddhh']">DDHH</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['delitos']">Actos que son delitos</a></li>
+        
+      </ul>
+      
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container main-container">
+  <router-outlet></router-outlet>
+  
 </div>

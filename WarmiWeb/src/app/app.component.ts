@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase} from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -15,10 +15,20 @@ export class AppComponent {
   }*/
 
   items: Observable<any[]>;
-  myNotes: Observable<any[]>;
+  myNotes: any;
   constructor(public db: AngularFireDatabase) {
     this.items = db.list('items').valueChanges();
-    this.myNotes = db.list('Notas');
+    this.myNotes = db.list('Notas').valueChanges();
+    
+    /*this.getNotes()
+        .subscribe(Notas =>
+          {this.myNotes = Notas;}     
+          );
+        }
+  
+
+  public getNotes(){
+    return this.db.list('Notas');*/
   }
 
   /*myNotes : FirebaseListObservable<any[]>;
@@ -46,7 +56,7 @@ export class AppComponent {
 
  	createNote(){ 		
  		this.note.id = Date.now();
- 		this.db.database.ref('/Notas' ).set(this.note);
+ 		this.db.database.ref('Notas/'+ this.note.id).set(this.note);
  		/*if(this.editing){
  			var me = this;
  			this.myNotes.forEach(function(el, i){
