@@ -19,6 +19,7 @@ export class DdhhComponent implements OnInit {
 
   constructor(public db: AngularFireDatabase) { 
     this.derecho = {
+      id:"",
       Articulo: "",
       Nombre: "",
       Descripcion: ""
@@ -39,22 +40,37 @@ export class DdhhComponent implements OnInit {
  	}
 
   guardarDerecho(){
-    this.derechos.push(this.derecho);
+    if(this.editando){
+      this.db.database.ref('DDHH/'+ this.derecho.id).set(this.derecho);
+
+    }else{
+     this.derecho.id = Date.now();
+     this.db.database.ref('DDHH/'+ this.derecho.id).set(this.derecho);
+
+    }
     this.derechos = {};
     this.derecho = {
+      id:"",
       Articulo: "",
       Nombre: "",
       Descripcion: ""
     }
   }
 
-  borrarInst(key:String){
+  borrarDerecho(){
     this.editando = true;
-    //this.db.database.ref([`/Instituciones/`, key]).remove();
+    this.db.database.ref('DDHH/'+ this.derecho.id).remove();
+    this.derecho = {
+      id:"",
+      Articulo: "",
+      Nombre: "",
+      Descripcion: ""
+    }
   }
 
   cancel(){
     this.derecho = {
+      id:"",
       Articulo: "",
       Nombre: "",
       Descripcion: ""

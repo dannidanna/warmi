@@ -3,10 +3,9 @@
   <div class="col-md-4">
     <h3 class="text-center">INSTITUCIONES EN CBBA.</h3>
     <ul type="list-group">
-
     <li (click)="verInst(n)" class="list-group-item" *ngFor="let n of inst  | async">
-    {{n.Nombre }} <br>{{n.Direccion }}  <br>{{n.Telefono}}
-    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+    {{n.Nombre }} <br>{{n.Direccion }}  <br>{{n.Telefono}} <br>{{n.Servicio}} <br>{{n.PaginaReferencia}}
+   
     </li>
     </ul>
   </div>

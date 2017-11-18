@@ -19,6 +19,7 @@ export class DelitosComponent implements OnInit {
 
   constructor(public db: AngularFireDatabase) { 
     this.delito = {
+      id:"",
       Articulo: "",
       Nombre: "",
       Descripcion: ""
@@ -39,22 +40,30 @@ export class DelitosComponent implements OnInit {
  	}
 
   guardarDelito(){
-    this.delitos.push(this.delito);
+    if(this.editando){      
+     this.db.database.ref('Delitos/'+ this.delito.id).set(this.delito);
+    }else{
+     this.delito.id = Date.now();
+     this.db.database.ref('Delitos/'+ this.delito.id).set(this.delito);
+    }
+
     this.delitos = {};
     this.delito = {
+      id:"",
       Articulo: "",
       Nombre: "",
       Descripcion: ""
     }
   }
 
-  borrarInst(key:String){
+  borrarDelito(){
     this.editando = true;
-    //this.db.database.ref([`/Instituciones/`, key]).remove();
+    this.db.database.ref('Delitos/'+ this.delito.id).remove();
   }
 
   cancel(){
     this.delito = {
+      id:"",
       Articulo: "",
       Nombre: "",
       Descripcion: ""

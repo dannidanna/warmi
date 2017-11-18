@@ -16,6 +16,7 @@ import { DdhhComponent } from './ddhh/ddhh.component';
 import { InstitucionesComponent } from './instituciones/instituciones.component';
 import { DenunciasComponent } from './denuncias/denuncias.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { RegistroComponent } from './registro/registro.component';
 
 var config = {
     apiKey: "AIzaSyDUzOVcMFGzCHTiPhYs78q-YKCFV_rBAVk",
@@ -37,7 +38,7 @@ var config = {
     app_routing
 
   ],
-  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent ],
+  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent, RegistroComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {}

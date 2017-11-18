@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <ul type="list-group">
     <li (click)="verDenuncia(n)" class="list-group-item" *ngFor="let n of denuncias  | async">
-    {{n.Nombre }} <br>{{n.localizacion }}  <br>{{n.descripcion}}
+    {{n.Nombre }} <br>{{n.nombreVictima }}  <br>{{n.descripcion}}
     </li>
     </ul>
     <a class="btn btn-primary btn-block" (click)="nuevaInst()">NUEVA INSTITUCION</a>

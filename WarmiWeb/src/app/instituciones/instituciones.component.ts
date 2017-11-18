@@ -21,6 +21,7 @@ export class InstitucionesComponent implements OnInit {
 
   constructor(public db: AngularFireDatabase) { 
     this.institucion = {
+      id:"",
       Nombre: "",
       Direccion: "",
       Telefono: "",
@@ -43,10 +44,18 @@ export class InstitucionesComponent implements OnInit {
  	}
 
   guardarInst(){
-    this.instituciones.push(this.institucion);
+    if(this.editando){        
+     this.db.database.ref('Instituciones/'+ this.institucion.id).set(this.institucion);
+
+    }else{
+
+     this.institucion.id = Date.now();
+     this.db.database.ref('Instituciones/'+ this.institucion.id).set(this.institucion);
+
+    }
     this.instituciones = {};
-    this.mostrarForm = false;
     this.institucion = {
+      id:"",
       Nombre: "",
       Direccion: "",
       Telefono: "",
@@ -55,13 +64,22 @@ export class InstitucionesComponent implements OnInit {
     }
   }
 
-  borrarInst(key:String){
+  borrarInst(){
     this.editando = true;
-    //this.db.database.ref([`/Instituciones/`, key]).remove();
+    this.db.database.ref('Instituciones/'+ this.institucion.id).remove();
+    this.institucion = {
+      id:"",
+      Nombre: "",
+      Direccion: "",
+      Telefono: "",
+      Servicio: "",
+      PaginaReferencia: ""
+    }
   }
 
   cancel(){
     this.institucion = {
+      id:"",
       Nombre: "",
       Direccion: "",
       Telefono: "",

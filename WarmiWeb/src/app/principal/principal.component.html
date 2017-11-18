@@ -1,3 +1,23 @@
-<p>
-  principal works!
-</p>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-4">
+  	<br>
+  	<button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/denuncias"> 	DENUNCIAS</button>
+	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/registro">REGISTRO</button>
+	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/instituciones">INSTITUCIONES</button>
+	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/ddhh">DDHH</button>
+	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/delitos">ACTOS QUE SON DELITOS</button>
+    
+  </div>
+
+  <div class="col-md-5">
+    <h1 class="text-center">INICIAR SESION</h1>
+    <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="institucion.Nombre"/>
+    <br>
+    <input class="form-control" type="text" placeholder="CONTRASEÑA" [(ngModel)]="institucion.Nombre"/>
+    <br>
+    
+    <a class="btn btn-primary btn-block" (click)="guardarInst()">INGRESAR</a>
+    
+  </div>
+</div>

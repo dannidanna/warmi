@@ -27,7 +27,7 @@ export class DenunciasComponent implements OnInit {
       descripcion: "",
       urlDescarga:""
     };
-    this.denuncias = db.list('/Usuarios//').valueChanges();
+    this.denuncias = this.db.list('Usuarios/').valueChanges();
   }
 
   verDenuncia(denuncia){
