@@ -1,15 +1,18 @@
+<div class="container-fluid">
 <div class="row">
   <div class="col-md-4">
+    <h3 class="text-center">INSTITUCIONES EN CBBA.</h3>
     <ul type="list-group">
+
     <li (click)="verInst(n)" class="list-group-item" *ngFor="let n of inst  | async">
     {{n.Nombre }} <br>{{n.Direccion }}  <br>{{n.Telefono}}
+    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
     </li>
     </ul>
-    <a class="btn btn-primary btn-block" (click)="nuevaInst()">NUEVA INSTITUCION</a>
   </div>
 
-  <div class="col-md-5" *ngIf="mostrarForm">
-    <h1>NUEVA INSTITUCION</h1>
+  <div class="col-md-5">
+    <h1 class="text-center">NUEVA INSTITUCION</h1>
     <input class="form-control" type="text" placeholder="NOMBRE INSTITUCION" [(ngModel)]="institucion.Nombre"/>
     <br>
     <textarea class="form-control" placeholder="DIRECCION" [(ngModel)]="institucion.Direccion"></textarea><br>
@@ -19,7 +22,7 @@
     <br>
     <div class="row">
       <div class="col-md-4">
-        <a class="btn btn-danger btn-block" *ngIf="editing" (click)="delete()">ELIMINAR</a>
+        <a class="btn btn-danger btn-block" *ngIf="editando" (click)="borrarInst()">ELIMINAR</a>
       </div>
       <div class="col-md-4">
         <a class="btn btn-default btn-block" (click)="cancel()">CANCELAR</a>
@@ -28,5 +31,6 @@
         <a class="btn btn-primary btn-block" (click)="guardarInst()">AGREGAR</a>
       </div>
     </div>
+    
   </div>
 </div>

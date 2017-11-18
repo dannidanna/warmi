@@ -18,13 +18,16 @@ export class DenunciasComponent implements OnInit {
 
   constructor(public db: AngularFireDatabase) { 
   	this.denuncia = {
-      Nombre: "",
-      Direccion: "",
-      Telefono: "",
-      Servicio: "",
-      PaginaReferencia: ""
+      nombreVictima: "",
+      numeroVictima: "",
+      nombreAgresor: "",
+      relacion: "",
+      fecha: "",
+      localizacion: "",
+      descripcion: "",
+      urlDescarga:""
     };
-    this.denuncias = db.list('./Denuncias/').valueChanges();
+    this.denuncias = db.list('/Usuarios//').valueChanges();
   }
 
   verDenuncia(denuncia){

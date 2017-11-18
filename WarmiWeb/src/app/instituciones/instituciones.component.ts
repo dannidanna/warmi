@@ -30,7 +30,6 @@ export class InstitucionesComponent implements OnInit {
 
     this.instituciones = this.db.list(`/Instituciones/`);
     this.inst = db.list(`Instituciones`).valueChanges();
-    //this.instituciones = db.list('/Instituciones/').valueChanges();
   }
 
   nuevaInst(){
@@ -46,7 +45,31 @@ export class InstitucionesComponent implements OnInit {
   guardarInst(){
     this.instituciones.push(this.institucion);
     this.instituciones = {};
+    this.mostrarForm = false;
+    this.institucion = {
+      Nombre: "",
+      Direccion: "",
+      Telefono: "",
+      Servicio: "",
+      PaginaReferencia: ""
+    }
   }
+
+  borrarInst(key:String){
+    this.editando = true;
+    //this.db.database.ref([`/Instituciones/`, key]).remove();
+  }
+
+  cancel(){
+    this.institucion = {
+      Nombre: "",
+      Direccion: "",
+      Telefono: "",
+      Servicio: "",
+      PaginaReferencia: ""
+    }
+    this.editando = false;
+    }
 
   ngOnInit() {
   }
