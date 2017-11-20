@@ -7,6 +7,8 @@ import {DdhhComponent} from "./ddhh/ddhh.component";
 import {DenunciasComponent} from "./denuncias/denuncias.component";
 import {InstitucionesComponent} from "./instituciones/instituciones.component";
 
+import {AppComponent} from "./app.component";
+
 
 const app_routes: Routes = [
 	{ path: 'principal', component: PrincipalComponent},
@@ -15,6 +17,8 @@ const app_routes: Routes = [
 	{ path: 'instituciones', component: InstitucionesComponent},
 	{ path: 'ddhh', component: DdhhComponent},
 	{ path: 'delitos', component: DelitosComponent},
+
+	{ path: 'home', component: AppComponent},
 	{ path: '**', pathMatch: 'full', redirectTo:'principal'}
 ];
 

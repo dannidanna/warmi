@@ -18,6 +18,8 @@ import { DenunciasComponent } from './denuncias/denuncias.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { RegistroComponent } from './registro/registro.component';
 
+
+import { AuthService } from './auth.service';
 var config = {
     apiKey: "AIzaSyDUzOVcMFGzCHTiPhYs78q-YKCFV_rBAVk",
     authDomain: "warmi-6afeb.firebaseapp.com",
@@ -37,7 +39,8 @@ var config = {
     FormsModule,
     app_routing
 
-  ],
+  ],  
+  providers: [AuthService],
   declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent, RegistroComponent ],
   bootstrap: [ AppComponent ]
 })

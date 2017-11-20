@@ -5,24 +5,33 @@
 
   <div class="col-md-6">
     <h1 class="text-center">REGISTRO</h1>
-    <input class="form-control" type="text" placeholder="NOMBRE INSTITUCION" [(ngModel)]="institucion.Nombre"/>
+    <input class="form-control" type="text" placeholder="NOMBRE INSTITUCION" [(ngModel)]="usuario.Nombre"/>
     <br>
-    <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="institucion.Nombre"/>
+    <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="usuario.Correo"/>
     <br>
-    <input class="form-control" type="text" placeholder="CONTRASEÑA" [(ngModel)]="institucion.Nombre"/>
+    <input class="form-control" type="password" placeholder="CONTRASEÑA"/>
     <br>
-    <input class="form-control" type="text" placeholder="TIPO DE USUARIO" [(ngModel)]="institucion.Nombre"/>
+    <select class="form-control" placeholder="TIPO DE USUARIO" >
+      <option>TIPO DE USUARIO</option>
+      <option [(ngModel)]="usuario.Rol">Administrador</option>
+      <option><input class="form-control" type="text" [(ngModel)]="usuario.Correo"/>Administrador</option>
+    </select>
+
+
     <br>
     <div class="row">
       <div class="col-md-6">
         <a class="btn btn-default btn-block" href="/principal" >CANCELAR</a>
       </div>
       <div class="col-md-6">
-        <a class="btn btn-primary btn-block" (click)="borrarInst()">REGISTRAR</a>
+        <a class="btn btn-primary btn-block" (click)="guardarUsuario()">REGISTRAR</a>
       </div>
     </div>
   </div>
 
+
   <div class="col-md-3">
   </div>
 </div>
+
+

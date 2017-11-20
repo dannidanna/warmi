@@ -10,14 +10,33 @@
     
   </div>
 
-  <div class="col-md-5">
-    <h1 class="text-center">INICIAR SESION</h1>
-    <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="institucion.Nombre"/>
+  <div class="col-md-5" >
+  	<div *ngIf="!(authService.user | async)">
+  		<h1 class="text-center">INICIAR SESION</h1>
+    <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="email"/>
     <br>
-    <input class="form-control" type="text" placeholder="CONTRASEÑA" [(ngModel)]="institucion.Nombre"/>
+    <input class="form-control" type="password" placeholder="CONTRASEÑA" [(ngModel)]="password"/>
     <br>
     
-    <a class="btn btn-primary btn-block" (click)="guardarInst()">INGRESAR</a>
+    <a class="btn btn-primary btn-block" (click)="login()">INGRESAR</a>
+  		
+  	</div>
+  	<br>
+  	<br>
+  	<div class="panel panel-default" *ngIf="(authService.user | async)">
+
+  		<div class="panel-heading text-center">BIENVENIDO!!!</div>
+
+    <h3 class="text-center" *ngIf="authService.user | async">{{ (authService.user | async)?.email }}!</h3>
+    <div class="row">
+    	<div class="col-md-3"></div>
+    	<div class="col-md-6">    		
+        <a class="btn btn-default btn-block" (click)="logout()">CERRAR SESION</a>
+    	</div>
+    	<div class="col-md-3"></div>
+    </div>
+  	</div>
+    
     
   </div>
 </div>

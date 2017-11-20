@@ -23,6 +23,9 @@
         <li routerLinkActive="active"><a [routerLink]="['delitos']">Actos que son delitos</a></li>
         
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a (click)="logout()" *ngIf="authService.user | async">CERRAR SESION</a></li>
+      </ul>
       
      
     </div><!-- /.navbar-collapse -->
