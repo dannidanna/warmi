@@ -15,10 +15,13 @@ export class PrincipalComponent implements OnInit {
 	email: string;
   password: string;
 
-  constructor(public authService: AuthService) {}
+  user : "";
+
+  constructor(public authService: AuthService) {
+  }
 
   signup() {
-    this.authService.signup(this.email, this.password);
+    this.authService.signup(this.email, this.password, "");
     this.email = this.password = '';
   }
 

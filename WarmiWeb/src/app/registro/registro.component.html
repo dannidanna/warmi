@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-3">    
@@ -5,26 +6,27 @@
 
   <div class="col-md-6">
     <h1 class="text-center">REGISTRO</h1>
-    <input class="form-control" type="text" placeholder="NOMBRE INSTITUCION" [(ngModel)]="usuario.Nombre"/>
+    
+    <div>
+    <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="email"/>
     <br>
-    <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="usuario.Correo"/>
+    <input name="contra" class="form-control"  type="password" placeholder="CONTRASEÑA" [(ngModel)]="password"/>
     <br>
-    <input class="form-control" type="password" placeholder="CONTRASEÑA"/>
+    <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="usuario.Nombre"/>
     <br>
-    <select class="form-control" placeholder="TIPO DE USUARIO" >
-      <option>TIPO DE USUARIO</option>
-      <option [(ngModel)]="usuario.Rol">Administrador</option>
-      <option><input class="form-control" type="text" [(ngModel)]="usuario.Correo"/>Administrador</option>
-    </select>
-
-
+    <input class="form-control" type="text" placeholder="Rol" [(ngModel)]="usuario.Rol"/>
     <br>
+  </div>
+  <div>
+    
+  </div>
+    
     <div class="row">
       <div class="col-md-6">
         <a class="btn btn-default btn-block" href="/principal" >CANCELAR</a>
       </div>
       <div class="col-md-6">
-        <a class="btn btn-primary btn-block" (click)="guardarUsuario()">REGISTRAR</a>
+        <a class="btn btn-primary btn-block" (click)="signup()">REGISTRAR</a>
       </div>
     </div>
   </div>
