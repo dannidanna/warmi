@@ -42,6 +42,12 @@ export class DelitosComponent implements OnInit {
   guardarDelito(){
     if(this.editando){      
      this.db.database.ref('Delitos/'+ this.delito.id).set(this.delito);
+     this.delito = {
+      id:"",
+      Articulo: "",
+      Nombre: "",
+      Descripcion: ""
+    }
     }else{
      this.delito.id = Date.now();
      this.db.database.ref('Delitos/'+ this.delito.id).set(this.delito);

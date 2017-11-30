@@ -36,7 +36,7 @@ export class AuthService {
       this.usuario = us;
       console.log('NOMBRE ',this.usuario.Nombre);
       firebase.auth().onAuthStateChanged((user) => {
-      if (this.user) { 
+      if (user) { 
         this.db.database.ref('Usuarios/'+ user.uid).set(this.usuario); 
 
       }      
