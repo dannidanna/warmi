@@ -10,6 +10,8 @@ export class AuthService {
 
     user: Observable<firebase.User>;    
   usuario: any= {};
+  u:any={};
+
 
   private userDetails: firebase.User = null;
 
@@ -33,14 +35,14 @@ export class AuthService {
       .catch(err => {
         console.log('Something went wrong:',err.message);
       });
-      this.usuario = us;
+      /*this.usuario = us;
       console.log('NOMBRE ',this.usuario.Nombre);
       firebase.auth().onAuthStateChanged((user) => {
       if (user) { 
         this.db.database.ref('Usuarios/'+ user.uid).set(this.usuario); 
 
       }      
-});
+});*/
 
   }
 
@@ -60,6 +62,28 @@ export class AuthService {
     this.firebaseAuth
       .auth
       .signOut();
+  }
+
+  registro(email: string, nombre: string, rol: string){
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) { 
+        console.log('HAY USUARIO con el email 1',user.displayName);
+        //this.db.database.ref('Usuarios/'+ user.uid).set(this.usuario); 
+        if(user.email=== email){
+            console.log('HAY USUARIO con el email2 ',user.email);
+            /*this.usuario.Nombre = nombre;
+            this.usuario.Rol= rol;
+            this.usuario.Correo = email;*/
+            this.u = {
+              Nombre: nombre,
+              Correo: email,
+              Rol: rol
+              }
+            this.db.database.ref('Usuarios/'+ user.uid).set(this.u);
+        }
+      //console.log('uid usuariossss ',user.uid);
+      }      
+});
   }
 
 }

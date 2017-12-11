@@ -36,9 +36,9 @@ export class RegistroComponent implements OnInit {
 
   signup() {
     this.usuario.Correo = this.email;
-    console.log('EMAIL',this.usuario.Correo);
     this.authService.signup(this.email, this.password, this.usuario);
-    //console.log( 'ID REGISTRO',this.authService.getUid());
+    console.log( 'NOMBRE USUARIO',this.usuario.Nombre);
+    this.authService.registro(this.email, this.usuario.Nombre, this.usuario.Rol);
     this.email = this.password = this.usuario.Nombre=this.usuario.Correo=this.usuario.Rol='';   
     
   }

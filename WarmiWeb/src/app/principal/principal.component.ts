@@ -1,8 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
 import { AngularFireDatabase} from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
-
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -14,10 +12,12 @@ import { AuthService } from '../auth.service';
 export class PrincipalComponent implements OnInit {
 	email: string;
   password: string;
-
   user : "";
+  users: any;
 
-  constructor(public authService: AuthService) {
+
+  constructor(public authService: AuthService, public db: AngularFireDatabase) {
+    this.users = this.db.list(`Usuarios/`);
   }
 
   signup() {
@@ -26,6 +26,7 @@ export class PrincipalComponent implements OnInit {
   }
 
   login() {
+
     this.authService.login(this.email, this.password);
     this.email = this.password = '';    
   }
