@@ -1,21 +1,34 @@
 <div class="row">
   <div class="col-md-4">
     <ul type="list-group">
-    <li (click)="verDenuncia(n)" class="list-group-item" *ngFor="let n of denuncias  | async">
-    {{n.Nombre }} <br>{{n.nombreVictima }}  <br>{{n.descripcion}}
+    <li (click)="verDenuncia(n)" class="list-group-item" *ngFor="let n of usuariosAll | async">
+    {{n.fecha }} <br>{{n.descrip}} <br> {{n.Denuncias | json}} <br> {{n.Rol}}
+    
+    <a class="btn btn-primary btn-block" (click)="descargarDenuncia(n)">DESCARGAR DENUNCIA</a>
     </li>
+
+
     </ul>
-    <a class="btn btn-primary btn-block" (click)="nuevaInst()">NUEVA INSTITUCION</a>
+    <a class="btn btn-primary btn-block" (click)="descargarDenuncia()">DESCARGAR DENUNCIA</a>
   </div>
 
   <div class="col-md-5" *ngIf="mostrarForm">
-    <h1>NUEVA INSTITUCION</h1>
-    <input class="form-control" type="text" placeholder="NOMBRE INSTITUCION" [(ngModel)]="institucion.Nombre"/>
-    <br>
-    <textarea class="form-control" placeholder="DIRECCION" [(ngModel)]="institucion.Direccion"></textarea><br>
-    <textarea class="form-control" placeholder="TELEFONO" [(ngModel)]="institucion.Telefono"></textarea><br>
-    <textarea class="form-control" placeholder="SERVICIO" [(ngModel)]="institucion.Servicio"></textarea><br>
+    <h1>DENUNCIA</h1>
+    <textarea class="form-control" disabled placeholder="DIRECCION" [(ngModel)]="denuncia.fecha"></textarea><br>
+    <textarea class="form-control" disabled placeholder="TELEFONO" [(ngModel)]="denuncia.descrip"></textarea><br>
+    <textarea class="form-control" placeholder="SERVICIO" [(ngModel)]="denuncia.nomVic"></textarea><br>
     <textarea class="form-control" placeholder="PAGINA DE REFERENCIA" [(ngModel)]="institucion.PaginaReferencia"></textarea>
     <br>
+
+    <select multiple class="form-control">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
   </div>
+
 </div>
+
+

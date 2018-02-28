@@ -51,6 +51,7 @@ import java.util.List;
 import java.util.Locale;
 
 import app.warmi.rodriguez.danny.warmi.Objects.Denuncia;
+import app.warmi.rodriguez.danny.warmi.Objects.Denuncias;
 import app.warmi.rodriguez.danny.warmi.Objects.LocalizacionClass;
 
 public class DenunciaActivity extends AppCompatActivity implements View.OnClickListener {
@@ -66,6 +67,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     private static final int CAMARA_REQ = 1;
     private static final int GALERIA_INT = 1;
     private DatabaseReference bdReferencia;
+    private DatabaseReference bdReferenciaUsuarios;
     private StorageReference storageReference;
     private String latitud;
     private String longitud;
@@ -75,6 +77,8 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseAuth autentificacion;
     private FirebaseAuth.AuthStateListener autenLis;
     private ProgressDialog miDialogo;
+
+    private Denuncias denuncias;
 
     @Override
     protected void onStart(){
@@ -293,6 +297,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         String fechaDen  = (String) DateFormat.format("MMMM d, yyyy ", d.getTime());
 
         bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+        bdReferenciaUsuarios = FirebaseDatabase.getInstance().getReference().child("DenunciasAll");
         final DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid()).child("Denuncias");
 
         LocalizacionClass localizacionObj = new LocalizacionClass(latitud, longitud, direccion);
@@ -300,7 +305,10 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         if(!descripcionDen.isEmpty() && !rel.isEmpty()) {
             Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, dire, urlImagenD);
             currentUserDB.push().setValue(denuncia);
-
+           // denuncias = new Denuncias(denuncia,"Danny","75929244");
+            denuncias = new Denuncias(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, dire,
+                    urlImagenD,"Danny","345");
+            bdReferenciaUsuarios.push().setValue(denuncias);
             Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);
             startActivity(intent);

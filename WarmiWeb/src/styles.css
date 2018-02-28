@@ -1,3 +1,11 @@
 .main-container{
 	margin-top: 50px;
 	}
+
+.body {
+	background: #02AAB0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(left, #00CDAC, #02AAB0);
+    background: -moz-linear-gradient(left, #00CDAC, #02AAB0);
+    background: -o-linear-gradient(left, #00CDAC, #02AAB0);
+    background: linear-gradient(to right, rgb(216, 221, 226), rgb(173, 213, 240));
+}

@@ -18,6 +18,9 @@ import { DenunciasComponent } from './denuncias/denuncias.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { RegistroComponent } from './registro/registro.component';
 
+import { AngularFireDatabase } from 'angularfire2/database';
+
+
 
 import { AuthService } from './auth.service';
 var config = {
@@ -40,8 +43,8 @@ var config = {
     app_routing
 
   ],  
-  providers: [AuthService],
+  providers: [AuthService, AngularFireDatabase],
   declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent, RegistroComponent ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent]
 })
 export class AppModule {}

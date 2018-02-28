@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
 import { AngularFireDatabase} from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../auth.service';
 
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Console } from '@angular/core/src/console';
 
 
 @Component({
@@ -13,6 +13,8 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
   styleUrls: ['./registro.component.css'],
   encapsulation: ViewEncapsulation.None
 })
+
+
 export class RegistroComponent implements OnInit {
 
   email: string;
@@ -51,6 +53,19 @@ export class RegistroComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+  }
+
+  roles(num){
+    if(num == "1"){
+      this.usuario.Rol = "Administrador 1";
+    }else{
+      if(num == "2"){
+        this.usuario.Rol = "Administrador 2";
+      }else 
+      this.usuario.Rol = "Administrador 3";
+    }
+    
+    console.log(this.usuario.Rol);
   }
 
 }

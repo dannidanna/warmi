@@ -13,9 +13,16 @@
     <input name="contra" class="form-control"  type="password" placeholder="CONTRASEÑA" [(ngModel)]="password"/>
     <br>
     <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="usuario.Nombre"/>
+    
     <br>
-    <input class="form-control" type="text" placeholder="Rol" [(ngModel)]="usuario.Rol"/>
-    <br>
+      <label for="rol" class="back">ROL DEL ADMINISTRADOR:</label><br>
+      <div class="btn-group" role="group" aria-label="..." id="rol" >
+        <button type="button" class="btn btn-default" (click)="roles(1)">ADMINISTRADOR 1</button>
+        <button type="button" class="btn btn-default" (click)="roles(2)">ADMINISTRADOR 2</button>
+        <button type="button" class="btn btn-default" (click)="roles(3)">ADMINISTRADOR 3</button>
+      </div>
+      <br>
+      <br>
   </div>
   <div>
     
@@ -35,5 +42,3 @@
   <div class="col-md-3">
   </div>
 </div>
-
-
