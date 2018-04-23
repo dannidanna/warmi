@@ -1,34 +1,58 @@
 <div class="row">
   <div class="col-md-4">
-    <ul type="list-group">
+      <h3 class="text-center">DENUNCIAS</h3>
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Buscar denuncias por fecha"/>
+          
+        </div>
+        <button class="btn btn-default" (click)="buscar()">Buscar</button>
+      </form>
+      <br>
+      <br>
+      <br>
+      <ul type="list-group" *ngIf="!buscando">
+        <li (click)="verDenuncia(n)" class="list-group-item" *ngFor="let n of usuariosAll | async">
+        {{n.fecha }} <br>{{n.descrip}} <br>   
+        <br>
+        </li>
+        </ul> 
+    <ul type="list-group" *ngIf="buscando">
     <li (click)="verDenuncia(n)" class="list-group-item" *ngFor="let n of usuariosAll | async">
-    {{n.fecha }} <br>{{n.descrip}} <br> {{n.Denuncias | json}} <br> {{n.Rol}}
-    
-    <a class="btn btn-primary btn-block" (click)="descargarDenuncia(n)">DESCARGAR DENUNCIA</a>
-    </li>
-
-
-    </ul>
-    <a class="btn btn-primary btn-block" (click)="descargarDenuncia()">DESCARGAR DENUNCIA</a>
-  </div>
-
-  <div class="col-md-5" *ngIf="mostrarForm">
-    <h1>DENUNCIA</h1>
-    <textarea class="form-control" disabled placeholder="DIRECCION" [(ngModel)]="denuncia.fecha"></textarea><br>
-    <textarea class="form-control" disabled placeholder="TELEFONO" [(ngModel)]="denuncia.descrip"></textarea><br>
-    <textarea class="form-control" placeholder="SERVICIO" [(ngModel)]="denuncia.nomVic"></textarea><br>
-    <textarea class="form-control" placeholder="PAGINA DE REFERENCIA" [(ngModel)]="institucion.PaginaReferencia"></textarea>
+    {{n.fecha }} <br>{{n.descrip}} <br>   
     <br>
-
-    <select multiple class="form-control">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
+    </li>
+    </ul>    
   </div>
 
+  <div class="col-md-5" *ngIf="mostrarForm" id="content">
+      <h3 class="text-center">DENUNCIA: </h3>
+      <div class="panel panel-default">    
+    <h6> &nbsp; &nbsp; &nbsp; FECHA DENUNCIA:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.fecha}}</label>
+    <h6> &nbsp; &nbsp; &nbsp; DESCRIPCION DENUNCIA:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.descrip}}</label>
+    <h6> &nbsp; &nbsp; &nbsp; NOMBRE VICTIMA:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.nomVic}}</label>
+    <h6> &nbsp; &nbsp; &nbsp; TELEFONO VICTIMA:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.numVic}}</label>
+    <h6> &nbsp; &nbsp; &nbsp; NOMBRE AGRESOR:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.nomAgre}}</label>
+    <h6> &nbsp; &nbsp; &nbsp; NOMBRE DENUNCIANTE:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.nombreUsuario}}</label>
+    <h6> &nbsp; &nbsp; &nbsp; RELACION VICTIMA - DENUNCIANTE:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.relacion}}</label>
+    <h6> &nbsp; &nbsp; &nbsp; NUMERO USUARIO:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.numeroUsuario}}</label>
+    <h6> &nbsp; &nbsp; &nbsp; IMAGEN ADJUNTA A LA DENUNCIA:</h6>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src= {{denuncia.url}} id="img" alt="IMAGEN DENUNCIA" width="150" height="150">
+      <br>
+      <br>      
+  </div>
+      <button class="btn btn-primary btn-block" id="export" (click)="descargarDenuncia(n)">DESCARGAR DENUNCIA</button>
+      <br>
+      <br>  
+    </div>
 </div>
 
 
