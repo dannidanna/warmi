@@ -21,7 +21,8 @@ import com.squareup.picasso.Picasso;
 import app.warmi.rodriguez.danny.warmi.Objects.Denuncia;
 
 
-public class HistorialActivity extends AppCompatActivity {
+public class
+HistorialActivity extends AppCompatActivity {
 
     private FirebaseAuth autentificacion;
     private FirebaseAuth.AuthStateListener autenLis;

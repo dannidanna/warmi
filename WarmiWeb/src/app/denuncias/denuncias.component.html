@@ -3,8 +3,7 @@
       <h3 class="text-center">DENUNCIAS</h3>
       <form class="navbar-form navbar-right">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Buscar denuncias por fecha"/>
-          
+          <input type="text" class="form-control" placeholder="Buscar denuncias por fecha" [(ngModel)]="fechaDenuncia.fechaDen" name="fechaDenunciasNew"/>
         </div>
         <button class="btn btn-default" (click)="buscar()">Buscar</button>
       </form>
@@ -12,12 +11,13 @@
       <br>
       <br>
       <ul type="list-group" *ngIf="!buscando">
-        <li (click)="verDenuncia(n)" class="list-group-item" *ngFor="let n of usuariosAll | async">
-        {{n.fecha }} <br>{{n.descrip}} <br>   
+        <li (click)="verDenunciaFecha(user)" class="list-group-item" *ngFor="let user of usuariosFecha">
+                   {{user.fecha}} <br>{{user.descrip}}<br>
+       
         <br>
         </li>
         </ul> 
-    <ul type="list-group" *ngIf="buscando">
+    <ul type="list-group">
     <li (click)="verDenuncia(n)" class="list-group-item" *ngFor="let n of usuariosAll | async">
     {{n.fecha }} <br>{{n.descrip}} <br>   
     <br>
@@ -26,32 +26,40 @@
   </div>
 
   <div class="col-md-5" *ngIf="mostrarForm" id="content">
-      <h3 class="text-center">DENUNCIA: </h3>
-      <div class="panel panel-default">    
-    <h6> &nbsp; &nbsp; &nbsp; FECHA DENUNCIA:</h6>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.fecha}}</label>
-    <h6> &nbsp; &nbsp; &nbsp; DESCRIPCION DENUNCIA:</h6>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.descrip}}</label>
-    <h6> &nbsp; &nbsp; &nbsp; NOMBRE VICTIMA:</h6>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.nomVic}}</label>
-    <h6> &nbsp; &nbsp; &nbsp; TELEFONO VICTIMA:</h6>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.numVic}}</label>
-    <h6> &nbsp; &nbsp; &nbsp; NOMBRE AGRESOR:</h6>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.nomAgre}}</label>
-    <h6> &nbsp; &nbsp; &nbsp; NOMBRE DENUNCIANTE:</h6>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.nombreUsuario}}</label>
-    <h6> &nbsp; &nbsp; &nbsp; RELACION VICTIMA - DENUNCIANTE:</h6>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.relacion}}</label>
-    <h6> &nbsp; &nbsp; &nbsp; NUMERO USUARIO:</h6>
-    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="exampleInputEmail1" >{{denuncia.numeroUsuario}}</label>
-    <h6> &nbsp; &nbsp; &nbsp; IMAGEN ADJUNTA A LA DENUNCIA:</h6>
+      <h3 class="text-center">DENUNCIA:</h3>
+      <div class="panel panel-default"> 
+    <h5>&nbsp; &nbsp; &nbsp;FECHA DENUNCIA:</h5>
+    <h5>&nbsp; &nbsp; &nbsp;{{denuncia.fecha}}</h5>
+    <h5>&nbsp; &nbsp; &nbsp;DESCRIPCION DENUNCIA:</h5>
+    <h5>&nbsp; &nbsp; &nbsp;{{denuncia.descrip}}</h5>
+    <h5>&nbsp; &nbsp; &nbsp;NOMBRE VICTIMA:</h5>
+    <h5>&nbsp; &nbsp; &nbsp;{{denuncia.nomVic}}</h5>
+    <h5>&nbsp; &nbsp; &nbsp;TELEFONO VICTIMA:</h5>
+    <h5>&nbsp; &nbsp; &nbsp;{{denuncia.numVic}}</h5>
+    <h5>&nbsp; &nbsp; &nbsp;NOMBRE AGRESOR:</h5>
+    <h5>&nbsp; &nbsp; &nbsp;{{denuncia.nomAgre}}</h5>
+    <h5>&nbsp; &nbsp; &nbsp;NOMBRE DENUNCIANTE:</h5>
+    <h5>&nbsp; &nbsp; &nbsp;{{denuncia.nombreUsuario}}</h5>
+    <h5>&nbsp; &nbsp; &nbsp;RELACION VICTIMA - DENUNCIANTE:</h5>
+    <h5>&nbsp; &nbsp; &nbsp;{{denuncia.relacion}}</h5> 
+    <h5>&nbsp; &nbsp; &nbsp;NUMERO USUARIO:</h5>
+    <h5>&nbsp; &nbsp; &nbsp;{{denuncia.numeroUsuario}}</h5>
+    <h5>&nbsp; &nbsp; &nbsp;IMAGEN ADJUNTA A LA DENUNCIA:</h5> <br>
     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src= {{denuncia.url}} id="img" alt="IMAGEN DENUNCIA" width="150" height="150">
-      <br>
-      <br>      
+    <br>
+    <br>      
   </div>
-      <button class="btn btn-primary btn-block" id="export" (click)="descargarDenuncia(n)">DESCARGAR DENUNCIA</button>
-      <br>
-      <br>  
+  <div class="row">
+    <div class="col-md-6">
+      <a href={{denuncia.url}} download="Acme Documentation (ver. 2.0.1).txt">
+      <button class="btn btn-default btn-block" id="export" >DESCARGAR IMAGEN</button>
+      </a>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-primary btn-block" id="export" (click)="descargarDenuncia()">DESCARGAR DENUNCIA</button>
+    </div>
+  </div>
+  <br>
     </div>
 </div>
 

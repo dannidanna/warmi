@@ -13,6 +13,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import app.warmi.rodriguez.danny.warmi.Objects.Delitos;
+
 public class DelitosActivity extends AppCompatActivity {
 
     private FirebaseAuth autentificacion;
@@ -36,33 +38,27 @@ public class DelitosActivity extends AppCompatActivity {
         bdReferencia = FirebaseDatabase.getInstance().getReference().child("Delitos");
         bdReferencia.keepSynced(true);
         autentificacion = FirebaseAuth.getInstance();
+
         autenLis = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseRecyclerAdapter<DelitosActivity.User, DelitosActivity.UserViewHolder > firebaseRecyclerAdapter =
-                        new FirebaseRecyclerAdapter<User, UserViewHolder>(
-                                DelitosActivity.User.class,
+                FirebaseRecyclerAdapter<Delitos, DelitosActivity.UserViewHolder> firebaseRecyclerAdapter =
+                        new FirebaseRecyclerAdapter<Delitos, UserViewHolder>(
+                                Delitos.class,
                                 R.layout.vista_delitos,
                                 DelitosActivity.UserViewHolder.class,
                                 bdReferencia
                         ) {
-                    @Override
-                    protected void populateViewHolder(UserViewHolder viewHolder, User model, int position) {
-                        viewHolder.nombre.setText(model.Nombre);
-                        viewHolder.articulo.setText(model.Articulo);
-                        viewHolder.descripcion.setText(model.Descripcion);
-                    }
-                };
+                            @Override
+                            protected void populateViewHolder(UserViewHolder viewHolder, Delitos model, int position) {
+                                viewHolder.nombre.setText(model.getnombre());
+                                viewHolder.articulo.setText(model.getarticulo());
+                                viewHolder.descripcion.setText(model.getdescripcion());
+                            }
+                        };
                 lista.setAdapter(firebaseRecyclerAdapter);
             }
         };
-    }
-
-    public static class User {
-
-        String Nombre;
-        String Articulo;
-        String Descripcion;
     }
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {

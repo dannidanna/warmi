@@ -5,12 +5,12 @@ import { FormsModule} from "@angular/forms";
 //rutas
 import { app_routing } from "./app.routes";
 
-
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import { DelitosComponent } from './delitos/delitos.component';
 import { DdhhComponent } from './ddhh/ddhh.component';
 import { InstitucionesComponent } from './instituciones/instituciones.component';
@@ -39,6 +39,7 @@ var config = {
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    AngularFireStorageModule,
     FormsModule,
     app_routing
 

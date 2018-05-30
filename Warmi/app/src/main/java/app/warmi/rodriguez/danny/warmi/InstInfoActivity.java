@@ -13,6 +13,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import app.warmi.rodriguez.danny.warmi.Objects.InstInfo;
+
 public class InstInfoActivity extends AppCompatActivity {
 
     private FirebaseAuth autentificacion;
@@ -33,44 +35,34 @@ public class InstInfoActivity extends AppCompatActivity {
 
         lista = (RecyclerView) findViewById(R.id.instituciones);
         lista.setLayoutManager(new LinearLayoutManager(this));
-        bdReferencia = FirebaseDatabase.getInstance().getReference().child("Instituciones");
+        bdReferencia = FirebaseDatabase.getInstance().getReference("Instituciones");
         bdReferencia.keepSynced(true);
         autentificacion = FirebaseAuth.getInstance();
+
         autenLis = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                    FirebaseRecyclerAdapter<InstInfoActivity.User, InstInfoActivity.UserViewHolder> firebaseRecyclerAdapter =
-                            new FirebaseRecyclerAdapter<InstInfoActivity.User, InstInfoActivity.UserViewHolder>(
-                            InstInfoActivity.User.class,
-                            R.layout.vista_instituciones,
-                            InstInfoActivity.UserViewHolder.class,
-                            bdReferencia
-                    ) {
-                                @Override
-                                protected void populateViewHolder(UserViewHolder viewHolder, User model, int position) {
-                                    viewHolder.nombre.setText(model.Nombre);
-                                    viewHolder.direccion.setText(model.Direccion);
-                                    viewHolder.telefono.setText(model.Telefono);
-                                    viewHolder.servicio.setText(model.Servicio);
-                                    viewHolder.pagina.setText(model.PaginaReferencia);
-                                }
-                    };
-                    lista.setAdapter(firebaseRecyclerAdapter);
+                FirebaseRecyclerAdapter<InstInfo, InstInfoActivity.UserViewHolder> firebaseRecyclerAdapter =
+                        new FirebaseRecyclerAdapter<InstInfo, UserViewHolder>(
+                                InstInfo.class,
+                                R.layout.vista_instituciones,
+                                InstInfoActivity.UserViewHolder.class,
+                                bdReferencia
+                        ) {
+                            @Override
+                            protected void populateViewHolder(final UserViewHolder viewHolder, InstInfo model, int position) {
+                                viewHolder.nombre.setText(model.getnombre());
+                                viewHolder.direccion.setText(model.getdireccion());
+                                viewHolder.telefono.setText(model.gettelefono());
+                                viewHolder.servicio.setText(model.getservicio());
+                                viewHolder.pagina.setText(model.getpaginaReferencia());
+                            }
+                        };
+                lista.setAdapter(firebaseRecyclerAdapter);
 
-                }
-
+            }
         };
 
-    }
-
-
-    public static class User {
-
-        String Nombre;
-        String Direccion;
-        String Telefono;
-        String Servicio;
-        String PaginaReferencia;
     }
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {

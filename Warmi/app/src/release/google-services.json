@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "878784051025",
+    "firebase_url": "https://warmi-6afeb.firebaseio.com",
+    "project_id": "warmi-6afeb",
+    "storage_bucket": "warmi-6afeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878784051025:android:526b4b1cba6d4dd9",
+        "android_client_info": {
+          "package_name": "app.warmi.rodriguez.danny.warmi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878784051025-6u8n2q1a0kghldcn3d5v9pp7prjllhd6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.warmi.rodriguez.danny.warmi",
+            "certificate_hash": "50982f04728aa785957a46d3b53b0097d027677e"
+          }
+        },
+        {
+          "client_id": "878784051025-v3t1vmmjn55grnth00r7c97t4cepr4ff.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "878784051025-v3t1vmmjn55grnth00r7c97t4cepr4ff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLlopt178mjV0ZfqWxzGvQUcbVy8v5hqw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878784051025-v3t1vmmjn55grnth00r7c97t4cepr4ff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
