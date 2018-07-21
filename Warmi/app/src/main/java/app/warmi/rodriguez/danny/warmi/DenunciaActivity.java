@@ -60,10 +60,13 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     private Button btnGuardar, btnCancelar, btnCamara, btnGaleria;
     private ImageView imagen;
     private EditText nomVic, numVic, nomAgre, descrip;
-    private Spinner relacion;
-    private String relaciones[] = {"Relacion con victima", "Esposo", "Hermana(o)", "Prima(o)", "Mamá","Papá",
+    private Spinner relacion, tipoDen;
+    private String relaciones[] = {"Relación con la afectada", "Esposo", "Hermana(o)", "Prima(o)", "Mamá","Papá",
             "Jefa(e)","Empleada(o)","Conocido(a)","Ninguno"};
+    private String tipos[] = {"Tipo de violencia", "Violencia física", "Violencia psicológica", "Violencia sexual", "Violencia económica","Violencia patrimonial",
+            "Violencia simbólica", "Violencia doméstica","Violencia institucional","Violencia laboral","Otro"};
     private String rel="";
+    private String tip="";
     private static final int CAMARA_REQ = 1;
     private static final int GALERIA_INT = 1;
     private DatabaseReference bdReferencia;
@@ -79,6 +82,9 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
     private ProgressDialog miDialogo;
 
     private Denuncias denuncias;
+    private String nombreUsuario;
+    private String numeroUsuario;
+    private String ubicacion;
 
     @Override
     protected void onStart(){
@@ -103,10 +109,26 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()==null){
-                    Toast.makeText(getApplicationContext(),"Inicie sesion para realizar una denuncia", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Inicie sesión para realizar una denuncia", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(DenunciaActivity.this, IniciarSesionActivity.class);
                     startActivity(intent);
                     finish();
+                }else{
+                    if(firebaseAuth.getCurrentUser()!=null){
+                        bdReferencia = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+                        bdReferencia.keepSynced(true);
+                        bdReferencia.child(firebaseAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                nombreUsuario = String.valueOf(dataSnapshot.child("Nombre").getValue());
+                                numeroUsuario = String.valueOf(dataSnapshot.child("Telefono").getValue());
+                            }
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+
+                            }
+                        });
+                    }
                 }
 
             }
@@ -123,9 +145,6 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i){
-                    case 1:
-                        rel =  relaciones[i];
-                        break;
                     case 2:
                         rel =  relaciones[i];
                         break;
@@ -155,6 +174,56 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
                 Toast toast = Toast.makeText(getApplicationContext(),"Seleccione una relación", Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
+
+        //TIPO DE DENUNCIA
+        tipoDen = (Spinner) findViewById(R.id.pagina2);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tipos);
+        tipoDen.setAdapter(adapter2);
+        tipoDen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 1:
+                        tip =  tipos[i];
+                        break;
+                    case 2:
+                        tip =  tipos[i];
+                        break;
+                    case 3:
+                        tip =  tipos[i];
+                        break;
+                    case 4:
+                        tip =  tipos[i];
+                        break;
+                    case 5:
+                        tip =  tipos[i];
+                        break;
+                    case 6:
+                        tip =  tipos[i];
+                        break;
+                    case 7:
+                        tip =  tipos[i];
+                        break;
+                    case 8:
+                        tip =  tipos[i];
+                        break;
+                    case 9:
+                        tip = tipos[i];
+                        break;
+                    case 10:
+                        tip =  tipos[i];
+                        break;
+                    case 11:
+                        tip = tipos[i];
+                        break;
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                Toast toast = Toast.makeText(getApplicationContext(),"Seleccione el tipo de violencia", Toast.LENGTH_LONG);
                 toast.show();
             }
         });
@@ -205,7 +274,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         final StorageReference filepath = storageReference.child("Fotos denuncias").child(getRandomString());
         final DatabaseReference currentUserDB = bdReferencia.child(autentificacion.getCurrentUser().getUid());
 
-        miDialogo.setMessage("Uploading image...");
+        miDialogo.setMessage("Subiendo imagen...");
         miDialogo.show();
 
         currentUserDB.child("image").addValueEventListener(new ValueEventListener() {
@@ -219,9 +288,9 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful())
-                                Toast.makeText(getApplicationContext(), "Deleted image succesfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Eliminación satisfactoria", Toast.LENGTH_SHORT).show();
                             else
-                                Toast.makeText(getApplicationContext(), "Deleted image failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Eliminación erronea", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -293,6 +362,7 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         descrip = (EditText) findViewById(R.id.descrip);
         String descripcionDen = descrip.getText().toString();
 
+
         Date d = new Date();
         String fechaDen  = (String) DateFormat.format("MMMM d, yyyy ", d.getTime());
 
@@ -303,11 +373,12 @@ public class DenunciaActivity extends AppCompatActivity implements View.OnClickL
         LocalizacionClass localizacionObj = new LocalizacionClass(latitud, longitud, direccion);
         String dire = localizacionObj.getDireccion();
         if(!descripcionDen.isEmpty() && !rel.isEmpty()) {
-            Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, dire, urlImagenD);
+            Denuncia denuncia = new Denuncia(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, dire, urlImagenD, tip);
             currentUserDB.push().setValue(denuncia);
-           // denuncias = new Denuncias(denuncia,"Danny","75929244");
+
+            //all denuncias
             denuncias = new Denuncias(nombreVictima, numeroVictima, nombreAgresor, descripcionDen, fechaDen, rel, dire,
-                    urlImagenD,"Danny","345");
+                    urlImagenD, nombreUsuario, numeroUsuario, tip);
             bdReferenciaUsuarios.push().setValue(denuncias);
             Toast.makeText(getApplicationContext(),"Denuncia registrada", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(DenunciaActivity.this, MainActivity.class);

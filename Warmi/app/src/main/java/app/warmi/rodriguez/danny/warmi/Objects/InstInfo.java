@@ -72,4 +72,5 @@ public class InstInfo {
     public void setpaginaReferencia(String paginaReferencia) {
         this.PaginaReferencia = paginaReferencia;
     }
+
 }

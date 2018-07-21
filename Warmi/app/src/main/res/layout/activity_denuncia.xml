@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:background="@drawable/borde"
-            android:text="Camara"
+            android:text="Cámara"
             android:textSize="15dp"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/btnGaleria"
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:background="@drawable/borde"
-            android:text="Galeria"
+            android:text="Galería"
             android:layout_marginRight="11dp"
             android:layout_marginEnd="11dp"
             android:layout_marginTop="34dp"
@@ -100,17 +100,18 @@
 
         <EditText
             android:id="@+id/nombre"
+            android:layout_width="340dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/telefono"
+            android:layout_alignStart="@+id/telefono"
             android:layout_below="@+id/textView2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bordedos"
             android:ems="10"
+            android:hint="   Nombre de la afectada (opcional)"
             android:inputType="textPersonName"
             android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"
-            android:background="@drawable/bordedos"
-            android:hint="   Nombre victima (opcional)"
-            android:layout_width="340dp"
-            android:layout_height="30dp"/>
+            android:textColorHint="@android:color/background_light" />
 
 
         <EditText
@@ -122,7 +123,7 @@
             android:layout_marginTop="18dp"
             android:background="@drawable/bordedos"
             android:ems="10"
-            android:hint="   Telf. o Cel. victima (opcional)"
+            android:hint="   Telf. o Cel. afectada (opcional)"
             android:inputType="number"
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light" />
@@ -131,16 +132,16 @@
             android:id="@+id/servicio"
             android:layout_width="340dp"
             android:layout_height="30dp"
-            android:background="@drawable/bordedos"
-            android:ems="10"
-            android:hint="   Nombre agresor (opcional)"
-            android:inputType="textPersonName"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"
-            android:layout_below="@+id/telefono"
             android:layout_alignLeft="@+id/telefono"
             android:layout_alignStart="@+id/telefono"
-            android:layout_marginTop="16dp" />
+            android:layout_below="@+id/telefono"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bordedos"
+            android:ems="10"
+            android:hint="   Nombre  del implicado (opcional)"
+            android:inputType="textPersonName"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light" />
 
         <EditText
             android:id="@+id/descrip"
@@ -150,7 +151,7 @@
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light"
             android:background="@drawable/bordedos"
-            android:hint="   Descripcion del acto"
+            android:hint="   Descripción del acto"
             android:layout_width="340dp"
             android:layout_height="30dp"
             android:layout_below="@+id/servicio"
@@ -161,13 +162,25 @@
             android:id="@+id/pagina"
             android:layout_width="340dp"
             android:layout_height="30dp"
+            android:layout_alignLeft="@+id/descrip"
+            android:layout_alignStart="@+id/descrip"
+            android:layout_below="@+id/descrip"
+            android:layout_marginTop="63dp"
+            android:background="@drawable/bordedos"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/background_light" />
+
+        <Spinner
+            android:id="@+id/pagina2"
+            android:layout_width="340dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@+id/pagina"
+            android:layout_alignStart="@+id/pagina"
+            android:layout_below="@+id/descrip"
             android:layout_marginTop="23dp"
             android:background="@drawable/bordedos"
             android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/background_light"
-            android:layout_below="@+id/descrip"
-            android:layout_alignLeft="@+id/descrip"
-            android:layout_alignStart="@+id/descrip" />
+            android:textColorHint="@android:color/background_light" />
 
 
     </RelativeLayout>

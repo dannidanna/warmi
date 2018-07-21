@@ -49,7 +49,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDSVmCJtK9FLNNbbBML2KeGDVqTt3FNsJY" />
+            android:value="AIzaSyCU8xfazZeF1ECdG-wymCsCYpHHUOhrr-s" />
 
         <activity
             android:name=".InstMapsActivity"
@@ -57,11 +57,6 @@
         <activity
             android:name=".InstInfoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".HistorialActivity"

@@ -53,7 +53,7 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/bordedos"
             android:ems="10"
-            android:hint=" Celular o telefono de contacto"
+            android:hint=" Celular o teléfono de contacto"
             android:inputType="text"
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light" />
@@ -70,7 +70,7 @@
             android:textColorHint="@android:color/background_light"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true"
-            android:hint="   Nombre"/>
+            android:hint="   Nombre completo"/>
 
         <EditText
             android:id="@+id/correo"

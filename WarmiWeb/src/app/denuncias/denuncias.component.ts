@@ -128,9 +128,30 @@ export class DenunciasComponent implements OnInit {
               numVic: "",
               numeroUsuario: "",
               relacion: "",
-              url: ""
+              url: "",
+              tipoDenuncia: "",
               };
-          if(this.fechaDenuncia.fechaDen === opportunities[i].fecha){
+          var buscada = this.fechaDenuncia.fechaDen.toLowerCase();
+          var op = opportunities[i];
+          if((op.fecha.toLowerCase()).indexOf(buscada)!=-1){
+            this.usuariosFecha.push(opportunities[i]);
+          }
+          if((op.nomAgre.toLowerCase()).indexOf(buscada)!=-1){
+            this.usuariosFecha.push(opportunities[i]);
+          }
+          if((op.nomVic.toLowerCase()).indexOf(buscada)!=-1){
+            this.usuariosFecha.push(opportunities[i]);
+          }
+          if((op.tipoDenuncia.toLowerCase()).indexOf(buscada)!=-1){
+            this.usuariosFecha.push(opportunities[i]);
+          }
+          if((op.nombreUsuario.toLowerCase()).indexOf(buscada)!=-1){
+            this.usuariosFecha.push(opportunities[i]);
+          }
+          if((opportunities[i].descrip.toLowerCase()).indexOf(buscada.toLowerCase())!=-1){
+            this.usuariosFecha.push(opportunities[i]);
+          }
+          if((opportunities[i].dir.toLowerCase()).indexOf(buscada.toLowerCase())!=-1){
             this.usuariosFecha.push(opportunities[i]);
           }
         }
@@ -140,9 +161,6 @@ export class DenunciasComponent implements OnInit {
    }
 
   verDenunciaFecha(denuncia, fechaBusqueda){
-    if(denuncia.fecha === fechaBusqueda){
-     // console.log("true");
-    }
    this.mostrarForm = true;
     this.denuncia = denuncia;
  }

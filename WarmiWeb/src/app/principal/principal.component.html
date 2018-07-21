@@ -1,12 +1,12 @@
 <div class="container-fluid">
 		<div class="page-header">
-				<h1>WARMI - WEB <small>Parte administrativa, de la app movil Warmi</small></h1>
+				<h1><img src="https://image.flaticon.com/icons/svg/120/120711.svg" width="45" height="45"><font color="purple"><b>&nbsp;WARMI - WEB</b></font> <small>Parte administrativa, de la app móvil Warmi</small></h1>
 			</div>
 <div class="row">
   <div class="col-md-4">
   	<br>
-  	<button type="button" class="btn btn-primary btn-lg btn-block" routerLink="/denuncias"> 	DENUNCIAS</button>
-	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/registro">REGISTRO</button>
+  	<button type="button" class="btn button btn-lg btn-block" routerLink="/denuncias">DENUNCIAS</button>
+	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/registro">REGISTRÓ</button>
 	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/instituciones">INSTITUCIONES</button>
 	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/ddhh">DDHH</button>
 	<button type="button" class="btn btn-default btn-lg btn-block" routerLink="/delitos">ACTOS QUE SON DELITOS</button>
@@ -15,13 +15,13 @@
 
   <div class="col-md-5" >
   	<div *ngIf="!(authService.user | async)">
-  		<h1 class="text-center">INICIAR SESION</h1>
+  		<h1 class="text-center">INICIAR SESIÓN</h1>
     <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="email"/>
     <br>
     <input class="form-control" type="password" placeholder="CONTRASEÑA" [(ngModel)]="password"/>
     <br>
     
-    <a class="btn btn-primary btn-block" (click)="login()">INGRESAR</a>
+    <a class="btn button btn-block" (click)="login()">INGRESAR</a>
   		
   	</div>
   	<br>
@@ -35,7 +35,7 @@
 			<div class="col-md-3"></div>
 			
     	<div class="col-md-6">    		
-        <a class="btn btn-default btn-block" (click)="logout()">CERRAR SESION</a>
+        <a class="btn btn-default btn-block" (click)="logout()">CERRAR SESIÓN</a>
 			</div>
 			<br>
 			<div class="col-md-3"></div>

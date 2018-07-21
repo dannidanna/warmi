@@ -5,7 +5,7 @@
   </div>
 
   <div class="col-md-6">
-    <h1 class="text-center">REGISTRO</h1>
+    <h1 class="text-center"><img src="https://image.flaticon.com/icons/svg/120/120704.svg" width="45" height="45"><font color="purple"><b>&nbsp;REGISTRO</b></font></h1>
     
     <div>
     <input class="form-control" type="text" placeholder="CORREO" [(ngModel)]="email"/>
@@ -15,16 +15,6 @@
     <input class="form-control" type="text" placeholder="NOMBRE USUARIO" [(ngModel)]="usuario.Nombre"/>
     
     <br>
-      <label for="rol" class="back">ROL DEL ADMINISTRADOR:</label><br>
-      <div class="btn-group" role="group" aria-label="..." id="rol" >
-        <button type="button" class="btn btn-default" (click)="roles(1)">ADMINISTRADOR 1</button>
-        <button type="button" class="btn btn-default" (click)="roles(2)">ADMINISTRADOR 2</button>
-        <button type="button" class="btn btn-default" (click)="roles(3)">ADMINISTRADOR 3</button>
-      </div>
-      
-      <br>
-      <br>
-      <br>
   </div>
   <div>
     
@@ -35,7 +25,7 @@
         <a class="btn btn-default btn-block" href="/principal" >CANCELAR</a>
       </div>
       <div class="col-md-6">
-        <a class="btn btn-primary btn-block" (click)="signup()">REGISTRAR</a>
+        <a class="btn button btn-block" (click)="signup()">REGISTRAR</a>
       </div>
     </div>
   </div>

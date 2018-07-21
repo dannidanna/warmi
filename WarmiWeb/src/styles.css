@@ -3,9 +3,16 @@
 	}
 
 .body {
-	background: #02AAB0;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(left, #00CDAC, #02AAB0);
+    /*background-image: url("back.jpg");
+	/* background: #02AAB0;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(left, #00CDAC, #02AAB0);
     background: -moz-linear-gradient(left, #00CDAC, #02AAB0);
     background: -o-linear-gradient(left, #00CDAC, #02AAB0);
-    background: linear-gradient(to right, rgb(216, 221, 226), rgb(173, 213, 240));
+    background: linear-gradient(to right, rgb(216, 221, 226), rgb(173, 213, 240));*/
+
+    background: #D8CEF6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(left, #00CDAC, #bebbbe);
+    background: -moz-linear-gradient(left, #00CDAC, #c4bbc9);
+    background: -o-linear-gradient(left, #00CDAC, #b1adb3);
+    background: linear-gradient(to right, rgb(226, 216, 225), rgb(184, 178, 182));
 }

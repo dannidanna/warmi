@@ -24,7 +24,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="41dp"
             android:background="@drawable/bordedos"
-            android:text="ATRAS"
+            android:text="ATRÁS"
             android:textColor="@android:color/background_light" />
 
         <Button
@@ -36,7 +36,7 @@
             android:layout_marginBottom="29dp"
             android:background="@drawable/bordetres"
             android:elevation="24dp"
-            android:text="CERRAR SESION"
+            android:text="CERRAR SESIÓN"
             android:textColor="@android:color/background_dark" />
 
         <ImageView

@@ -43,7 +43,7 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
-                    Toast.makeText(getApplicationContext(),"Ya se encuentra en su sesion", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Ya se encuentra en su sesión", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(IniciarSesionActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
@@ -79,19 +79,19 @@ public class IniciarSesionActivity extends AppCompatActivity implements View.OnC
         String con = contra.getText().toString().trim();
 
         if(!TextUtils.isEmpty(cor) && !TextUtils.isEmpty(con)){
-            miDialogo.setMessage("Iniciando sesion... por favor espere!");
+            miDialogo.setMessage("Iniciando sesión... por favor espere!");
             miDialogo.show();
             autentificacion.signInWithEmailAndPassword(cor,con).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     miDialogo.dismiss();
                     if(task.isSuccessful()){
-                        Toast.makeText(getApplicationContext(),"Inicio sesion correctamente!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Inicio sesión correctamente!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(IniciarSesionActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
                     else {
-                        Toast.makeText(getApplicationContext(), "No se pudo iniciar sesion, vuelva a intentarlo", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "No se pudo iniciar sesión, vuelva a intentarlo", Toast.LENGTH_LONG).show();
                     }
                 }
             });

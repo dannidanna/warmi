@@ -71,7 +71,7 @@ HistorialActivity extends AppCompatActivity {
                     lista.setAdapter(firebaseRecyclerAdapter);
                     }
                     else{
-                        Toast.makeText(getApplicationContext(),"Inicie sesion para ver el historial de sus denuncias",
+                        Toast.makeText(getApplicationContext(),"Inicie sesión para ver el historial de sus denuncias",
                                 Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(HistorialActivity.this, IniciarSesionActivity.class);
                         startActivity(intent);

@@ -29,7 +29,7 @@ export class RegistroComponent implements OnInit {
     this.usuario = {
       Nombre: "",
       Correo: "",
-      Rol: ""
+      Rol: "Administrador"
     }
   }
   ngOnInit() {
@@ -39,7 +39,6 @@ export class RegistroComponent implements OnInit {
   signup() {
     this.usuario.Correo = this.email;
     this.authService.signup(this.email, this.password, this.usuario);
-    console.log( 'NOMBRE USUARIO',this.usuario.Nombre);
     this.authService.registro(this.email, this.usuario.Nombre, this.usuario.Rol);
     this.email = this.password = this.usuario.Nombre=this.usuario.Correo=this.usuario.Rol='';   
     

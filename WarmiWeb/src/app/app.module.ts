@@ -23,6 +23,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 
 import { AuthService } from './auth.service';
+import { EstadisticasComponent } from './estadisticas/estadisticas.component';
 var config = {
     apiKey: "AIzaSyDUzOVcMFGzCHTiPhYs78q-YKCFV_rBAVk",
     authDomain: "warmi-6afeb.firebaseapp.com",
@@ -45,7 +46,7 @@ var config = {
 
   ],  
   providers: [AuthService, AngularFireDatabase],
-  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent, RegistroComponent ],
+  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent, RegistroComponent, EstadisticasComponent ],
   bootstrap: [ AppComponent]
 })
 export class AppModule {}

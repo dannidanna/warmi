@@ -47,7 +47,7 @@ public class UsuarioActivity extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()==null){
-                    Toast.makeText(getApplicationContext(),"Inicie sesion para ver la informacion de su cuenta", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Inicie sesión para ver la información de su cuenta", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(UsuarioActivity.this, IniciarSesionActivity.class);
                     startActivity(intent);
                     finish();

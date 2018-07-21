@@ -16,6 +16,7 @@ public class Denuncia {
     private String relacion;
     private String localizacion;
     private String urlDescarga;
+    private String tipoDenuncia;
 
     public Denuncia() {
     }
@@ -29,7 +30,7 @@ public class Denuncia {
     }
 
     public Denuncia(String nombreVictima, String numeroVictima, String nombreAgresor, String descripcion,
-                    String fecha, String relacion, String localizacion, String urlDescarga) {
+                    String fecha, String relacion, String localizacion, String urlDescarga, String tipoDenuncia) {
         this.nombreVictima = nombreVictima;
         this.numeroVictima = numeroVictima;
         this.nombreAgresor = nombreAgresor;
@@ -38,6 +39,7 @@ public class Denuncia {
         this.relacion = relacion;
         this.localizacion = localizacion;
         this.urlDescarga = urlDescarga;
+        this.tipoDenuncia = tipoDenuncia;
 
     }
 
@@ -98,6 +100,14 @@ public class Denuncia {
 
     public String getLocalizacion() {
         return localizacion;
+    }
+
+    public String getTipoDenuncia() {
+        return  this.tipoDenuncia;
+    }
+
+    public void setTipoDenuncia(String nuevoTipo) {
+        this.tipoDenuncia = nuevoTipo;
     }
 
 }

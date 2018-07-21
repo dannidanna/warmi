@@ -58,7 +58,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
-                    Toast.makeText(getApplicationContext(),"Ya se encuentra en su sesion", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Ya se encuentra en su sesión", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();

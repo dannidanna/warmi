@@ -16,6 +16,7 @@ public class Denuncias {
     private String url;
     private String nombreUsuario;
     private String numeroUsuario;
+    private String tipoDenuncia;
 
     /*public Denuncias(Denuncia denuncia, String nombreUsuario, String numeroUsuario) {
         this.denuncia = denuncia;
@@ -88,7 +89,7 @@ public class Denuncias {
     }
 
     public Denuncias(String nomVic, String numVic, String nomAgre, String descrip,
-                     String fecha, String relacion, String dir, String url, String nombreUsuario, String numeroUsuario) {
+                     String fecha, String relacion, String dir, String url, String nombreUsuario, String numeroUsuario, String tipoDenuncia) {
         this.nomVic = nomVic;
         this.numVic = numVic;
         this.nomAgre = nomAgre;
@@ -100,6 +101,7 @@ public class Denuncias {
 
         this.nombreUsuario = nombreUsuario;
         this.numeroUsuario = numeroUsuario;
+        this.tipoDenuncia = tipoDenuncia;
     }
 
     public Denuncia getDenuncia() {
@@ -124,5 +126,13 @@ public class Denuncias {
 
     public void setNumeroUsuario(String numeroUsuario) {
         this.numeroUsuario = numeroUsuario;
+    }
+
+    public String getTipoDenuncia () {
+        return tipoDenuncia;
+    }
+
+    public void setTipoDenuncia(String nuevoTipo) {
+        this.tipoDenuncia = nuevoTipo;
     }
 }

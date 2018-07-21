@@ -1,20 +1,20 @@
 <div class="row">
   <div class="col-md-4">
 
-    <h3 class="text-center">ACTOS QUE SON CONSIDERADOS DELITOS</h3>
+    <h3 class="text-center"><font color="purple"><b>ACTOS QUE SON CONSIDERADOS DELITOS</b></font></h3>
     <ul type="list-group">
     <li (click)="verDelitos(n)" class="list-group-item" *ngFor="let n of del  | async">
-    {{n.Articulo }} <br>{{n.Nombre }}  <br>{{n.Descripcion}}
+        &#45;Articulo: {{n.Articulo }} <br>{{n.Nombre }}  <br>{{n.Descripcion}}
     </li>
     </ul>
   </div>
 
   <div class="col-md-5">
-    <h1 class="text-center">NUEVA ACTO QUE ES UN DELITO</h1>
-    <input class="form-control" type="text" placeholder="ARTICULO" [(ngModel)]="delito.Articulo"/>
+    <h1 class="text-center"><img src="https://image.flaticon.com/icons/svg/120/120699.svg" width="45" height="45"><font color="purple">&nbsp;NUEVO ACTO QUE ES UN DELITO</font></h1>
+    <input class="form-control" type="text" placeholder="ARTÍCULO" [(ngModel)]="delito.Articulo"/>
     <br>
     <textarea class="form-control" placeholder="NOMBRE" [(ngModel)]="delito.Nombre"></textarea><br>
-    <textarea class="form-control" placeholder="DESCRIPCION" [(ngModel)]="delito.Descripcion"></textarea><br>
+    <textarea class="form-control" placeholder="DESCRIPCIÓN" [(ngModel)]="delito.Descripcion"></textarea><br>
     <div class="row">
       <div class="col-md-4">
         <a class="btn btn-danger btn-block" *ngIf="editando" (click)="borrarDelito()">ELIMINAR</a>
@@ -23,7 +23,7 @@
         <a class="btn btn-default btn-block" (click)="cancel()">CANCELAR</a>
       </div>
       <div class="col-md-4">
-        <a class="btn btn-primary btn-block" (click)="guardarDelito()">AGREGAR</a>
+        <a class="btn button btn-block" (click)="guardarDelito()">AGREGAR</a>
       </div>
     </div>
   </div>

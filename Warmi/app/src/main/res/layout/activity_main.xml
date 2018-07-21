@@ -47,12 +47,13 @@
             style="@style/miEstilo"
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:background="@drawable/bordedos"
-            android:text="INSTITUCIONES EN CBBA."
             android:layout_above="@+id/btnHistorial"
             android:layout_alignLeft="@+id/btnHistorial"
             android:layout_alignStart="@+id/btnHistorial"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bordedos"
+            android:text="INSTITUCIONES DE COCHABAMBA"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btnHistorial"

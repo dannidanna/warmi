@@ -1,23 +1,22 @@
 <div class="container-fluid">
 <div class="row">
   <div class="col-md-4">
-    <h3 class="text-center">INSTITUCIONES EN CBBA.</h3>
+    <h3 class="text-center"><font color="purple"><b>INSTITUCIONES EN COCHABAMBA</b></font></h3>
     <ul type="list-group">
-    <li (click)="verInst(n)" class="list-group-item" *ngFor="let n of inst  | async">
-    {{n.Nombre }} <br>{{n.Direccion }}  <br>{{n.Telefono}} <br>{{n.Servicio}} <br>{{n.PaginaReferencia}}
-   
+    <li type="square" (click)="verInst(n)" class="list-group-item" *ngFor="let n of inst  | async">
+        &#45; {{n.Nombre }} <br>{{n.Direccion }}  <br>{{n.Telefono}} <br>{{n.Servicio}} <br>{{n.PaginaReferencia}} <br>
     </li>
     </ul>
   </div>
 
   <div class="col-md-5">
-    <h1 class="text-center">NUEVA INSTITUCION</h1>
-    <input class="form-control" type="text" placeholder="NOMBRE INSTITUCION" [(ngModel)]="institucion.Nombre"/>
+    <h1 class="text-center"><img src="https://image.flaticon.com/icons/svg/120/120706.svg" width="45" height="45"><font color="purple">&nbsp;NUEVA INSTITUCIÓN</font></h1>
+    <input class="form-control" type="text" placeholder="NOMBRE DE LA INSTITUCIÓN" [(ngModel)]="institucion.Nombre"/>
     <br>
-    <textarea class="form-control" placeholder="DIRECCION" [(ngModel)]="institucion.Direccion"></textarea><br>
-    <textarea class="form-control" placeholder="TELEFONO" [(ngModel)]="institucion.Telefono"></textarea><br>
+    <textarea class="form-control" placeholder="DIRECCIÓN" [(ngModel)]="institucion.Direccion"></textarea><br>
+    <textarea class="form-control" type="number" placeholder="TELÉFONO" [(ngModel)]="institucion.Telefono"></textarea><br>
     <textarea class="form-control" placeholder="SERVICIO" [(ngModel)]="institucion.Servicio"></textarea><br>
-    <textarea class="form-control" placeholder="PAGINA DE REFERENCIA" [(ngModel)]="institucion.PaginaReferencia"></textarea>
+    <textarea class="form-control" placeholder="PÁGINA DE REFERENCIA" [(ngModel)]="institucion.PaginaReferencia"></textarea>
     <br>
     <div class="row">
       <div class="col-md-4">
@@ -27,9 +26,11 @@
         <a class="btn btn-default btn-block" (click)="cancel()">CANCELAR</a>
       </div>
       <div class="col-md-4">
-        <a class="btn btn-primary btn-block" (click)="guardarInst()">AGREGAR</a>
+        <a class="btn button btn-block" (click)="guardarInst()">AGREGAR</a>
       </div>
     </div>
+    <br>
+    <br>
     
   </div>
 </div>
