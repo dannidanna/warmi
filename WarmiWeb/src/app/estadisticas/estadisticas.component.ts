@@ -66,6 +66,20 @@ export class EstadisticasComponent implements OnInit {
              url: "",
              tipoDenuncia: "",
              };
+
+          this.tipos = {
+              totalDen: inde,
+              viFis: 0,
+              viPsico:0,
+              viSexu: 0,
+              viEco: 0,
+              viPatri: 0,
+              viSimb: 0,
+              viDomes: 0,
+              viInsti: 0,
+              viLabo: 0,
+              viOtr: 0
+              };
          var vFis = "Violencia física";
          var vPsi = "Violencia psicológica";
          var vSex = "Violencia sexual";
@@ -79,66 +93,45 @@ export class EstadisticasComponent implements OnInit {
          var op = opportunities[i];
          if(op.tipoDenuncia === vFis){
             vFisCont = vFisCont + 1;
-            console.log("inFis"+vFisCont);
          }
          if(op.tipoDenuncia === vPsi){
           vPsiCont = vPsiCont + 1;
-          console.log(vPsiCont);
          }
          if(op.tipoDenuncia === vSex){
           vSexCont = vSexCont + 1;
-          console.log(vSexCont);
          }
          if(op.tipoDenuncia === vEco){
           vEcoCont = vEcoCont + 1;
-          console.log("eco"+vEcoCont);
          }
          if(op.tipoDenuncia === vPat){
           vPatCont = vPatCont + 1;
-          console.log(vPatCont);
          }
          if(op.tipoDenuncia === vSim){
           vSimCont = vSimCont + 1;
-          console.log("inSim"+vSimCont);
          }
          if(op.tipoDenuncia === vDom){
           vDomCont = vDomCont + 1;
-          console.log("inDom"+vDomCont);
          }
          if(op.tipoDenuncia === vIns){
           vInsCont = vInsCont + 1;
-          console.log(vInsCont);
          }
          if(op.tipoDenuncia === vLab){
           vLabCont = vLabCont + 1;
-          console.log(vLabCont);
          }
          if(op.tipoDenuncia === vOtro){
           vOtroCont = vOtroCont + 1;
-          console.log(vOtroCont);
          }
-
-         console.log("ecoFinal"+vEcoCont);
-
-        /* if((op.nomAgre.toLowerCase()).indexOf(buscada)!=-1){
-           this.usuariosFecha.push(opportunities[i]);
-         }
-         if((op.nomVic.toLowerCase()).indexOf(buscada)!=-1){
-           this.usuariosFecha.push(opportunities[i]);
-         }
-         if((op.tipoDenuncia.toLowerCase()).indexOf(buscada)!=-1){
-           this.usuariosFecha.push(opportunities[i]);
-         }
-         if((op.nombreUsuario.toLowerCase()).indexOf(buscada)!=-1){
-           this.usuariosFecha.push(opportunities[i]);
-         }
-         if((opportunities[i].descrip.toLowerCase()).indexOf(buscada.toLowerCase())!=-1){
-           this.usuariosFecha.push(opportunities[i]);
-         }
-         if((opportunities[i].dir.toLowerCase()).indexOf(buscada.toLowerCase())!=-1){
-           this.usuariosFecha.push(opportunities[i]);
-         }*/
        }
+       this.tipos.viFis = vFisCont;
+       this.tipos.viPsico= vPsiCont;
+       this.tipos.viSexu = vSexCont;
+       this.tipos.viEco = vEcoCont;
+       this.tipos.viPatri = vPatCont;
+       this.tipos.viSimb = vSimCont;
+       this.tipos.viDomes = vDomCont;
+       this.tipos.viInsti = vInsCont;
+       this.tipos.viLabo = vLabCont;
+       this.tipos.viOtr = vOtroCont;
       });
   }
 
