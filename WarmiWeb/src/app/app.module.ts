@@ -24,6 +24,10 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 import { AuthService } from './auth.service';
 import { EstadisticasComponent } from './estadisticas/estadisticas.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { LineChartDemoComponent } from './line-chart-demo/line-chart-demo.component';
+import { ChartsModule } from 'ng2-charts';
+
 var config = {
     apiKey: "AIzaSyDUzOVcMFGzCHTiPhYs78q-YKCFV_rBAVk",
     authDomain: "warmi-6afeb.firebaseapp.com",
@@ -42,11 +46,11 @@ var config = {
     AngularFireDatabaseModule,
     AngularFireStorageModule,
     FormsModule,
-    app_routing
-
+    app_routing,
+    ChartsModule
   ],  
   providers: [AuthService, AngularFireDatabase],
-  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent, RegistroComponent, EstadisticasComponent ],
+  declarations: [ AppComponent, DelitosComponent, DdhhComponent, InstitucionesComponent, DenunciasComponent, PrincipalComponent, RegistroComponent, EstadisticasComponent, ReportesComponent, LineChartDemoComponent ],
   bootstrap: [ AppComponent]
 })
 export class AppModule {}

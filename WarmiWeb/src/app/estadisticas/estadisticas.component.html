@@ -7,8 +7,8 @@
     <div class="col-md-6">
       <h1 class="text-center"><img src="https://image.flaticon.com/icons/svg/120/120700.svg" width="45" height="45"><font color="purple"><b>&nbsp;DENUNCIAS</b></font></h1>
       <h3 class="text-center">Número de denuncias registradas: {{tipos.totalDen}}</h3>
+      <hr>
     </div>
-  
     <div class="col-md-3">
     </div>
   </div>
@@ -17,7 +17,7 @@
         <h3 class="text-center"><img src="https://image.flaticon.com/icons/svg/120/120708.svg" width="50" height="50"><font color="purple"><b>&nbsp;VIOLENCIA FÍSICA</b></font></h3>
         <h3 class="text-center">Número de denuncias: {{tipos.viFis}}</h3>    
     </div>
-  
+    
     <div class="col-md-6">
       <h3 class="text-center"><img src="https://image.flaticon.com/icons/svg/120/120711.svg" width="50" height="50"><font color="purple"><b>&nbsp;VIOLENCIA PSICOLÓGICA</b></font></h3>
       <h3 class="text-center">Número de denuncias: {{tipos.viPsico}}</h3>    
@@ -77,4 +77,39 @@
 <br>
 <br>
 <br>
+
+<div class="row">
+  <div class="col-md-6">
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+        <div class="col-md-5">
+            <a class="btn button btn-block" (click)="descargar()">Crear copia de seguridad</a>
+          </div>
+          <div class="col-md-5"> 
+            <form enctype="multipart/form-data" action="uploader.php" method="POST" >
+            <input class="btn button btn-block" name="uploadedfile" type="file" />
+            <br>
+            
+            <div class="row">
+              <div class="col-md-7">
+                  <input class="btn button btn-block" type="submit" value="Subir archivo" (click)="subir()" />
+              </div>
+              <div class="col-md-5">
+                  <input class="btn button btn-block" type="submit" value="Cancelar" (click)="quitarSpinner()" />
+              </div>
+            </div>
+            </form>
+          </div>
+          <div class="col-md-2">
+
+            <div *ngIf="spinner" class="loader"></div>
+          </div>
+    </div>
+    <br>
+    <br>
+  </div>
+<br>
+<br>
+</div>
   </div>

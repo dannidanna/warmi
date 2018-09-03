@@ -98,13 +98,17 @@ export class DenunciasComponent implements OnInit {
           }
           doc.save('Denuncia de ' + Date() + '.pdf');
         }, margins);      
-    }   
+    } 
+    
+    borrarBusqueda(){
+      this.buscando = false;
+      this.fechaDenuncia.fechaDen = "";
+    }
 
     verDenuncia(denunciaVer){
       this.buscando = false;
       this.usuarios.forEach(user => {
         this.usuario = user;
-        console.log(this.usuario);
       });
       this.mostrarForm = true;
       this.denuncia = denunciaVer;

@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, NgZone } from '@angular/core';
 import { AngularFireDatabase} from 'angularfire2/database';
 import { FirebaseApp } from 'angularfire2';
 import { Observable } from 'rxjs/Observable';
 import { Index } from '@firebase/database/dist/src/core/snap/indexes/Index';
 import { IndexMap } from '@firebase/database/dist/src/core/snap/IndexMap';
+import {UPLOAD_DIRECTIVES} from 'ng2-uploader';
+import * as jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-estadisticas',
@@ -27,16 +29,18 @@ export class EstadisticasComponent implements OnInit {
   vLaboral: any;
   otros: any;
   tipos: any = {};
+  uploadFile: any;
+  spinner: boolean;
+  time: any;
 
   constructor(public db: AngularFireDatabase) {       
     this.usuariosAll = this.db.list('DenunciasAll').valueChanges();
     this.buscar();
+    this.spinner = false;
   }
 
   buscar(){
     this.usuariosFecha = [];
-
-    console.log(this.usuariosAll.length );
     var inde;
     var vFisCont = 0;
     var vPsiCont = 0;
@@ -134,6 +138,29 @@ export class EstadisticasComponent implements OnInit {
        this.tipos.viOtr = vOtroCont;
       });
   }
+
+  handleUpload(data): void {
+    console.log(data);
+    if (data && data.response) {
+        data = JSON.parse(data.response);
+        this.uploadFile = data;
+    }
+}
+
+subir(){
+  this.spinner = true;
+}
+
+quitarSpinner(){
+  this.spinner = false;
+}
+
+descargar(){
+  var bd = "";
+  const doc = new jsPDF();
+  doc.save('warmi-6afeb_data' + '.json');
+           
+}
 
 
   ngOnInit() {

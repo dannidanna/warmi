@@ -1,0 +1,851 @@
+{
+  "DDHH" : {
+    "1511376839752" : {
+      "Articulo" : "1",
+      "Descripcion" : "El derecho a la vida es el derecho que se reconoce a cualquier persona por el simple hecho de estar viva, y que le protege de la privación u otras formas graves de atentado contra su vida.",
+      "Nombre" : "Derecho a la vida",
+      "id" : 1511376839752
+    },
+    "1511376855305" : {
+      "Articulo" : "25",
+      "Descripcion" : "Toda persona tiene derecho a un nivel de vida adecuado que le asegure, así como a su familia, la salud y el bienestar, y en especial la alimentación, el vestido, la vivienda, la asistencia médica y los servicios sociales necesarios",
+      "Nombre" : "Derecho a la vivienda social",
+      "id" : 1511376855305
+    },
+    "1511376867150" : {
+      "Articulo" : "23",
+      "Descripcion" : "El derecho al trabajo es el derecho fundamental humano por el que toda persona tiene derecho al trabajo, a la libre elección del mismo, a condiciones equitativas y satisfactorias de trabajo.",
+      "Nombre" : "Derecho al trabajo",
+      "id" : 1511376867150
+    }
+  },
+  "Delitos" : {
+    "1511377144351" : {
+      "Articulo" : "12",
+      "Descripcion" : "El acoso psicológico atenta contra la dignidad e integridad moral de la persona.",
+      "Nombre" : "Acoso psicológico",
+      "id" : 1511377144351
+    },
+    "1511377231905" : {
+      "Articulo" : "10",
+      "Descripcion" : "El acoso físico es una forma de acoso que consiste en la persecución ininterrumpida e intrusiva a un sujeto con el que se pretende iniciar o restablecer un contacto personal contra su voluntad.",
+      "Nombre" : "Acoso fisico",
+      "id" : 1511377231905
+    },
+    "1511377246326" : {
+      "Articulo" : "21",
+      "Descripcion" : "El abuso verbal (ataque verbal o agresión verbal) se produce cuando una persona critica o insulta  a otra persona.",
+      "Nombre" : "Abuso verbal",
+      "id" : 1511377246326
+    }
+  },
+  "DenunciasAll" : {
+    "-LD3E1aBjWK2VUyYsfjg" : {
+      "descrip" : "mujer golpeada",
+      "dir" : "Ingreso Vehicular SUCRE, Cochabamba, Bolivia",
+      "fecha" : "mayo 21, 2018 ",
+      "nomAgre" : "Jose",
+      "nomVic" : "María",
+      "nombreUsuario" : "Danny",
+      "numVic" : "57846467",
+      "numeroUsuario" : "345",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia económica",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F13507?alt=media&token=3ee0240d-bbc4-456b-9cba-18f44f22ea71"
+    },
+    "-LD3EPZ5tslT62VkpkrY" : {
+      "descrip" : "descripción ",
+      "dir" : "Ingreso Vehicular SUCRE, Cochabamba, Bolivia",
+      "fecha" : "mayo 21, 2018 ",
+      "nomAgre" : "",
+      "nomVic" : "Sofia",
+      "nombreUsuario" : "Hector Murillo",
+      "numVic" : "54876764",
+      "numeroUsuario" : "345",
+      "relacion" : "Jefa(e)",
+      "tipoDenuncia" : "Violencia económica",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F13502?alt=media&token=c2ba48c9-4995-4a6d-beb5-798452f627f3"
+    },
+    "-LEN6iamPXGRgXa1RVsW" : {
+      "descrip" : "Mujer golpeada por una deuda.",
+      "dir" : "Av. Waldo Ballivian, Quillacollo, Bolivia",
+      "fecha" : "junio 6, 2018 ",
+      "nomAgre" : "Héctor Perez",
+      "nomVic" : "Maria Gonzales",
+      "nombreUsuario" : "Rodrigo Grajeda",
+      "numVic" : "4365141",
+      "numeroUsuario" : "345",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia económica",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F15854?alt=media&token=006f7808-28b4-4de6-b772-bb0972dd1954"
+    },
+    "-LEN7HRxD6nPmtzNhJee" : {
+      "descrip" : "Empleada malteada por su jefa, recibe burlas y gritos.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "junio 6, 2018 ",
+      "nomAgre" : "Carla Rojas",
+      "nomVic" : "Rosa Vargas",
+      "nombreUsuario" : "Rodrigo Saavedra",
+      "numVic" : "75428467",
+      "numeroUsuario" : "345",
+      "relacion" : "Jefa(e)",
+      "tipoDenuncia" : "Violencia económica",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F15855?alt=media&token=414bdc46-66ac-4be9-8d01-568a0feb7408"
+    },
+    "-LEN7sdDXzkcgOC3xivd" : {
+      "descrip" : "Adolescente golpeada en plena vía pública, por su madre. Además siendo agredida verbalmente.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "junio 6, 2018 ",
+      "nomAgre" : "Maria loza",
+      "nomVic" : "Kassandra Loza",
+      "nombreUsuario" : "Milena Grajeda",
+      "numVic" : "78543678",
+      "numeroUsuario" : "345",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia económica"
+    },
+    "-LEjEnKTbSKNvCU666mr" : {
+      "descrip" : "mujer golpeada ",
+      "dir" : "M.Ricardo Terrazas 1374, Cochabamba, Bolivia",
+      "fecha" : "junio 11, 2018 ",
+      "nomAgre" : "Josrj",
+      "nomVic" : "maria",
+      "nombreUsuario" : "Milena Grajeda",
+      "numVic" : "42578",
+      "numeroUsuario" : "345",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia económica"
+    },
+    "-LH5vfQzexIEZH_e3JRk" : {
+      "descrip" : " Esposa golpeada, en plena calle.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "julio 10, 2018 ",
+      "nomAgre" : "Hernán López",
+      "nomVic" : "María Gonzáles",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "4365141",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Ninguno",
+      "tipoDenuncia" : "Violencia doméstica",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F21041?alt=media&token=25b0c958-3ea1-41c6-8e72-c774920f7d17"
+    },
+    "-LI8KgRVtPX8utMJHAWt" : {
+      "descrip" : "Esposo ofende a su mujer.",
+      "dir" : "Av Tadeo Haenke, Cochabamba, Bolivia",
+      "fecha" : "julio 23, 2018 ",
+      "nomAgre" : "Eduardo Rojas",
+      "nomVic" : "Rosa María Cardenas",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "75929244",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia psicológica"
+    },
+    "-LJBdHffO1Q0cB2YIFXi" : {
+      "descrip" : "Hombre insulta verbalmente a una mujer con su niño, porque el niño estaba llorando en el transporte público.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 5, 2018 ",
+      "nomAgre" : "",
+      "nomVic" : "Rosa Suárez",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "4453984",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Ninguno",
+      "tipoDenuncia" : "Violencia económica",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F23337?alt=media&token=f318a599-b1fd-4091-b14d-a1407961f7a8"
+    },
+    "-LJBe899LK_e7sW17xMm" : {
+      "descrip" : "Esposo constantemente  ofende a su mujer diciéndole que su cuerpo no es suficientemente bueno, que necesita ser moldeado.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 5, 2018 ",
+      "nomAgre" : "Marcelo Durán",
+      "nomVic" : "Guillermina Sánchez Bustamante",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "72435788",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia simbólica"
+    },
+    "-LJmymVPKCF0wgwMYmEL" : {
+      "descrip" : "Jefa trata mal a su secretaría, sólo porque es secretaría.",
+      "dir" : "Sucre, Cochabamba, Bolivia",
+      "fecha" : "agosto 13, 2018 ",
+      "nomAgre" : "María Daza",
+      "nomVic" : "Elisa Rojas",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "4253681",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia institucional"
+    },
+    "-LJmzHr9GWdAqV_vFy15" : {
+      "descrip" : "Directora del colegio explota laboralmente a su secretaría, trabaja muchas horas demás.",
+      "dir" : "Carreras de INFORMÁTICA y SISTEMAS, Cochabamba, Bolivia",
+      "fecha" : "agosto 13, 2018 ",
+      "nomAgre" : "Vania Ramirez",
+      "nomVic" : "Elvia Peña",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "73214568",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia laboral"
+    },
+    "-LJmznoCXOzmFyeIhPcR" : {
+      "descrip" : "Hermana mayor quiere dejar sin herencia a su hermana menor, quitándole todos los derechos sobre las cosas que les dejaron sus papás.",
+      "dir" : "Carreras de INFORMÁTICA y SISTEMAS, Cochabamba, Bolivia",
+      "fecha" : "agosto 13, 2018 ",
+      "nomAgre" : "Florencia Meneses",
+      "nomVic" : "Lidia Meneses",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "4365141",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia patrimonial"
+    },
+    "-LJqINFbK-E2N30r8_Od" : {
+      "descrip" : " Jefe forcejeo con su secretaría.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 13, 2018 ",
+      "nomAgre" : "Juan Vargas",
+      "nomVic" : "Angela Vázquez",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "4253625",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia física"
+    },
+    "-LJqIrb4SAGJPxX9tj7d" : {
+      "descrip" : "Esposo obliga a su mujer a tener relaciones sexuales, cuando la esposa no está de acuerdo.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 13, 2018 ",
+      "nomAgre" : "Benedicto Escobar",
+      "nomVic" : "Clara Molina",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "4213184",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia sexual"
+    },
+    "-LJqJJI_qZ3TvN8fJ7JV" : {
+      "descrip" : "Mujer sufre constantes humillaciones por parte de sus hijos.",
+      "dir" : "Av. Waldo Ballivian, Quillacollo, Bolivia",
+      "fecha" : "agosto 13, 2018 ",
+      "nomAgre" : "",
+      "nomVic" : "Gabriela Merida",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Otro"
+    },
+    "-LJqJmkszYvbXpsgmrNT" : {
+      "descrip" : "Madre golpea constantemente a su hija, causando graves daños físicos.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 13, 2018 ",
+      "nomAgre" : "Josefina Vargas",
+      "nomVic" : "Carmen Rocha",
+      "nombreUsuario" : "Danny Rodríguez",
+      "numVic" : "72135418",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Hermana(o)",
+      "tipoDenuncia" : "Violencia física"
+    },
+    "-LKJ-EcQr6HYo_dZRSdj" : {
+      "descrip" : "Jefa de mi esposa anda constantemente insultando a todo su personal, en especial a las mujeres.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 19, 2018 ",
+      "nomAgre" : "Alcira Reinaga",
+      "nomVic" : "Guadalupe Vargas",
+      "nombreUsuario" : "Roger Vargas",
+      "numVic" : "4252314",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Hermana(o)",
+      "tipoDenuncia" : "Violencia psicológica"
+    },
+    "-LKJ-pMt0ornWVj8VebB" : {
+      "descrip" : "Profesor del colegio anda tocando indebidamente  a la estudiante ",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 19, 2018 ",
+      "nomAgre" : "Luis Miguel Soria",
+      "nomVic" : "Isabel Merino",
+      "nombreUsuario" : "Roger Vargas",
+      "numVic" : "4214578",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Papá",
+      "tipoDenuncia" : "Violencia sexual"
+    },
+    "-LKJ0yf2oujzNcaqBax0" : {
+      "descrip" : "Esposo quiere obligar a su esposa para hacerse operar el cuerpo.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 19, 2018 ",
+      "nomAgre" : "Raúl Lobo",
+      "nomVic" : "Eliana Rosales",
+      "nombreUsuario" : "Roger Vargas",
+      "numVic" : "74123684",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia simbólica",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F25455?alt=media&token=91a034d4-1aec-4f96-a551-1ba32e08fb72"
+    },
+    "-LKd_SLKdCNIQB1cn0vB" : {
+      "descrip" : "Hombre maltrata a su mujer y le obliga a trabajar.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 23, 2018 ",
+      "nomAgre" : "Edgar Soria",
+      "nomVic" : "Josefina Rosales",
+      "nombreUsuario" : "Roger Vargas",
+      "numVic" : "4453984",
+      "numeroUsuario" : "75929244",
+      "relacion" : "Jefa(e)",
+      "tipoDenuncia" : "Otro"
+    },
+    "-LKoG0h69ZsaN2fV27Yl" : {
+      "descrip" : "Esposo golpea a su esposa e hijos todo el tiempo  que llega ebrio a su casa.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 25, 2018 ",
+      "nomAgre" : "Fermín Noriega",
+      "nomVic" : "Escarleth Hinojosa",
+      "nombreUsuario" : "Jimena Guarachi",
+      "numVic" : "4434128",
+      "numeroUsuario" : "72234981",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia doméstica"
+    },
+    "-LKoGtenuiKLPsGDYHdD" : {
+      "descrip" : "Funcionario de la alcaldía anda agrediendo física y psicologicamente a su secretaría.",
+      "dir" : "Av Suárez Miranda 515, Quillacollo, Bolivia",
+      "fecha" : "agosto 25, 2018 ",
+      "nomAgre" : "",
+      "nomVic" : "Marisa Nogales",
+      "nombreUsuario" : "Jimena Guarachi",
+      "numVic" : "74539847",
+      "numeroUsuario" : "72234981",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia institucional"
+    },
+    "-LKoKqgCTeuls4IL5svC" : {
+      "descrip" : "Jefe de piso amenaza a su empleada con botarla del trabajó.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 25, 2018 ",
+      "nomAgre" : "Rubén Rios",
+      "nomVic" : "Susana Claros",
+      "nombreUsuario" : "Jimena Guarachi",
+      "numVic" : "71412645",
+      "numeroUsuario" : "72234981",
+      "relacion" : "Empleada(o)",
+      "tipoDenuncia" : "Violencia laboral"
+    },
+    "-LKoLMv4B5hsqOOYCbpL" : {
+      "descrip" : "Hermana de Felicidad sustrajo los papeles de la vivienda que sus padres le habían dejado como herencia.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 25, 2018 ",
+      "nomAgre" : "Sonia Rojas",
+      "nomVic" : "Felicidad Rojas",
+      "nombreUsuario" : "Jimena Guarachi",
+      "numVic" : "74134512",
+      "numeroUsuario" : "72234981",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia patrimonial"
+    },
+    "-LKsdyrR9fzPWE6gNTHo" : {
+      "descrip" : "Esposo golpea a su mujer frente a sus estudiantes.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 26, 2018 ",
+      "nomAgre" : "Roberto Vera",
+      "nomVic" : "Lucía Claros",
+      "nombreUsuario" : "Ramiro Reyes",
+      "numVic" : "4264417",
+      "numeroUsuario" : "72398541",
+      "relacion" : "Jefa(e)",
+      "tipoDenuncia" : "Violencia física"
+    },
+    "-LKseaXZKM8U5rYMyQ36" : {
+      "descrip" : "Madre ofende a su hija constantemente, a través de insultos y uso de malas palabras.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 26, 2018 ",
+      "nomAgre" : "Sonia Cabrera",
+      "nomVic" : "Rebeca Nogales",
+      "nombreUsuario" : "Ramiro Reyes",
+      "numVic" : "71489244",
+      "numeroUsuario" : "72398541",
+      "relacion" : "Prima(o)",
+      "tipoDenuncia" : "Violencia psicológica"
+    },
+    "-LKsfPoiSX1aW8JxAYxt" : {
+      "descrip" : "Profesor se insinúa a su estudiante en pleno colegio.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 26, 2018 ",
+      "nomAgre" : "Roger Saucedo",
+      "nomVic" : "Luisa Reyes",
+      "nombreUsuario" : "Ramiro Reyes",
+      "numVic" : "73641279",
+      "numeroUsuario" : "72398541",
+      "relacion" : "Hermana(o)",
+      "tipoDenuncia" : "Violencia sexual"
+    },
+    "-LKsgLYkTHX1P8XTGthA" : {
+      "descrip" : "Sobrino se adueña de la casa de una anciana, aprovechando que no tiene hijos vivos.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 26, 2018 ",
+      "nomAgre" : "Carlos Rios",
+      "nomVic" : "Benedicta Silas",
+      "nombreUsuario" : "Ramiro Reyes",
+      "numVic" : "4361245",
+      "numeroUsuario" : "72398541",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia patrimonial"
+    },
+    "-LKsjbRWSAcTSiu_9br5" : {
+      "descrip" : " Jefe de trabajadora de limpieza explota laboralmente a su empleada, ya sea en trabajo y en horas extras.",
+      "dir" : "Capitán Arzabe, Quillacollo, Bolivia",
+      "fecha" : "agosto 26, 2018 ",
+      "nomAgre" : "Ramiro Vergara",
+      "nomVic" : "Rosa Cáceres",
+      "nombreUsuario" : "Ramiro Reyes",
+      "numVic" : "71485324",
+      "numeroUsuario" : "72398541",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia institucional"
+    },
+    "-LKsnkDVPbjJEzq_3kaV" : {
+      "descrip" : "Jefa de planta arriesga la vida de su empleada al ponerla a hacer trabajos peligrosos.",
+      "dir" : "Av. Waldo Ballivian, Quillacollo, Bolivia",
+      "fecha" : "agosto 26, 2018 ",
+      "nomAgre" : "Rocío Segovia",
+      "nomVic" : "Corina Vargas",
+      "nombreUsuario" : "Ramiro Reyes",
+      "numVic" : "4859612",
+      "numeroUsuario" : "72398541",
+      "relacion" : "Conocido(a)",
+      "tipoDenuncia" : "Violencia laboral"
+    }
+  },
+  "Instituciones" : {
+    "1530587341237" : {
+      "Direccion" : " Cirunvalacion Nro. 345",
+      "Nombre" : "SLIM",
+      "PaginaReferencia" : "slim/facebook",
+      "Servicio" : "Jurídico",
+      "Telefono" : "4365141 - 4453984",
+      "id" : 1530587341237
+    },
+    "1530587804929" : {
+      "Direccion" : "Calle Concepción casi Eduardo Rojas ",
+      "Nombre" : "OFICINA JURÍDICA DE LA MUJER",
+      "PaginaReferencia" : "@ofMujer",
+      "Servicio" : "Jurídico - Psicológico",
+      "Telefono" : "4453984 - 4365141",
+      "id" : 1530587804929
+    },
+    "1530588031477" : {
+      "Direccion" : "Zona laguna Alalay",
+      "Nombre" : "FELCC cbba",
+      "PaginaReferencia" : "@felcc",
+      "Servicio" : "Judicial",
+      "Telefono" : "4365141 - 73929833",
+      "id" : 1530588031477
+    },
+    "1530640177675" : {
+      "Direccion" : "Calle Mejillones nro. 125",
+      "Nombre" : "FELCV",
+      "PaginaReferencia" : "@felcvCbba",
+      "Servicio" : "Judicial",
+      "Telefono" : "4567823 - 72744546",
+      "id" : 1530640177675
+    },
+    "1530640252123" : {
+      "Direccion" : "Av. Petrolera nro. 34",
+      "Nombre" : "OFICINA JURIDICA DERECHO - UNIVALLE",
+      "PaginaReferencia" : "@uniDerecho",
+      "Servicio" : "Judicial - juridico",
+      "Telefono" : "43634989",
+      "id" : 1530640252123
+    },
+    "1530640297326" : {
+      "Direccion" : "Zona Laguna Alalay",
+      "Nombre" : "OFICINA JURIDICA DERECHO-UMSS",
+      "PaginaReferencia" : "@umssDerecho",
+      "Servicio" : "Juridico",
+      "Telefono" : "4368923 - 75937235",
+      "id" : 1530640297326
+    },
+    "1530640373472" : {
+      "Direccion" : "Zona Ecologica",
+      "Nombre" : "DEFENSORIA DE LA NINEZ",
+      "PaginaReferencia" : "@defensoriaCbba",
+      "Servicio" : "Jurídico - psicologico",
+      "Telefono" : "4565432",
+      "id" : 1530640373472
+    }
+  },
+  "Usuarios" : {
+    "Dm8zyeTnFLVzfUnWFdHO315KJ2m2" : {
+      "Correo" : "danny@gmail.com",
+      "Nombre" : "Danny Rodriguez Montecinos",
+      "Telefono" : "75929244"
+    },
+    "FGVgANNCfhO8vddcmoOARKBUpzr1" : {
+      "Correo" : "danny@gmail.com",
+      "Denuncias" : {
+        "-LEN7HRp63DzPNchNNPu" : {
+          "descripcion" : "Empleada malteada por su jefa, recibe burlas y gritos.",
+          "fecha" : "junio 6, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Carla Rojas",
+          "nombreVictima" : "Rosa Vargas",
+          "numeroVictima" : "75428467",
+          "relacion" : "Jefa(e)",
+          "urlDescarga" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F15855?alt=media&token=414bdc46-66ac-4be9-8d01-568a0feb7408"
+        },
+        "-LEN7sd2gYEuOcDRG6-Y" : {
+          "descripcion" : "Adolescente golpeada en plena vía pública, por su madre. Además siendo agredida verbalmente.",
+          "fecha" : "junio 6, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Maria loza",
+          "nombreVictima" : "Kassandra Loza",
+          "numeroVictima" : "78543678",
+          "relacion" : "Conocido(a)"
+        },
+        "-LEjEnK-fXXdbtVUSY3-" : {
+          "descripcion" : "Mujer golpeada ",
+          "fecha" : "junio 11, 2018 ",
+          "localizacion" : "M.Ricardo Terrazas 1374, Cochabamba, Bolivia",
+          "nombreAgresor" : "Jose Canaviri",
+          "nombreVictima" : "Maria Guardia",
+          "numeroVictima" : "42578",
+          "relacion" : "Prima(o)"
+        },
+        "-LH5vfQYl_Pd0KsMICs7" : {
+          "descripcion" : " Esposa golpeada, en plena calle.",
+          "fecha" : "julio 10, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Hernán López",
+          "nombreVictima" : "María Gonzáles",
+          "numeroVictima" : "4365141",
+          "relacion" : "Ninguno",
+          "tipoDenuncia" : "Violencia doméstica",
+          "urlDescarga" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F21041?alt=media&token=25b0c958-3ea1-41c6-8e72-c774920f7d17"
+        },
+        "-LI8KgQUqvnp_pxJE-xp" : {
+          "descripcion" : "Esposo ofende a su mujer.",
+          "fecha" : "julio 23, 2018 ",
+          "localizacion" : "Av Tadeo Haenke, Cochabamba, Bolivia",
+          "nombreAgresor" : "Eduardo Rojas",
+          "nombreVictima" : "Rosa María Cardenas",
+          "numeroVictima" : "75929244",
+          "relacion" : "Conocido(a)",
+          "tipoDenuncia" : "Violencia psicológica"
+        },
+        "-LJBdHfN3ULXhSiWddPf" : {
+          "descripcion" : "Hombre insulta verbalmente a una mujer con su niño, porque el niño estaba llorando en el transporte público.",
+          "fecha" : "agosto 5, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "",
+          "nombreVictima" : "Rosa Suárez",
+          "numeroVictima" : "4453984",
+          "relacion" : "Ninguno",
+          "tipoDenuncia" : "Violencia económica",
+          "urlDescarga" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F23337?alt=media&token=f318a599-b1fd-4091-b14d-a1407961f7a8"
+        },
+        "-LJBe89-rRSR1DVCo-vc" : {
+          "descripcion" : "Esposo constantemente  ofende a su mujer diciéndole que su cuerpo no es suficientemente bueno, que necesita ser moldeado.",
+          "fecha" : "agosto 5, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Marcelo Durán",
+          "nombreVictima" : "Guillermina Sánchez Bustamante",
+          "numeroVictima" : "72435788",
+          "relacion" : "Prima(o)",
+          "tipoDenuncia" : "Violencia simbólica"
+        },
+        "-LJmymUwishRzvibKPa4" : {
+          "descripcion" : "Jefa trata mal a su secretaría, sólo porque es secretaría.",
+          "fecha" : "agosto 13, 2018 ",
+          "localizacion" : "Sucre, Cochabamba, Bolivia",
+          "nombreAgresor" : "María Daza",
+          "nombreVictima" : "Elisa Rojas",
+          "numeroVictima" : "4253681",
+          "relacion" : "Conocido(a)",
+          "tipoDenuncia" : "Violencia institucional"
+        },
+        "-LJmzHr-9PfMclJuDjIb" : {
+          "descripcion" : "Directora del colegio explota laboralmente a su secretaría, trabaja muchas horas demás.",
+          "fecha" : "agosto 13, 2018 ",
+          "localizacion" : "Carreras de INFORMÁTICA y SISTEMAS, Cochabamba, Bolivia",
+          "nombreAgresor" : "Vania Ramirez",
+          "nombreVictima" : "Elvia Peña",
+          "numeroVictima" : "73214568",
+          "relacion" : "Prima(o)",
+          "tipoDenuncia" : "Violencia laboral"
+        },
+        "-LJmznnytKoBdVKT_t8h" : {
+          "descripcion" : "Hermana mayor quiere dejar sin herencia a su hermana menor, quitándole todos los derechos sobre las cosas que les dejaron sus papás.",
+          "fecha" : "agosto 13, 2018 ",
+          "localizacion" : "Carreras de INFORMÁTICA y SISTEMAS, Cochabamba, Bolivia",
+          "nombreAgresor" : "Florencia Meneses",
+          "nombreVictima" : "Lidia Meneses",
+          "numeroVictima" : "4365141",
+          "relacion" : "Prima(o)",
+          "tipoDenuncia" : "Violencia patrimonial"
+        },
+        "-LJqINF91zOWcyJGYHJZ" : {
+          "descripcion" : " Jefe forcejeo con su secretaría.",
+          "fecha" : "agosto 13, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Juan Vargas",
+          "nombreVictima" : "Angela Vázquez",
+          "numeroVictima" : "4253625",
+          "relacion" : "Conocido(a)",
+          "tipoDenuncia" : "Violencia física"
+        },
+        "-LJqIrar5b9AyigIeOd5" : {
+          "descripcion" : "Esposo obliga a su mujer a tener relaciones sexuales, cuando la esposa no está de acuerdo.",
+          "fecha" : "agosto 13, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Benedicto Escobar",
+          "nombreVictima" : "Clara Molina",
+          "numeroVictima" : "4213184",
+          "relacion" : "Prima(o)",
+          "tipoDenuncia" : "Violencia sexual"
+        },
+        "-LJqJJINAdSZWPw2xxet" : {
+          "descripcion" : "Mujer sufre constantes humillaciones por parte de sus hijos.",
+          "fecha" : "agosto 13, 2018 ",
+          "localizacion" : "Av. Waldo Ballivian, Quillacollo, Bolivia",
+          "nombreAgresor" : "",
+          "nombreVictima" : "Gabriela Merida",
+          "numeroVictima" : "",
+          "relacion" : "Conocido(a)",
+          "tipoDenuncia" : "Otro"
+        },
+        "-LJqJmkqL9WFAtE-oDgt" : {
+          "descripcion" : "Madre golpea constantemente a su hija, causando graves daños físicos.",
+          "fecha" : "agosto 13, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Josefina Vargas",
+          "nombreVictima" : "Carmen Rocha",
+          "numeroVictima" : "72135418",
+          "relacion" : "Hermana(o)",
+          "tipoDenuncia" : "Violencia física"
+        }
+      },
+      "Nombre" : "Danny Rodríguez",
+      "Telefono" : "75929244"
+    },
+    "JNQWhMLZerPqH00w3mvVGvbBopN2" : {
+      "Correo" : "gimena@gmail.com",
+      "Denuncias" : {
+        "-LKoG0gwT_oOSGTmBwgf" : {
+          "descripcion" : "Esposo golpea a su esposa e hijos todo el tiempo  que llega ebrio a su casa.",
+          "fecha" : "agosto 25, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Fermín Noriega",
+          "nombreVictima" : "Escarleth Hinojosa",
+          "numeroVictima" : "4434128",
+          "relacion" : "Prima(o)",
+          "tipoDenuncia" : "Violencia doméstica"
+        },
+        "-LKoGteb7zB2vtcwB4Fp" : {
+          "descripcion" : "Funcionario de la alcaldía anda agrediendo física y psicologicamente a su secretaría.",
+          "fecha" : "agosto 25, 2018 ",
+          "localizacion" : "Av Suárez Miranda 515, Quillacollo, Bolivia",
+          "nombreAgresor" : "",
+          "nombreVictima" : "Marisa Nogales",
+          "numeroVictima" : "74539847",
+          "relacion" : "Conocido(a)",
+          "tipoDenuncia" : "Violencia institucional"
+        },
+        "-LKoKqfsgUyucbXpsDyI" : {
+          "descripcion" : "Jefe de piso amenaza a su empleada con botarla del trabajó.",
+          "fecha" : "agosto 25, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Rubén Rios",
+          "nombreVictima" : "Susana Claros",
+          "numeroVictima" : "71412645",
+          "relacion" : "Empleada(o)",
+          "tipoDenuncia" : "Violencia laboral"
+        },
+        "-LKoLMutQF16K2G3I53G" : {
+          "descripcion" : "Hermana de Felicidad sustrajo los papeles de la vivienda que sus padres le habían dejado como herencia.",
+          "fecha" : "agosto 25, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Sonia Rojas",
+          "nombreVictima" : "Felicidad Rojas",
+          "numeroVictima" : "74134512",
+          "relacion" : "Prima(o)",
+          "tipoDenuncia" : "Violencia patrimonial"
+        }
+      },
+      "Nombre" : "Jimena Guarachi",
+      "Telefono" : "72234981"
+    },
+    "RJQeA1Rbc4d4Gt8Mm6Yt5pgeGhH3" : {
+      "Correo" : "roger@gmail.com",
+      "Denuncias" : {
+        "-LKJ-Ec-2slAUkLke9PY" : {
+          "descripcion" : "Jefa de mi esposa anda constantemente insultando a todo su personal, en especial a las mujeres.",
+          "fecha" : "agosto 19, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Alcira Reinaga",
+          "nombreVictima" : "Guadalupe Vargas",
+          "numeroVictima" : "4252314",
+          "relacion" : "Hermana(o)",
+          "tipoDenuncia" : "Violencia psicológica"
+        },
+        "-LKJ-pMhJnqVSSZcycy7" : {
+          "descripcion" : "Profesor del colegio anda tocando indebidamente  a la estudiante ",
+          "fecha" : "agosto 19, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Luis Miguel Soria",
+          "nombreVictima" : "Isabel Merino",
+          "numeroVictima" : "4214578",
+          "relacion" : "Papá",
+          "tipoDenuncia" : "Violencia sexual"
+        },
+        "-LKJ0yf0SoeiEi0LEPTl" : {
+          "descripcion" : "Esposo quiere obligar a su esposa para hacerse operar el cuerpo.",
+          "fecha" : "agosto 19, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Raúl Lobo",
+          "nombreVictima" : "Eliana Rosales",
+          "numeroVictima" : "74123684",
+          "relacion" : "Prima(o)",
+          "tipoDenuncia" : "Violencia simbólica",
+          "urlDescarga" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F25455?alt=media&token=91a034d4-1aec-4f96-a551-1ba32e08fb72"
+        },
+        "-LKd_SKTxU-RrZ_jnAA-" : {
+          "descripcion" : "Hombre maltrata a su mujer y le obliga a trabajar.",
+          "fecha" : "agosto 23, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Edgar Soria",
+          "nombreVictima" : "Josefina Rosales",
+          "numeroVictima" : "4453984",
+          "relacion" : "Jefa(e)",
+          "tipoDenuncia" : "Otro"
+        }
+      },
+      "Nombre" : "Roger Vargas",
+      "Telefono" : "75929244"
+    },
+    "VDf7RRNETjPfkwhRW8VuSRGeQIk1" : {
+      "Correo" : "ramiro@gmail.com",
+      "Denuncias" : {
+        "-LKsdyrA2DsCcHuepZyv" : {
+          "descripcion" : "Esposo golpea a su mujer frente a sus estudiantes.",
+          "fecha" : "agosto 26, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Roberto Vera",
+          "nombreVictima" : "Lucía Claros",
+          "numeroVictima" : "4264417",
+          "relacion" : "Jefa(e)",
+          "tipoDenuncia" : "Violencia física"
+        },
+        "-LKseaXJVXx6rIUJwPOx" : {
+          "descripcion" : "Madre ofende a su hija constantemente, a través de insultos y uso de malas palabras.",
+          "fecha" : "agosto 26, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Sonia Cabrera",
+          "nombreVictima" : "Rebeca Nogales",
+          "numeroVictima" : "71489244",
+          "relacion" : "Prima(o)",
+          "tipoDenuncia" : "Violencia psicológica"
+        },
+        "-LKsfPoYoegLSVMb4Cz7" : {
+          "descripcion" : "Profesor se insinúa a su estudiante en pleno colegio.",
+          "fecha" : "agosto 26, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Roger Saucedo",
+          "nombreVictima" : "Luisa Reyes",
+          "numeroVictima" : "73641279",
+          "relacion" : "Hermana(o)",
+          "tipoDenuncia" : "Violencia sexual"
+        },
+        "-LKsgLYaqiClmHnOxXIB" : {
+          "descripcion" : "Sobrino se adueña de la casa de una anciana, aprovechando que no tiene hijos vivos.",
+          "fecha" : "agosto 26, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Carlos Rios",
+          "nombreVictima" : "Benedicta Silas",
+          "numeroVictima" : "4361245",
+          "relacion" : "Conocido(a)",
+          "tipoDenuncia" : "Violencia patrimonial"
+        },
+        "-LKsjbRE1l3HI9IDc-Cq" : {
+          "descripcion" : " Jefe de trabajadora de limpieza explota laboralmente a su empleada, ya sea en trabajo y en horas extras.",
+          "fecha" : "agosto 26, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Ramiro Vergara",
+          "nombreVictima" : "Rosa Cáceres",
+          "numeroVictima" : "71485324",
+          "relacion" : "Conocido(a)",
+          "tipoDenuncia" : "Violencia institucional"
+        },
+        "-LKsnkDNc3c3ei4_W_mN" : {
+          "descripcion" : "Jefa de planta arriesga la vida de su empleada al ponerla a hacer trabajos peligrosos.",
+          "fecha" : "agosto 26, 2018 ",
+          "localizacion" : "Av. Waldo Ballivian, Quillacollo, Bolivia",
+          "nombreAgresor" : "Rocío Segovia",
+          "nombreVictima" : "Corina Vargas",
+          "numeroVictima" : "4859612",
+          "relacion" : "Conocido(a)",
+          "tipoDenuncia" : "Violencia laboral"
+        }
+      },
+      "Nombre" : "Ramiro Reyes",
+      "Telefono" : "72398541"
+    },
+    "WhgcOnknJkUz09IJWMlO9L9K9v83" : {
+      "Correo" : "dannidanna@gmail.con",
+      "Denuncias" : {
+        "-LALj9ETTXNy40zJe8up" : {
+          "descripcion" : "Mujer agredida por su jefe en el trabajo.",
+          "fecha" : "abril 17, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Mario",
+          "nombreVictima" : "Arminda",
+          "numeroVictima" : "75929244",
+          "relacion" : "Jefa(e)",
+          "urlDescarga" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F9791?alt=media&token=ab5dc4fa-528e-44af-a343-ec9a17e3da5d"
+        },
+        "-LALjVshmwfPsIgQkLlk" : {
+          "descripcion" : "Mujer golpeada sin sentido en plena vía pública.",
+          "fecha" : "abril 17, 2018 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Teresa",
+          "nombreVictima" : "Sonia",
+          "numeroVictima" : "44365141",
+          "relacion" : "Prima(o)",
+          "urlDescarga" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F9793?alt=media&token=9712ae89-995c-4246-ba97-c61518457615"
+        }
+      },
+      "Nombre" : "Milena Grajeda",
+      "Telefono" : "75929244"
+    },
+    "eQIQpVydVZRKH8yhPOy8UjhuEQG3" : {
+      "Correo" : "dannidanna@gmail.com",
+      "Denuncias" : {
+        "-KzUrQvA2VBggM1YHJf8" : {
+          "descripcion" : "mujer golpeada por su jefe",
+          "fecha" : "noviembre 21, 2017 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "Héctor Sanabria",
+          "nombreVictima" : "María Gonzáles",
+          "numeroVictima" : "",
+          "relacion" : "Jefa(e)",
+          "urlDescarga" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F10605?alt=media&token=66f016c3-605c-408c-b48f-ed113e5c334a"
+        },
+        "-Kz_-XiB74bdHLUefyLK" : {
+          "descripcion" : "mujer embarazada maltratada por una mujer",
+          "fecha" : "noviembre 22, 2017 ",
+          "localizacion" : "Capitán Arzabe, Quillacollo, Bolivia",
+          "nombreAgresor" : "",
+          "nombreVictima" : "Julia Sanchez",
+          "numeroVictima" : "44365141",
+          "relacion" : "Ninguno",
+          "urlDescarga" : "https://firebasestorage.googleapis.com/v0/b/warmi-6afeb.appspot.com/o/Fotos%2F10691?alt=media&token=0d8076f6-c03b-4826-8297-d4a0f19bab14"
+        }
+      },
+      "Nombre" : "Rodrigo Saavedra",
+      "Telefono" : "75929244"
+    }
+  }
+}

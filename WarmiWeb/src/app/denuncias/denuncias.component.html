@@ -6,6 +6,7 @@
           <input type="text" class="form-control" placeholder="Buscar denuncias por fecha" [(ngModel)]="fechaDenuncia.fechaDen" name="fechaDenunciasNew"/>
         </div>
         <button class="btn btn-default" (click)="buscar()">Buscar</button>
+        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true" (click)="borrarBusqueda()"></span>
       </form>
       <br>
       <br>
@@ -22,7 +23,10 @@
         Tipo de denuncia : <b>{{n.tipoDenuncia}}</b> <br> {{n.fecha }} <br>{{n.descrip}} <br>   
     <br>
     </li>
-    </ul>    
+    </ul>
+    <br>
+    <br>
+    <br>    
   </div>
 
   <div class="col-md-5" *ngIf="mostrarForm" id="content">
@@ -65,6 +69,7 @@
   </div>
   <br>
     </div>
+
 </div>
 
 

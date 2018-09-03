@@ -1,8 +1,11 @@
 package app.warmi.rodriguez.danny.warmi;
 
+import android.*;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +42,12 @@ HistorialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historial);
+
+
+        if ((ActivityCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)) {
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE,}, 1000);
+        }
+
         lista = (RecyclerView) findViewById(R.id.recHis);
         lista.setLayoutManager(new LinearLayoutManager(this));
         bdReferencia = FirebaseDatabase.getInstance().getReference("Usuarios");
@@ -63,6 +72,7 @@ HistorialActivity extends AppCompatActivity {
                             holder.txtNumVic.setText(model.getNumeroVictima());
                             holder.txtNomAgre.setText(model.getNombreAgresor());
                             holder.txtRelacion.setText(model.getRelacion());
+                            holder.txtTipoDenuncia.setText(model.getTipoDenuncia());
                             holder.txtFecha.setText(model.getFecha());
                             holder.txtDescripcion.setText(model.getDescripcion());
                             Picasso.with(HistorialActivity.this).load(model.getUrlDescarga()).into(holder.viewImagen);
@@ -88,6 +98,7 @@ HistorialActivity extends AppCompatActivity {
         TextView txtNumVic;
         TextView txtNomAgre;
         TextView txtRelacion;
+        TextView txtTipoDenuncia;
         TextView txtFecha;
         TextView txtDescripcion;
         ImageView viewImagen;
@@ -98,7 +109,8 @@ HistorialActivity extends AppCompatActivity {
             txtNomVic = (TextView) itemView.findViewById(R.id.nombre);
             txtNumVic = (TextView) itemView.findViewById(R.id.telefono);
             txtNomAgre = (TextView) itemView.findViewById(R.id.servicio);
-            txtRelacion = (TextView) itemView.findViewById(R.id.pagina);
+            txtRelacion = (TextView) itemView.findViewById(R.id.pagina4);
+            txtTipoDenuncia = (TextView) itemView.findViewById(R.id.pagina);
             txtFecha = (TextView) itemView.findViewById(R.id.fecha);
             txtDescripcion = (TextView) itemView.findViewById(R.id.test);
             viewImagen = (ImageView) itemView.findViewById(R.id.imagen);

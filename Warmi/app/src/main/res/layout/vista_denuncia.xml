@@ -17,6 +17,17 @@
         tools:layout_editor_absoluteX="17dp">
 
         <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView11"
+            android:layout_alignStart="@+id/textView11"
+            android:layout_below="@+id/textView11"
+            android:layout_marginTop="12dp"
+            android:text="Tipo de denuncia:"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
             android:id="@+id/articulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,7 +58,7 @@
             android:layout_alignLeft="@+id/textView4"
             android:layout_alignStart="@+id/textView4"
             android:layout_below="@+id/textView4"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="11dp"
             android:text="Número afectada: "
             android:textColor="@android:color/background_light" />
 
@@ -66,12 +77,10 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textView4"
             android:layout_alignLeft="@+id/textView9"
-            android:layout_alignRight="@+id/textView4"
             android:layout_alignStart="@+id/textView9"
             android:layout_below="@+id/textView9"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="11dp"
             android:text="Relación:"
             android:textColor="@android:color/background_light" />
 
@@ -79,12 +88,10 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/textView11"
-            android:layout_alignLeft="@+id/textView11"
-            android:layout_alignRight="@+id/textView11"
-            android:layout_alignStart="@+id/textView11"
-            android:layout_below="@+id/textView11"
-            android:layout_marginTop="18dp"
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignStart="@+id/textView6"
+            android:layout_below="@+id/textView6"
+            android:layout_marginTop="13dp"
             android:text="Fecha:"
             android:textColor="@android:color/background_light" />
 
@@ -155,6 +162,19 @@
 
         <TextView
             android:id="@+id/pagina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView6"
+            android:layout_alignBottom="@+id/textView6"
+            android:layout_alignLeft="@+id/pagina4"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/pagina4"
+            android:text="sdfsdf"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/pagina4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textView11"
